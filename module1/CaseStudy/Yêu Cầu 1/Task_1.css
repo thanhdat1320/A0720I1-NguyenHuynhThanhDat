@@ -1,0 +1,99 @@
+body {
+    font-family: 'Indie Flower', cursive;
+    font-size: 20px;
+    background-image: url("../Image/2.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+* {
+    padding: 0;
+    margin: 0;
+}
+/*Banner Furama*/
+.furama {
+    font-size: 100px;
+    text-align: center;
+}
+/*Table Booking Information*/
+#Information {
+    width: 414px;
+    border: 1px solid #7b7f84;
+    border-radius: 10px;
+    padding: 52px;
+    margin: 0 auto;
+    background-color: white;
+}
+h2 {
+    text-align: center;
+}
+.bookingInfo {
+    margin-top: 15px;
+}
+.bookingInfo tr, td {
+    padding: 3px;
+    text-align: center;
+}
+.typeCustomer {
+    width: 250px;
+}
+.typeHouse {
+    width: 250px;
+}
+.typeRoom {
+    width: 250px;
+}
+.Birthday {
+    width: 187px;
+}
+.btn {
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 4px;
+    background-color: #f2f2f2;
+    border: 1px solid #f2f2f2;
+    color: #5F6368;
+    text-decoration: none;
+    transition: all .3s;
+    width: 400px;
+    height: 50px;
+    margin-top: 10px;
+}
+.btn:hover {
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    background-image: -webkit-linear-gradient(top, #f8f8f8, #f1f1f1);
+    background-color: #f2f2f2;
+    border: 1px solid #dfdfdf;
+    border-radius: 5px;
+    color: #0c0b03;
+}
+.btn:visited {
+    border: none;
+}
+.confirm {
+    font-size: 15px;
+    padding: 10px 30px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    outline: none;
+    transition: all .3s;
+}
+.confirm:hover {
+    box-shadow: 0 1px 6px 0 rgba(32,33,36,0.28);
+    border-color: rgba(223,225,229,0);
+}
+#resultAndShow {
+    margin-top: 50px;
+}
+.showInfo {
+    width: 520px;
+    border: 1px solid #7b7f84;
+    border-radius: 20px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 10px;
+}
+.showInfo td:nth-child(2) {
+    border: 1px solid #f2f2f2;
+    border-radius: 10px;
+}
