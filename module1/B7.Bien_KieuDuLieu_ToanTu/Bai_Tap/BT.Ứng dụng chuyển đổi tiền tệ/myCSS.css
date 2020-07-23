@@ -1,0 +1,18 @@
+body {
+    font-size: 30px;
+}
+
+#calcullate {
+    margin: 0 auto;
+    width: 300px;
+}
+#showResult {
+    margin: 0 auto;
+    width: 300px;
+}
+table tr td {
+    padding: 10px;
+}
+select {
+    width: 100px;
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="myCSS.css">
+</head>
+<body>
+<div id="calcullate">
+    <form action="#" method="post" id="change">
+        <table>
+            <tr>
+                <th>Amount</th>
+                <th>From Currency</th>
+                <th>To Curency</th>
+                <td></td>
+            </tr>
+            <tr>
+                <th>
+                    <input type="text" id="Amount">
+                </th>
+                <th>
+                    <select name="from" id="fromCurrency">
+                        <option value="VietNam">VietNam</option>
+                        <option value="USD">USD</option>
+                    </select>
+                </th>
+                <th>
+                    <select name="to" id="toCurrency">
+                        <option value="VietNam"> VietNam</option>
+                        <option value="USD">USD</option>
+                    </select>
+                </th>
+                <th>
+                    <input type="button" class="btn" value="Convert" onclick="convert()">
+                </th>
+            </tr>
+            <tr>
+                <td></td>
+            </tr>
+        </table>
+    </form>
+</div>
+<div id="showResult">
+
+</div>
+<script src="myJS.js"></script>
+</body>
+</html>

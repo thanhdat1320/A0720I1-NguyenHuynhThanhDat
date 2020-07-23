@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3bb72d56-e856-498d-86c2-7d053caa8fcf" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/Practise_WS.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BT. Biến, kiểu dữ liệu và toán tử/.idea/BT. Sử dụng toán tử.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BT. Biến, kiểu dữ liệu và toán tử/Bai1/Bai1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BT. Biến, kiểu dữ liệu và toán tử/Bai1/Bai1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BT. Biến, kiểu dữ liệu và toán tử/Bai2/Bai2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BT. Biến, kiểu dữ liệu và toán tử/Bai2/Bai2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BT. Biến, kiểu dữ liệu và toán tử/Bai3/Bai3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BT. Biến, kiểu dữ liệu và toán tử/Bai3/Bai3.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BT. Biến, kiểu dữ liệu và toán tử/Bai4/Bai4.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BT. Biến, kiểu dữ liệu và toán tử/Bai4/Bai4.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/BT.Ứng dụng chuyển đổi tiền tệ.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myCSS.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myJS.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/.idea/CaseStudy.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/Yêu Cầu 1/Task_1.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/Yêu Cầu 1/Task_1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/Yêu Cầu 1/Task_1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TEST_JAVA/.idea/TEST_JAVA.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TEST_JAVA/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TEST_JAVA/my_script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TEST_JAVA/style.css" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="D:/" />
+  </component>
+  <component name="ProjectId" id="1f2od7UNvu1sAOtJUYjqQh7aAkE" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3bb72d56-e856-498d-86c2-7d053caa8fcf" name="Default Changelist" comment="" />
+      <created>1595495616767</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1595495616767</updated>
+      <workItem from="1595495618017" duration="2498000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+</project>
