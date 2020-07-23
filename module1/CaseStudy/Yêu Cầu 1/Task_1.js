@@ -73,7 +73,7 @@ function showAllInformation(){
             "</tr>" +
             "<tr>" +
                 "<td>Total:</td>" +
-                "<td>" + total + " " + "USD"+"</td>" +
+                "<td  class='totalAll'>" + total + " " + "USD"+"</td>" +
             "</tr>" +
         "</table>"
 }

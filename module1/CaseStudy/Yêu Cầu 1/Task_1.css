@@ -97,3 +97,9 @@ h2 {
     border: 1px solid #f2f2f2;
     border-radius: 10px;
 }
+.showInfo td:last-child {
+    font-weight: bold;
+}
+.totalAll {
+    color: red;
+}
