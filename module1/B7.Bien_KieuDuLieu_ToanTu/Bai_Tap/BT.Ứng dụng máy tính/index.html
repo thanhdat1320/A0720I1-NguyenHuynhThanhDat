@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="myCSS.css">
+</head>
+<body>
+<div id="calculator">
+    <form action="#" method="post" id="calculate">
+        <table>
+            <tr>
+               <td colspan="2">
+                   <input type="text" value="" id="Number1">
+               </td>
+                <td colspan="2">
+                    <input type="text" value="" id="Number2">
+                </td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" value="Addition(+)" id="Add" onclick="Addition()">
+                </td>
+                <td>
+                    <input type="button" value="Subtraction(-)" id="Sub" onclick="Subtraction()">
+                </td>
+                <td>
+                    <input type="button" value="Multiplication(X)" id="Mul" onclick="Multiplication()">
+                </td>
+                <td>
+                    <input type="button" value="Division(/)" id="Div" onclick="Division()">
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+<div id="showResult"></div>
+<script src="myJS.js"></script>
+</body>
+</html>

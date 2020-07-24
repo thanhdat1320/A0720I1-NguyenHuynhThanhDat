@@ -1,0 +1,15 @@
+
+#calculator {
+    width: 300px;
+    margin: 0 auto;
+}
+table {
+    padding: 10px;
+}
+table tr td {
+    padding: 10px;
+}
+#showResult {
+    width: 300px;
+    margin: 0 auto;
+}
