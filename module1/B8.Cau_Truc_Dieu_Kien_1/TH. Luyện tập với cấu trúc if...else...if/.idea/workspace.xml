@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="fcf942ac-c289-45b0-b526-b0bbe37a2e07" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myJS.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TH. Luyện tập với cấu trúc ifelse/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TH. Luyện tập với cấu trúc ifelse/myJS.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../B1.HocCachHoc&amp;QuanLiCongViecBangKanban/Thuc_Hanh/Thiết kế Kanban và Sử dụng Trello.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../B1.HocCachHoc&amp;QuanLiCongViecBangKanban/Thuc_Hanh/Điều tra nguyên nhân với 5WHYs.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../B1.HocCachHoc&amp;QuanLiCongViecBangKanban/Thuc_Hanh/Đặt mục tiêu cho công việc của bạn.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../B1.HocCachHoc&amp;QuanLiCongViecBangKanban/Thuc_Hanh/Đặt mục tiêu tốt theo SMART.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../B1.HocCachHoc&amp;QuanLiCongViecBangKanban/Thuc_Hanh/Ưu tiên hóa công việc để đạt hiệu quả cao nhất.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../B2.NhapMonTuDuyLapTrinh/Bai_Tap/Khoa_hoc_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../B2.NhapMonTuDuyLapTrinh/Bai_Tap/Khoa_hoc_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../B3.MoTaThuatToanBangPseudoCode&amp;Flowchart/Bai_Tap/Mô tả thuật toán chuyển đổi tiền tệ.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../B3.MoTaThuatToanBangPseudoCode&amp;Flowchart/Bai_Tap/Mô tả thuật toán có cấu trúc điều kiện.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../B3.MoTaThuatToanBangPseudoCode&amp;Flowchart/Bai_Tap/Mô tả thuật toán tìm giá trị lớn nhất trong 3 số.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../B3.MoTaThuatToanBangPseudoCode&amp;Flowchart/Bai_Tap/Mô tả thuật toán tìm giá trị lớn nhất trong một dãy số.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../B3.MoTaThuatToanBangPseudoCode&amp;Flowchart/Bai_Tap/Mô tả thuật toán tính điểm trung bình.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../B3.MoTaThuatToanBangPseudoCode&amp;Flowchart/Thuc_Hanh/Thuật toán chuyển đổi nhiệt độ.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../B3.MoTaThuatToanBangPseudoCode&amp;Flowchart/Thuc_Hanh/Thuật toán game đoán số.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../B4.Git&amp;amp;HTML/Bai_Tap/Sử dụng git.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../B4.Git&amp;amp;HTML/Bai_Tap/Tạo Trang CV cá nhân/5.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../B4.Git&amp;amp;HTML/Bai_Tap/Tạo Trang CV cá nhân/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../B4.Git&amp;amp;HTML/Bai_Tap/Tạo danh sách/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../B4.Git&amp;amp;HTML/Thuc_Hanh/Sử dụng thẻ HTML cơ bản/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../B4.Git&amp;amp;HTML/Thuc_Hanh/Sử dụng thẻ HTML cơ bản/.idea/HelloWorld.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../B4.Git&amp;amp;HTML/Thuc_Hanh/Sử dụng thẻ HTML cơ bản/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../B4.Git&amp;amp;HTML/Thuc_Hanh/Sử dụng thẻ HTML cơ bản/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../B4.Git&amp;amp;HTML/Thuc_Hanh/Sử dụng thẻ HTML cơ bản/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../B4.Git&amp;amp;HTML/Thuc_Hanh/Sử dụng thẻ HTML cơ bản/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../B4.Git&amp;amp;HTML/Thuc_Hanh/TH1.Clone dự án từ Git.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../B4.Git&amp;amp;HTML/Thuc_Hanh/TH2.Tạo dự án mới trên GitHub.docx" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="1fBHsJxzLsMozL6MIVlTMlmbpJp" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../CaseStudy" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fcf942ac-c289-45b0-b526-b0bbe37a2e07" name="Default Changelist" comment="" />
+      <created>1595684770728</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1595684770728</updated>
+      <workItem from="1595684771908" duration="1182000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1118" y="330" key="FileChooserDialogImpl" timestamp="1595686330862">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1118" y="330" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1595686330862" />
+  </component>
+</project>
