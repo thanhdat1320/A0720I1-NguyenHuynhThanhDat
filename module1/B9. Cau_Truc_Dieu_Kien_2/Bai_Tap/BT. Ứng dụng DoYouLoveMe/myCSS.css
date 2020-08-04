@@ -1,0 +1,15 @@
+h1 {
+    position: absolute;
+    left: 220px;
+    top: 175px;
+}
+.Yes {
+    position: absolute;
+    left: 285px;
+    top: 235px;
+}
+.No {
+    position: absolute;
+    left: 360px;
+    top: 235px;
+}
