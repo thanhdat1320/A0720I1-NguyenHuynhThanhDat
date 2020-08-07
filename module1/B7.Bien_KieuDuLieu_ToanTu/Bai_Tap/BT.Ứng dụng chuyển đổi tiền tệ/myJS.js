@@ -7,7 +7,6 @@ function convert() {
     if (fromCurrency.value == toCurrency.value || toCurrency.value == fromCurrency.value) {
         alert("Can't Convert");
     } else  {
-        debugger
         if (fromCurrency.value == "VietNam" && toCurrency.value == "USD") {
             monney = Currency * 23000;
             document.getElementById("showResult").innerHTML = "Result:" + " " + monney + "VND";

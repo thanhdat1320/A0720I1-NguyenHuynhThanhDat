@@ -20,7 +20,6 @@ function month_Ahave() {
             document.getElementById("showMonth_A").innerHTML = "Tháng" + " " + month_A + " có 30 ngày";
             break;
     }
-
 }
 function month_Bhave() {
     let month_B = parseInt(document.getElementById("month_B").value);
