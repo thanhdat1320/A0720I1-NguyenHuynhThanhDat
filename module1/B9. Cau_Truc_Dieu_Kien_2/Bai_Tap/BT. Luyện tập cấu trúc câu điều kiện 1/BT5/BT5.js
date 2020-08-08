@@ -1,4 +1,5 @@
 let clickButton = document.getElementById("btn");
+let sum;
 clickButton.onclick = rating;
 function rating() {
     let diligentMark = parseFloat(document.getElementById("diligentMark").value);
@@ -7,7 +8,7 @@ function rating() {
     if (isNaN(diligentMark) || isNaN(midtermMark) || isNaN(lastMark) || diligentMark < 0 || midtermMark < 0 || lastMark < 0) {
         alert("Enter wrong mark.");
     } else {
-        let sum = (diligentMark * 2 + midtermMark * 3 + lastMark * 5) / 10;
+          sum = (diligentMark * 2 + midtermMark * 3 + lastMark * 5) / 10;
     }
     if (sum >= 8.5) {
         alert("Mark A");
