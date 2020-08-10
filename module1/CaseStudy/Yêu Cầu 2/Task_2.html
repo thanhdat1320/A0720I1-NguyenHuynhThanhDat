@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Furama</title>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Task_2.css">
+</head>
+<body>
+<div id="mainFurama">
+    <p class="furama">Furama</p>
+</div>
+<div id="Information">
+    <h2>Booking Information</h2> <hr>
+    <form action="#" method="post" id="guestMain">
+        <table class="bookingInfo">
+            <tr>
+                <td>Your Name</td>
+                <td>
+                    <input type="text" name="name" value="" class="confirm" id="guestName">
+                </td>
+            </tr>
+            <tr>
+                <td>Passport</td>
+                <td>
+                    <input type="text" name="Passport" value="" class="confirm" id="guestPassport">
+                </td>
+            </tr>
+            <tr>
+                <td>Birthday</td>
+                <td>
+                    <input type="date" name="Birthday" value="" class="confirm Birthday" id="guestBirthday">
+                </td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>
+                    <input type="email" name="Email" value="" class="confirm" id="guestEmail">
+                </td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td>
+                    <select name="Address" class="confirm typeAdd" id="guestAddress">
+                        <option value="Đà Nẵng">Đà Nẵng</option>
+                        <option value="Huế">Huế</option>
+                        <option value="Quảng Nam">Quảng Nam</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Customer Type</td>
+                <td>
+                    <select name="Customer" class="confirm typeCustomer" id="guestCustomerType">
+                        <option value="Diamond">Diamond</option>
+                        <option value="Platinum">Platinum</option>
+                        <option value="Gold">Gold</option>
+                        <option value="Silver">Silver</option>
+                        <option value="Member">Member</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Amount</td>
+                <td>
+                    <input type="text" name="name" value="" class="confirm" id="guestAmount">
+                </td>
+            </tr>
+            <tr>
+                <td>Discount</td>
+                <td>
+                    <input type="text" name="Discount" value="" class="confirm" id="guestDiscount">
+                </td>
+            </tr>
+            <tr>
+                <td>RentDays</td>
+                <td>
+                    <input type="number" name="RentDays" value="" class="confirm" id="guestRentDays">
+                </td>
+            </tr>
+            <tr>
+                <td>Type of House</td>
+                <td>
+                    <select name="typeHouse" class="confirm typeHouse" id="guestTypeOfHouse">
+                        <option value="Villa">Villa</option>
+                        <option value="House">House</option>
+                        <option value="Room">Room</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Type of Room</td>
+                <td>
+                    <select name="typeRooom" class="confirm typeRoom" id="guestTypeOfRoom">
+                        <option value="Vip">Vip</option>
+                        <option value="Business">Business</option>
+                        <option value="Normal">Normal</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="button" class="btn" value="Show Total" onclick="showAllInformation()">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="button" class="btn btn-editInfo" value="Edit Information Customer"
+                           onclick="showEditInformation()">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="button" class="btn btn-ShowAllPrice" value="Show price"
+                           onclick="showPriceAfterDiscount()">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                   <input type="reset" class="btn btn-reset" value="Reset">
+               </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+<div id="resultAndShow"></div>
+<script src="Task_2.js"></script>
+</body>
+</html>

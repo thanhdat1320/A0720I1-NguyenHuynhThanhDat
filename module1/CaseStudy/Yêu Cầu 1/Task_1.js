@@ -14,10 +14,10 @@ function showAllInformation(){
     let prices;
     let total;
     let discount;
-    if (guestTypeOfHouse.value == "Villa") {
+    if (guestTypeOfHouse.value === "Villa") {
        prices = 500;
     } else {
-        if (guestTypeOfHouse.value == "House"){
+        if (guestTypeOfHouse.value === "House"){
            prices = 300;
         } else {
             prices = 100;
