@@ -6,7 +6,7 @@ let guestAddress = document.forms["guestMain"]["guestAddress"];
 let guestCustomerType = document.forms["guestMain"]["guestCustomerType"];
 let guestAmount = document.forms["guestMain"]["guestAmount"];
 let guestRentDays = document.forms["guestMain"]["guestRentDays"];
-let Rents = parseInt(guestRentDays.value);
+let Rents = parseFloat(guestRentDays.value);
 let guestTypeOfHouse = document.forms["guestMain"]["guestTypeOfHouse"];
 let guestTypeOfRoom = document.forms["guestMain"]["guestTypeOfRoom"];
 let total;
@@ -15,10 +15,97 @@ let typeHousePrices;
 let addDiscount;
 let timestayDiscount;
 let typeCustomerDiscount;
-let check = false;
 
-function showAllInformation(){
-    Rents = parseInt(guestRentDays.value);
+    // Check Email.
+function checkEmail() {
+    let countAt = 0;
+    let countDot = 0;
+    if (guestEmail.value === "") {
+        alert("Please input your email.");
+    } else {
+            for (let i = 0; i < guestEmail.value.length; i++) {
+                if (guestEmail.value.charAt(i) === "@") {
+                    countAt++;
+                    for (let j = 0; j < guestEmail.value.length; j++) {
+                        if (guestEmail.value.charAt(j) === ".") {
+                            countDot++;
+                        }
+                    }
+                }
+            }
+            if (countAt !== 1 || countDot < 1) {
+                alert("Your email is not correct.");
+            }
+        }
+}
+
+    // Check passport
+function checkPassport() {
+    if (guestPassport.value === "") {
+        alert("Please input your passport.");
+    } else {
+            let tempPP = guestPassport.value;
+            if (!isNaN(tempPP)) {
+                tempPP = Number.parseFloat(tempPP);
+            }
+            if (!Number.isInteger(tempPP)) {
+                alert("Your passport is not correct");
+            }
+            if (tempPP < 100000000 || tempPP > 999999999) {
+                alert("Your passport is not correct");
+            }
+    }
+}
+
+    //Check Rentdays
+function checkRentdays() {
+    let tempRD = guestRentDays.value;
+    if (guestRentDays.value === "") {
+        alert("Please input your rent days.");
+    } else if (!isNaN(tempRD)) {
+        tempRD = parseFloat(tempRD);
+        if (!Number.isInteger(tempRD) || tempRD < 0) {
+            alert("Your rent days is not correct");
+        }
+    }
+}
+    // Check Amount
+function checkAmount() {
+    let tempAmount = guestAmount.value;
+    if (guestAmount.value === "") {
+        alert("Please input your amount.")
+    } else if (!isNaN(tempAmount)) {
+        tempAmount = parseFloat(tempAmount);
+        if (!Number.isInteger(tempAmount) || tempAmount < 0) {
+            alert("Your amount is not correct.");
+        }
+    }
+}
+
+    // Change input name
+    function changeName() {
+        let tempName = "";
+        guestName.value = guestName.value.trim().toLowerCase();
+        for (let i = 0; i < guestName.value.length; i ++) {
+            if (guestName.value.charAt(i) === " " && guestName.value.charAt(i + 1) === " ") {
+                continue;
+            }
+            if (i === 0 || guestName.value.charAt(i - 1) === " ") {
+                tempName += guestName.value.charAt(i).toUpperCase();
+                continue;
+            }
+            tempName += guestName.value.charAt(i);
+        }
+        guestName.value = tempName;
+    }
+    // Show All Information
+function showAllInformation() {
+    changeName();
+    checkEmail();
+    checkPassport();
+    checkRentdays();
+    checkAmount();
+    Rents = parseFloat(guestRentDays.value);
     /* Get price by services*/
     if (guestTypeOfHouse.value === "Villa") {
         typeHousePrices = 500;
@@ -38,7 +125,7 @@ function showAllInformation(){
     /*Get price discount by times stay*/
     if (guestRentDays.value > 7) {
         timestayDiscount = 30;
-    } else if (guestRentDays.value >= 5 || guestRentDays.value <= 7 ) {
+    } else if (guestRentDays.value >= 5 || guestRentDays.value <= 7) {
         timestayDiscount = 20;
     } else if (guestRentDays.value >= 2 || guestRentDays.value <= 4) {
         timestayDiscount = 10;
@@ -103,21 +190,21 @@ function showAllInformation(){
         "</tr>" +
         "<tr>" +
         "<td>Prices:</td>" +
-        "<td>" + discount + " " + "USD/day"+"</td>" +
+        "<td>" + discount + " " + "USD/day" + "</td>" +
         "</tr>" +
         "<tr>" +
         "<td>Total:</td>" +
-        "<td  class='totalAll'>" + total + " " + "USD"+"</td>" +
+        "<td  class='totalAll'>" + total + " " + "USD" + "</td>" +
         "</tr>" +
         "</table>"
 }
 
-/*Show Edit Information*/
+    /*Show Edit Information*/
 function showEditInformation() {
     document.getElementById("resultAndShow").innerText = "";
 }
 
-/*Show Price After Discount*/
+    /*Show Price After Discount*/
 function showPriceAfterDiscount() {
     Rents = parseInt(guestRentDays.value);
     document.getElementById("resultAndShow").innerHTML = "<h2>Price After Discount</h2>" +
@@ -135,7 +222,7 @@ function showPriceAfterDiscount() {
         "<tr>" +
         "<td>RentDays:</td>" +
         "<td>" + guestRentDays.value + "</td>" +
-        "<td>" + timestayDiscount + "/" + " USD"+ "</td>" +
+        "<td>" + timestayDiscount + "/" + " USD" + "</td>" +
         "</tr>" +
         "<tr>" +
         "<td>Type of House:</td>" +
@@ -144,25 +231,19 @@ function showPriceAfterDiscount() {
         "</tr>" +
         "<tr>" +
         "<td>Prices:</td>" +
-        "<td>" + discount + " " + " USD/day"+"</td>" +
+        "<td>" + discount + " " + " USD/day" + "</td>" +
         "</tr>" +
         "<tr>" +
         "<td>Total:</td>" +
-        "<td  class='totalAll'>" + total + " " + " USD"+"</td>" +
+        "<td  class='totalAll'>" + total + " " + " USD" + "</td>" +
         "</tr>" +
         "</table>"
 }
 
-/*Check Input Information*/
-function checkInformatiom() {
-  do {
-      if (guestEmail.value === "" ) {
-          alert("Please input your email.");
-      }
-      break;
-  } while (!check)
-}
-checkInformatiom();
+
+
+
+
 
 
 
