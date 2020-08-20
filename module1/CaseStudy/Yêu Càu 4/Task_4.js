@@ -15,49 +15,49 @@ let typeHousePrices;
 let addDiscount;
 let timestayDiscount;
 let typeCustomerDiscount;
-
-    // Check Email.
+let arrNameCustomers = [];
+// Check Email.
 function checkEmail() {
     let countAt = 0;
     let countDot = 0;
     if (guestEmail.value === "") {
         alert("Please input your email.");
     } else {
-            for (let i = 0; i < guestEmail.value.length; i++) {
-                if (guestEmail.value.charAt(i) === "@") {
-                    countAt++;
-                    for (let j = 0; j < guestEmail.value.length; j++) {
-                        if (guestEmail.value.charAt(j) === ".") {
-                            countDot++;
-                        }
+        for (let i = 0; i < guestEmail.value.length; i++) {
+            if (guestEmail.value.charAt(i) === "@") {
+                countAt++;
+                for (let j = 0; j < guestEmail.value.length; j++) {
+                    if (guestEmail.value.charAt(j) === ".") {
+                        countDot++;
                     }
                 }
             }
-            if (countAt !== 1 || countDot < 1) {
-                alert("Your email is not correct.");
-            }
         }
+        if (countAt !== 1 || countDot < 1) {
+            alert("Your email is not correct.");
+        }
+    }
 }
 
-    // Check passport
+// Check passport
 function checkPassport() {
     if (guestPassport.value === "") {
         alert("Please input your passport.");
     } else {
-            let tempPP = guestPassport.value;
-            if (!isNaN(tempPP)) {
-                tempPP = Number.parseFloat(tempPP);
-            }
-            if (!Number.isInteger(tempPP)) {
-                alert("Your passport is not correct");
-            }
-            if (tempPP < 100000000 || tempPP > 999999999) {
-                alert("Your passport is not correct");
-            }
+        let tempPP = guestPassport.value;
+        if (!isNaN(tempPP)) {
+            tempPP = Number.parseFloat(tempPP);
+        }
+        if (!Number.isInteger(tempPP)) {
+            alert("Your passport is not correct");
+        }
+        if (tempPP < 100000000 || tempPP > 999999999) {
+            alert("Your passport is not correct");
+        }
     }
 }
 
-    //Check Rentdays
+//Check Rentdays
 function checkRentdays() {
     let tempRD = guestRentDays.value;
     if (guestRentDays.value === "") {
@@ -69,7 +69,7 @@ function checkRentdays() {
         }
     }
 }
-    // Check Amount
+// Check Amount
 function checkAmount() {
     let tempAmount = guestAmount.value;
     if (guestAmount.value === "") {
@@ -82,30 +82,30 @@ function checkAmount() {
     }
 }
 
-    // Change input name
-    function changeName() {
-        let tempName = "";
-        guestName.value = guestName.value.trim().toLowerCase();
-        for (let i = 0; i < guestName.value.length; i ++) {
-            if (guestName.value.charAt(i) === " " && guestName.value.charAt(i + 1) === " ") {
-                continue;
-            }
-            if (i === 0 || guestName.value.charAt(i - 1) === " ") {
-                tempName += guestName.value.charAt(i).toUpperCase();
-                continue;
-            }
-            tempName += guestName.value.charAt(i);
+// Change input name
+function changeName() {
+    let tempName = "";
+    guestName.value = guestName.value.trim().toLowerCase();
+    for (let i = 0; i < guestName.value.length; i ++) {
+        if (guestName.value.charAt(i) === " " && guestName.value.charAt(i + 1) === " ") {
+            continue;
         }
-        guestName.value = tempName;
+        if (i === 0 || guestName.value.charAt(i - 1) === " ") {
+            tempName += guestName.value.charAt(i).toUpperCase();
+            continue;
+        }
+        tempName += guestName.value.charAt(i);
     }
-    
-    // Show All Information
+    guestName.value = tempName;
+}
+
+// Show All Information
 function showAllInformation() {
-    changeName();
-    checkEmail();
-    checkPassport();
-    checkRentdays();
-    checkAmount();
+    // changeName();
+    // checkEmail();
+    // checkPassport();
+    // checkRentdays();
+    // checkAmount();
     Rents = parseFloat(guestRentDays.value);
     /* Get price by services*/
     if (guestTypeOfHouse.value === "Villa") {
@@ -200,12 +200,12 @@ function showAllInformation() {
         "</table>"
 }
 
-    /*Show Edit Information*/
+/*Show Edit Information*/
 function showEditInformation() {
     document.getElementById("resultAndShow").innerText = "";
 }
 
-    /*Show Price After Discount*/
+/*Show Price After Discount*/
 function showPriceAfterDiscount() {
     Rents = parseInt(guestRentDays.value);
     document.getElementById("resultAndShow").innerHTML = "<h2>Price After Discount</h2>" +
@@ -241,11 +241,47 @@ function showPriceAfterDiscount() {
         "</table>"
 }
 
+// Add Name Customer
+let clickToAddCustomer = document.getElementById("addCustomer");
+clickToAddCustomer.onclick = addCustomer;
+function addCustomer() {
+    let numberToAdd = parseInt(prompt("The number of customers you want to add:"));
+    for (let i = 0; i < numberToAdd; i++) {
+        arrNameCustomers.push(prompt("Name of customer:"));
+    }
+    let result = "";
+    arrNameCustomers.sort();
+    for (let i = 0; i < arrNameCustomers.length; i++) {
+        result += i + 1 + ")" + " " + arrNameCustomers[i] + "<br>";
+    }
+    document.getElementById("resultAndShow").innerHTML =
+        "<table class='showInfo'> " +
+        "<tr>" +
+        "<td>" + result + "</td>" +
+        "</tr>" +
+        "</table>"
+}
 
+//  Delete Customer
+let clickToDeleteCustomer = document.getElementById("deleteCustomer");
+clickToDeleteCustomer.onclick = deleteCustomer;
+function deleteCustomer() {
+    let nameToDelete = prompt("Enter a name to delete");
+    for (let j = 0; j < arrNameCustomers.length; j++) {
+        if (nameToDelete === arrNameCustomers[j]) {
+            arrNameCustomers.splice(j, 1);
+        }
+    }
+    let result = "";
+    arrNameCustomers.sort();
+    for (let i = 0; i < arrNameCustomers.length; i++) {
+        result += i + 1 + ")" + " " + arrNameCustomers[i] + "<br>";
+    }
+    document.getElementById("resultAndShow").innerHTML =
+        "<table class='showInfo'> " +
+        "<tr>" +
+        "<td>" + result + "</td>" +
+        "</tr>" +
+        "</table>"
 
-
-
-
-
-
-
+}

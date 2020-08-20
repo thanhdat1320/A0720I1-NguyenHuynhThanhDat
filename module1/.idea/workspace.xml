@@ -2,9 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="68de934e-edb3-47c6-9d21-d63641872466" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/B12. Mang_1/Bai_Tap/BT. Luyện tập mảng 02/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/B12. Mang_1/Bai_Tap/BT. Luyện tập mảng 02/myJS.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/B14. Ham_1/Thuc_Hanh/TH. Chuyển Đổi Nhiệt Độ/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/B14. Ham_1/Thuc_Hanh/TH. Chuyển Đổi Nhiệt Độ/myJS.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/B14. Ham_1/Thuc_Hanh/TH. Tìm giá trị nhỏ nhất trong mảng/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/B14. Ham_1/Thuc_Hanh/TH. Tìm giá trị nhỏ nhất trong mảng/myJS.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/B14. Ham_1/Thuc_Hanh/TH. Tạo và Gọi Hàm/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/B14. Ham_1/Thuc_Hanh/TH. Tạo và Gọi Hàm/myJS.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/B15. Ham_2/Bai_Tap/BT. Chuyển đổi giữa feet và meters/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/B15. Ham_2/Bai_Tap/BT. Chuyển đổi giữa feet và meters/myJS.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/B15. Ham_2/Bai_Tap/BT. Hàm kiểm tra số nguyên tố/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/B15. Ham_2/Bai_Tap/BT. Hàm kiểm tra số nguyên tố/myJs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/B15. Ham_2/Bai_Tap/BT. Luyện tập tạo và sử dụng hàm 02/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/B15. Ham_2/Bai_Tap/BT. Luyện tập tạo và sử dụng hàm 02/myJS.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/B15. Ham_2/Bai_Tap/BT. Luyện tập tạo và sử dụng hàm/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/B15. Ham_2/Bai_Tap/BT. Luyện tập tạo và sử dụng hàm/myJS.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CaseStudy/Yêu Càu 4/Task_4.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CaseStudy/Yêu Càu 4/Task_4.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CaseStudy/Yêu Càu 4/Task_4.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B12. Mang_1/Bai_Tap/BT. Luyện tập mảng 01/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/B13. Mang_2/Bai_Tap/BT. Luyện tập mảng 01/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B12. Mang_1/Bai_Tap/BT. Luyện tập mảng 01/myJS.js" beforeDir="false" afterPath="$PROJECT_DIR$/B13. Mang_2/Bai_Tap/BT. Luyện tập mảng 01/myJS.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B12. Mang_1/Bai_Tap/BT. Luyện tập mảng 02/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/B13. Mang_2/Bai_Tap/BT. Luyện tập mảng 02/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B12. Mang_1/Bai_Tap/BT. Luyện tập mảng 02/myJS.js" beforeDir="false" afterPath="$PROJECT_DIR$/B13. Mang_2/Bai_Tap/BT. Luyện tập mảng 02/myJS.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B12. Mang_1/Bai_Tap/BT. Sử dụng các hàm có sẵn của mảng/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/B13. Mang_2/Bai_Tap/BT. Sử dụng các hàm có sẵn của mảng/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B12. Mang_1/Bai_Tap/BT. Sử dụng các hàm có sẵn của mảng/myJS.js" beforeDir="false" afterPath="$PROJECT_DIR$/B13. Mang_2/Bai_Tap/BT. Sử dụng các hàm có sẵn của mảng/myJS.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B12. Mang_1/Bai_Tap/BT. Tic tac toe/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/B13. Mang_2/Bai_Tap/BT. Tic tac toe/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B12. Mang_1/Bai_Tap/BT. Tic tac toe/myJS.js" beforeDir="false" afterPath="$PROJECT_DIR$/B13. Mang_2/Bai_Tap/BT. Tic tac toe/myJS.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B12. Mang_1/Bai_Tap/BT. Từ điển/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/B13. Mang_2/Bai_Tap/BT. Từ điển/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B12. Mang_1/Bai_Tap/BT. Từ điển/myJS.js" beforeDir="false" afterPath="$PROJECT_DIR$/B13. Mang_2/Bai_Tap/BT. Từ điển/myJS.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy/Yêu cầu 3/Task_3.js" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy/Yêu cầu 3/Task_3.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,8 +61,13 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\A0720I1_Nguyen_Huynh_Thanh_Dat\module1\B13. Mang_2\Bai_Tap" />
+    </key>
+  </component>
   <component name="RunManager">
-    <configuration name="myJS.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/B12. Mang_1/Bai_Tap/BT. Luyện tập mảng 01/myJS.js" working-dir="$PROJECT_DIR$/B12. Mang_1/Bai_Tap/BT. Luyện tập mảng 01">
+    <configuration name="myJS.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/B13. Mang_2/Bai_Tap/BT. Luyện tập mảng 01/myJS.js" working-dir="$PROJECT_DIR$/B13. Mang_2/Bai_Tap/BT. Luyện tập mảng 01">
       <method v="2" />
     </configuration>
     <recent_temporary>
@@ -66,7 +97,11 @@
       <workItem from="1597227708054" duration="10205000" />
       <workItem from="1597300608286" duration="6197000" />
       <workItem from="1597372521803" duration="26345000" />
-      <workItem from="1597568641980" duration="10948000" />
+      <workItem from="1597568641980" duration="11540000" />
+      <workItem from="1597657882614" duration="13276000" />
+      <workItem from="1597741155467" duration="3448000" />
+      <workItem from="1597808780911" duration="857000" />
+      <workItem from="1597833544146" duration="10736000" />
     </task>
     <servers />
   </component>
@@ -74,21 +109,29 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="739" y="263" key="FileChooserDialogImpl" timestamp="1594552258394">
+    <state x="739" y="263" key="FileChooserDialogImpl" timestamp="1597809571161">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="739" y="263" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1594552258394" />
+    <state x="739" y="263" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1597809571161" />
     <state x="1070" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1597571260813">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1070" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1597571260813" />
+    <state x="754" y="127" width="1148" height="793" key="dock-window-1" timestamp="1597668228804">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="754" y="127" width="1148" height="793" key="dock-window-1/0.0.1920.1040@0.0.1920.1040" timestamp="1597668228804" />
+    <state x="754" y="127" width="1148" height="793" key="dock-window-2" timestamp="1597668228804">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="754" y="127" width="1148" height="793" key="dock-window-2/0.0.1920.1040@0.0.1920.1040" timestamp="1597668228804" />
     <state x="1099" y="244" key="run.anything.popup" timestamp="1597386078120">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1099" y="244" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1597386078120" />
-    <state x="962" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1597235882721">
+    <state x="962" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1597663755021">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="962" y="257" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1597235882721" />
+    <state x="962" y="257" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1597663755021" />
   </component>
 </project>
