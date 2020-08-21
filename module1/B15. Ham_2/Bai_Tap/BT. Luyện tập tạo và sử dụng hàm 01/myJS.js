@@ -52,16 +52,11 @@ function baiTap4() {
 function baiTap5() {
     function check(input) {
         let arr1 = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
-        let arr2 = ["Ursa Minor", "Taurus", "Cygnus", "Lyra", "Aquila"," Ursa Major", "Leo"];
+        let arr2 = ["Ursa Minor", "Taurus", "Cygnus", "Lyra", "Aquila", " Ursa Major", "Leo"];
         let result = "Not thing";
         for (let i = 0; i < arr1.length; i++) {
             if (input === arr1[i]) {
-                for (let j = 0; j < arr2.length; j++){
-                    result = arr2[j];
-                    break;
-                }
-            } else {
-                return result;
+                result = arr2[i];
             }
         }
         return result;

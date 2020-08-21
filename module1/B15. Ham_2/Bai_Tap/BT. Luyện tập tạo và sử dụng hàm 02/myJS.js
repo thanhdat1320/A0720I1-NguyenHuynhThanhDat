@@ -40,20 +40,20 @@ function baiTap2() {
     console.log(Circumference(inputRadius));
     console.log(Area(inputRadius));
     
-    function Circumference(Radius) {
-        if (isNaN(Radius) || Radius < 0) {
+    function Circumference(radius) {
+        if (isNaN(radius) || radius < 0) {
             alert("Enter wrong Radius");
         } else {
-            resultCircumference = 2 * Math.PI * Radius;
+            resultCircumference = 2 * Math.PI * radius;
         }
         return resultCircumference;
     }
 
-    function Area(Radius) {
-        if (isNaN(Radius) || Radius < 0) {
+    function Area(radius) {
+        if (isNaN(radius) || radius < 0) {
             alert("Enter wrong Radius");
         } else {
-            resultArea =  Math.PI * Radius * Radius;
+            resultArea =  Math.PI * radius * radius;
         }
         return resultArea;
     }
