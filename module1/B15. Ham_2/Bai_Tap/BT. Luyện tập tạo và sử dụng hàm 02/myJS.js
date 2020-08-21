@@ -155,3 +155,27 @@ function baiTap8() {
 }
 
 // Bài Tập 9
+function baiTap9() {
+    let countWord = parseInt(prompt("Enter number of array:"));
+    let arr = [];
+    for (let i = 0; i < countWord; i++) {
+        arr[i] = prompt("Write something:");
+    }
+    console.log(checkWord(arr));
+    function checkWord(array) {
+        let countWord = 0;
+        let word = "";
+        let inputWord = prompt("Enter a word to check:");
+        for (let j = 0; j < array.length; j++) {
+            if (inputWord === array[j]) {
+                word = array[j];
+                countWord++;
+            }
+        }
+        if (countWord === 0) {
+            return -1;
+        } else {
+            return "Số lần xuất hiện của " + word + " là" + countWord;
+        }
+    }
+}
