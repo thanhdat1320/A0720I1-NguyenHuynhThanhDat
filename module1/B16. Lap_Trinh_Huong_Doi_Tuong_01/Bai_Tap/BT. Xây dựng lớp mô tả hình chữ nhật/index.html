@@ -5,6 +5,7 @@
     <title>Title</title>
 </head>
 <body>
+<canvas id="myCanvas" width="300" height="200"></canvas>
 <script>
     class Rectangle {
         constructor(height, width) {
@@ -17,7 +18,32 @@
         getCircumference() {
             return (this.height + this.width) * 2;
         }
+        setHeight(height) {
+            this.height = height;
+        }
+        setWidth(width) {
+            this.width = width;
+        }
     }
+
+    let newRec = new Rectangle(200, 100);
+    let areaRect = newRec.getArea();
+    let circumferenceRect = newRec.getCircumference();
+    console.log("Area:" + areaRect + "Circumference:" + circumferenceRect);
+    // set height and width
+    newRec.setHeight(500);
+    newRec.setWidth(100);
+    let areaRect2 = newRec.getArea();
+    let circumferenceRect2 = newRec.getCircumference();
+    console.log(areaRect2 +" " + circumferenceRect2);
+    // draw canvas rectangle
+    let newRect2 = new Rectangle(100, 50);
+    let display = document.getElementById("myCanvas");
+    let ctx = display.getContext("2d");
+    ctx.fillStyle = "red";
+    ctx.fillRect(0, 0, newRect2.width, newRect2.height);
+
+
 </script>
 </body>
 </html>

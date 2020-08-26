@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="68de934e-edb3-47c6-9d21-d63641872466" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/B13. Mang_2/Bai_Tap/BT. Ứng dụng vui Faking Textarea on Typing/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/B13. Mang_2/Bai_Tap/BT. Ứng dụng vui Faking Textarea on Typing/myJS.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/B16. Lap_Trinh_Huong_Doi_Tuong_01/Bai_Tap/BT. Xây dựng lớp mô tả hình chữ nhật/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/B16. Lap_Trinh_Huong_Doi_Tuong_01/Thuc_Hanh/TH. Xây dựng lớp Date/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/B16. Lap_Trinh_Huong_Doi_Tuong_01/Thuc_Hanh/TH. Xây dựng lớp Hình Tròn/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/B16. Lap_Trinh_Huong_Doi_Tuong_01/Bai_Tap/BT.  Xây dựng lớp mô tả Temperature/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/B15. Ham_2/Bai_Tap/BT. Ứng dụng quản lý sản phẩm sử dụng hàm/myJS.js" beforeDir="false" afterPath="$PROJECT_DIR$/B15. Ham_2/Bai_Tap/BT. Ứng dụng quản lý sản phẩm sử dụng hàm/myJS.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B16. Lap_Trinh_Huong_Doi_Tuong_01/Bai_Tap/BT. Xây dựng lớp mô tả hình chữ nhật/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/B16. Lap_Trinh_Huong_Doi_Tuong_01/Bai_Tap/BT. Xây dựng lớp mô tả hình chữ nhật/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +79,7 @@
       <workItem from="1597981613141" duration="7516000" />
       <workItem from="1598154517873" duration="4862000" />
       <workItem from="1598247272713" duration="4988000" />
-      <workItem from="1598428207249" duration="8488000" />
+      <workItem from="1598428207249" duration="11955000" />
     </task>
     <servers />
   </component>

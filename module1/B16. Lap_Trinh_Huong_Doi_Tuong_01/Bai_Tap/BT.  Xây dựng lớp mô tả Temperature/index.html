@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Temperature {
+        constructor(Celsius) {
+            this.Celsius = Celsius;
+        }
+        celsiusToFahrenheit() {
+            return 9/5 * this.Celsius + 32;
+        }
+        celsiusToKevin() {
+            return this.Celsius + 273.15;
+        }
+    }
+
+    let temperature = new Temperature(37);
+    let celsiusToFahrenheit = temperature.celsiusToFahrenheit();
+    let celsiusToKevin = temperature.celsiusToKevin();
+    console.log("C -> F: " + celsiusToFahrenheit + " " + "C -> K: " + celsiusToKevin);
+</script>
+</body>
+</html>
