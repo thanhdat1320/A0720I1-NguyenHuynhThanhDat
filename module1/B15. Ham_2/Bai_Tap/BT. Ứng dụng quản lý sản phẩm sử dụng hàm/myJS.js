@@ -41,4 +41,3 @@ function deleteProduct(index) {
     }
     displayProduct();
 }
-displayProduct();
