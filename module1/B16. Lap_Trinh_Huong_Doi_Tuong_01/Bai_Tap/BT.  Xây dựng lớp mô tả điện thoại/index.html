@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Mobile {
+        constructor(pin, typingMessage, boxMessage, sentMessage, status, telephoneMember) {
+            this.pin = pin;
+            this.typingMessage = typingMessage;
+            this.boxMessage = boxMessage;
+            this.sentMessage = sentMessage;
+            this.status = status;
+            this.telephoneMember = telephoneMember;
+        }
+        isStatus() {
+            if (this.status) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        changeStatus() {
+            this.status = !this.status;
+            this.pin--;
+        }
+        chargePin() {
+            while(this.pin <= 100) {
+                this.pin ++;
+            }
+        }
+        writingMessage(mobile) {
+            if (this.status) {
+                this.chargePin();
+                let message = prompt("Write a message:");
+                let isSend = confirm("Are you sure to send a message?");
+                if (isSend) {
+                    this.sentMessage.push(mobile.telephoneMember + ": " + message);
+                    mobile.boxMessage.push(mobile.telephoneMember + ": " + message);
+                } else {
+                    this.typingMessage.push(mobile.telephoneMember + ": " + message);
+                }
+                this.pin--;
+            } else {
+                alert("Your phone is turning off.")
+            }
+        }
+        seeBoxMessage() {
+            if (this.isStatus()) {
+                this.chargePin();
+                let temp = "";
+                for (let i = 0; i < this.boxMessage.length; i++) {
+                    temp += i + ": " + this.boxMessage[i] + "\n";
+                }
+                let index = prompt(temp);
+                alert(this.boxMessage[index]);
+            } else {
+                alert("Your phone is turning off.");
+            }
+            this.pin--;
+        }
+        seeSentMessage() {
+            if (this.isStatus()) {
+                this.chargePin();
+                let temp = "";
+                for (let i = 0; i < this.sentMessage.length; i++) {
+                    temp += i + ": " + this.sentMessage[i] + "\n";
+                }
+                let index = prompt(temp);
+                alert(this.sentMessage[index]);
+            } else {
+                alert("Your phone is turning off.");
+            }
+            this.pin--;
+        }
+    }
+
+    let nokia = new Mobile(100, [], [], [], false, 949641320);
+    let iphone = new Mobile(100, [], [], [], false, 964646852);
+    nokia.changeStatus();
+    iphone.changeStatus();
+    nokia.writingMessage(iphone);
+    nokia.seeSentMessage();
+    iphone.seeBoxMessage();
+</script>
+</body>
+</html>

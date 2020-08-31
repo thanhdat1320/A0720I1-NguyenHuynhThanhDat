@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Rat {
+        constructor(name, weight, speed, status) {
+            this.name = name;
+            this.weight = weight;
+            this.speed = speed;
+            this.status = status;
+        }
+        action() {
+            console.log("Chit Chit");
+        }
+    }
+
+    class Cat {
+        constructor(name, weight, maxSpeed) {
+            this.name = name;
+            this.weight = weight;
+            this.maxSpeed = maxSpeed;
+        }
+        action () {
+            console.log("Meo Meo");
+        }
+        catchRat(Rat) {
+            if (Rat.status === true) {
+                if (this.maxSpeed > Rat.speed) {
+                    alert(this.name + " Bắt được " + Rat.name);
+                } else {
+                    alert(this.name + " chậm quá không bắn được " + Rat.name);
+                }
+            } else {
+                alert(Rat.name + " chết rồi không ăn được");
+            }
+        }
+        eatRat(Rat) {
+            if (Rat.speed > this.maxSpeed) {
+                alert("Chậm quá không ăn được rồi");
+            } else {
+                if (Rat.status === true) {
+                    alert(this.name + " ăn được " + Rat.name);
+                    Rat.status = false;
+                    this.weight += Rat.weight;
+                } else {
+                    alert(Rat.name + " chết rồi không ăn được");
+                }
+            }
+        }
+    }
+
+    let rat1 = new Rat("Jerry", 5, 10, true);
+    let rat2 = new Rat("Ti", 10, 25, true);
+    let rat3 = new Rat("Ola", 15, 15, false);
+    let cat = new Cat("Tom", 20, 20);
+    // bắt rat 1
+    cat.action();
+    cat.catchRat(rat1);
+    rat1.action();
+    cat.eatRat(rat1);
+    // bắt rat 2
+    cat.action();
+    cat.catchRat(rat2);
+    rat1.action();
+    cat.eatRat(rat2);
+    // bắt rat 3
+    cat.action();
+    cat.catchRat(rat3);
+    rat1.action();
+    cat.eatRat(rat3);
+</script>
+</body>
+</html>

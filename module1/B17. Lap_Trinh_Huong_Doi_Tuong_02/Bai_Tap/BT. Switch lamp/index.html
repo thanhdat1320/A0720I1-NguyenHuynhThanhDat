@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<img src="pic_bulboff.gif" id="Lamp1">
+    <!--<img src="pic_bulboff.gif" id="Lamp2">-->
+<input type="button" value="On/Off" id="switch" onclick="onOff()">
+<script>
+    class SwitchButton {
+        constructor(status, lamp) {
+            this.status = status;
+            this.lamp = lamp;
+        }
+        // connectToLamp(Lamp){
+        //     this.lamp = Lamp;
+        // }
+        switch(){
+            this.status = !this.status;
+            this.lamp.status = !this.lamp.status;
+            this.lamp.turnOnOff();
+        }
+    }
+
+    class ElectricLamp {
+        constructor(status, display) {
+            this.status = status;
+            this.display = display;
+        }
+        displayDesktop(){
+            if(this.status){
+                this.display.src = "pic_bulbon.gif";
+            }else{
+                this.display.src = "pic_bulboff.gif";
+            }
+        }
+        turnOnOff(){
+            if(this.display.getAttribute("src") === "pic_bulboff.gif"){
+                this.display.src = "pic_bulbon.gif";
+            }else{
+                this.display.src = "pic_bulboff.gif";
+            }
+        }
+    }
+    let display1 = document.getElementById("Lamp1");
+    // let display2 = document.getElementById("Lamp2");
+    let lamp1 = new ElectricLamp(false, display1);
+    // let lamp2 = new ElectricLamp(false, display2);
+    lamp1.displayDesktop();
+    // lamp2.displayDesktop();
+    let buttonSwitch = new SwitchButton(false, lamp1);
+    // buttonSwitch.connectToLamp(lamp2);
+    //buttonSwitch.connectToLamp(lamp1);
+    function onOff() {
+        buttonSwitch.switch();
+    }
+</script>
+</body>
+</html>
+
+

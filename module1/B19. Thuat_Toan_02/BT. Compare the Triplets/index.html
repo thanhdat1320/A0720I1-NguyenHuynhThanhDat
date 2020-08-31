@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr1 = [];
+    let arr2 = [];
+    let markA = 0;
+    let markB = 0;
+    let i, j;
+    let countArray = parseInt(prompt("Enter number of array:"));
+    for (i = 0; i < countArray; i++) {
+        arr1[i] = parseInt(prompt("Enter a number in array 1:"));
+    }
+    for (j = 0; j < countArray; j++) {
+        arr2[j] = parseInt(prompt("Enter a number in array 2:"));
+    }
+    if (arr1[i] > arr2[j]) {
+        markA++;
+    } else if (arr1[i] < arr2[j]) {
+        markB++;
+    } else {
+        markA++;
+        markB++;
+    }
+    if (markA > markB) {
+        console.log("A Win");
+    } else {
+        console.log(" B Win");
+    }
+</script>
+</body>
+</html>

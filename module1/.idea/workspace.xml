@@ -2,9 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="68de934e-edb3-47c6-9d21-d63641872466" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/B16. Lap_Trinh_Huong_Doi_Tuong_01/Bai_Tap/BT.  Xây dựng lớp mô tả Temperature/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/B15. Ham_2/Bai_Tap/BT. Kiểm từ đối xứng/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/B16. Lap_Trinh_Huong_Doi_Tuong_01/Bai_Tap/BT.  Xây dựng lớp mô tả điện thoại/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/B17. Lap_Trinh_Huong_Doi_Tuong_02/Bai_Tap/BT. CatAndMouse/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/B17. Lap_Trinh_Huong_Doi_Tuong_02/Bai_Tap/BT. Game đơn giản - di chuyển đối tượng/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/B17. Lap_Trinh_Huong_Doi_Tuong_02/Bai_Tap/BT. Switch lamp/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/B17. Lap_Trinh_Huong_Doi_Tuong_02/Thuc_Hanh/TH. Xây dựng mô phỏng sự hoạt động của bóng đèn/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/B19. Thuat_Toan_02/BT. Compare the Triplets/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/B16. Lap_Trinh_Huong_Doi_Tuong_01/Bai_Tap/BT. Xây dựng lớp mô tả hình chữ nhật/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/B16. Lap_Trinh_Huong_Doi_Tuong_01/Bai_Tap/BT. Xây dựng lớp mô tả hình chữ nhật/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +42,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\A0720I1_Nguyen_Huynh_Thanh_Dat\module1\B17. Lap_Trinh_Huong_Doi_Tuong_02\Thuc_Hanh\TH. Xây dựng mô phỏng sự hoạt động của bóng đèn" />
       <recent name="D:\A0720I1_Nguyen_Huynh_Thanh_Dat\module1\B13. Mang_2\Bai_Tap" />
     </key>
   </component>
@@ -79,7 +85,12 @@
       <workItem from="1597981613141" duration="7516000" />
       <workItem from="1598154517873" duration="4862000" />
       <workItem from="1598247272713" duration="4988000" />
-      <workItem from="1598428207249" duration="11955000" />
+      <workItem from="1598428207249" duration="13780000" />
+      <workItem from="1598494181627" duration="9304000" />
+      <workItem from="1598611909826" duration="10076000" />
+      <workItem from="1598688137540" duration="2877000" />
+      <workItem from="1598758465266" duration="3847000" />
+      <workItem from="1598843808390" duration="8540000" />
     </task>
     <servers />
   </component>
@@ -103,10 +114,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="754" y="127" width="1148" height="793" key="dock-window-2/0.0.1920.1040@0.0.1920.1040" timestamp="1597668228804" />
-    <state x="1099" y="244" key="run.anything.popup" timestamp="1598440003170">
+    <state x="1099" y="244" key="run.anything.popup" timestamp="1598845986774">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1099" y="244" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1598440003170" />
+    <state x="1099" y="244" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1598845986774" />
     <state x="962" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1597663755021">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

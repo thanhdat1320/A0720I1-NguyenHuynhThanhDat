@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Hero {
+        constructor(image, top, left, size) {
+            this.image = image;
+            this.top = top;
+            this.left = left;
+            this.size = size;
+        }
+        displayPikachu() {
+            return "'<img width='"+ this.size +"' height='"+ this.size +"' src='"+ this.image +"'" +
+                " style='top: "+ this.top +"; left: "+ this.left +"; position: absolute'>'";
+        }
+        moveRight() {
+            this.left += 20;
+            console.log("ok: " + this.left);
+        }
+        moveLeft() {
+            
+        }
+
+    }
+</script>
+</body>
+</html>
