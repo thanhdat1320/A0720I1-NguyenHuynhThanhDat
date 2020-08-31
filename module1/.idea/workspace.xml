@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="68de934e-edb3-47c6-9d21-d63641872466" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/B15. Ham_2/Bai_Tap/BT. Kiểm từ đối xứng/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/B16. Lap_Trinh_Huong_Doi_Tuong_01/Bai_Tap/BT.  Xây dựng lớp mô tả điện thoại/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/B17. Lap_Trinh_Huong_Doi_Tuong_02/Bai_Tap/BT. CatAndMouse/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/B17. Lap_Trinh_Huong_Doi_Tuong_02/Bai_Tap/BT. Game đơn giản - di chuyển đối tượng/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/B17. Lap_Trinh_Huong_Doi_Tuong_02/Bai_Tap/BT. Switch lamp/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/B17. Lap_Trinh_Huong_Doi_Tuong_02/Thuc_Hanh/TH. Xây dựng mô phỏng sự hoạt động của bóng đèn/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/B19. Thuat_Toan_02/BT. Compare the Triplets/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/B17. Lap_Trinh_Huong_Doi_Tuong_02/Bai_Tap/BT. CatAndMouse/abc.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B17. Lap_Trinh_Huong_Doi_Tuong_02/Bai_Tap/BT. CatAndMouse/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/B17. Lap_Trinh_Huong_Doi_Tuong_02/Bai_Tap/BT. CatAndMouse/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +85,7 @@
       <workItem from="1598611909826" duration="10076000" />
       <workItem from="1598688137540" duration="2877000" />
       <workItem from="1598758465266" duration="3847000" />
-      <workItem from="1598843808390" duration="8540000" />
+      <workItem from="1598843808390" duration="19052000" />
     </task>
     <servers />
   </component>

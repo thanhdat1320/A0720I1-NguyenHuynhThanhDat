@@ -27,27 +27,27 @@
         action () {
             console.log("Meo Meo");
         }
-        catchRat(Rat) {
-            if (Rat.status === true) {
-                if (this.maxSpeed > Rat.speed) {
-                    alert(this.name + " Bắt được " + Rat.name);
+        catchRat(rat) {
+            if (rat.status === true) {
+                if (this.maxSpeed > rat.speed) {
+                    alert(this.name + " Bắt được " + rat.name);
                 } else {
-                    alert(this.name + " chậm quá không bắn được " + Rat.name);
+                    alert(this.name + " chậm quá không bắn được " + rat.name);
                 }
             } else {
-                alert(Rat.name + " chết rồi không ăn được");
+                alert(rat.name + " chết rồi không ăn được");
             }
         }
-        eatRat(Rat) {
-            if (Rat.speed > this.maxSpeed) {
+        eatRat(rat) {
+            if (rat.speed > this.maxSpeed) {
                 alert("Chậm quá không ăn được rồi");
             } else {
-                if (Rat.status === true) {
-                    alert(this.name + " ăn được " + Rat.name);
-                    Rat.status = false;
-                    this.weight += Rat.weight;
+                if (rat.status === true) {
+                    alert(this.name + " ăn được " + rat.name);
+                    rat.status = false;
+                    this.weight += rat.weight;
                 } else {
-                    alert(Rat.name + " chết rồi không ăn được");
+                    alert(rat.name + " chết rồi không ăn được");
                 }
             }
         }
