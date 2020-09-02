@@ -201,45 +201,9 @@ function showAllInformation() {
         "</table>"
 }
 
-/*Show Edit Information*/
+// Show Edit Information
 function showEditInformation() {
     document.getElementById("resultAndShow").innerText = "";
-}
-
-/*Show Price After Discount*/
-function showPriceAfterDiscount() {
-    Rents = parseInt(guestRentDays.value);
-    document.getElementById("resultAndShow").innerHTML = "<h2>Price After Discount</h2>" +
-        "<table class='showInfo'> " +
-        "<tr>" +
-        "<td>Address:</td>" +
-        "<td>" + guestAddress.value + "</td>" +
-        "<td>" + addDiscount + "/" + " USD" + "</td>" +
-        "</tr>" +
-        "<tr>" +
-        "<td>Customer Type:</td>" +
-        "<td>" + guestCustomerType.value + "</td>" +
-        "<td>" + typeCustomerDiscount + "/" + " USD" + "</td>" +
-        "</tr>" +
-        "<tr>" +
-        "<td>RentDays:</td>" +
-        "<td>" + guestRentDays.value + "</td>" +
-        "<td>" + timestayDiscount + "/" + " USD" + "</td>" +
-        "</tr>" +
-        "<tr>" +
-        "<td>Type of House:</td>" +
-        "<td>" + guestTypeOfHouse.value + "</td>" +
-        "<td>" + typeHousePrices + "/" + " USD" + "</td>" +
-        "</tr>" +
-        "<tr>" +
-        "<td>Prices:</td>" +
-        "<td>" + discount + " " + " USD/day" + "</td>" +
-        "</tr>" +
-        "<tr>" +
-        "<td>Total:</td>" +
-        "<td  class='totalAll'>" + total + " " + " USD" + "</td>" +
-        "</tr>" +
-        "</table>"
 }
 
 // Add Name Customer
@@ -284,5 +248,40 @@ function deleteCustomer() {
         "<td>" + result + "</td>" +
         "</tr>" +
         "</table>"
+}
 
+/*Show Price After Discount*/
+function showPriceAfterDiscount() {
+    Rents = parseInt(guestRentDays.value);
+    document.getElementById("resultAndShow").innerHTML = "<h2>Price After Discount</h2>" +
+        "<table class='showInfo'> " +
+        "<tr>" +
+        "<td>Address:</td>" +
+        "<td>" + guestAddress.value + "</td>" +
+        "<td>" + addDiscount + "/" + " USD" + "</td>" +
+        "</tr>" +
+        "<tr>" +
+        "<td>Customer Type:</td>" +
+        "<td>" + guestCustomerType.value + "</td>" +
+        "<td>" + typeCustomerDiscount + "/" + " USD" + "</td>" +
+        "</tr>" +
+        "<tr>" +
+        "<td>RentDays:</td>" +
+        "<td>" + guestRentDays.value + "</td>" +
+        "<td>" + timestayDiscount + "/" + " USD" + "</td>" +
+        "</tr>" +
+        "<tr>" +
+        "<td>Type of House:</td>" +
+        "<td>" + guestTypeOfHouse.value + "</td>" +
+        "<td>" + typeHousePrices + "/" + " USD" + "</td>" +
+        "</tr>" +
+        "<tr>" +
+        "<td>Prices:</td>" +
+        "<td>" + discount + " " + " USD/day" + "</td>" +
+        "</tr>" +
+        "<tr>" +
+        "<td>Total:</td>" +
+        "<td  class='totalAll'>" + total + " " + " USD" + "</td>" +
+        "</tr>" +
+        "</table>"
 }
