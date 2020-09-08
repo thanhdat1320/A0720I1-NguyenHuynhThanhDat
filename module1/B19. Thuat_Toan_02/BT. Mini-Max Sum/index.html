@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [7, 8, 9, 10, 11, 12];
+    let minSum = 0;
+    let maxSum = 0;
+    for (let i = 0; i < arr.length - 1; i++) {
+        minSum += arr[i];
+    }
+    console.log(minSum);
+    for (let j = 1; j < arr.length; j++) {
+        maxSum += arr[j];
+    }
+    console.log(maxSum);
+</script>
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="Bài 1" onclick="baiTap1()">
+<input type="button" value="Bài 2" onclick="baiTap2()">
+<input type="button" value="Bài 3" onclick="baiTap3()">
+<input type="button" value="Bài 4" onclick="baiTap4()">
+<input type="button" value="Bài 5" onclick="baiTap5()">
+<input type="button" value="Bài 6" onclick="baiTap6()">
+<input type="button" value="Bài 7" onclick="baiTap7()">
+<input type="button" value="Bài 8" onclick="baiTap8()">
+<input type="button" value="Bài 9" onclick="baiTap9()">
+<input type="button" value="Bài 10" onclick="baiTap10()">
+<input type="button" value="Bài 11" onclick="baiTap11()">
+<input type="button" value="Bài 12" onclick="baiTap112()">
+<script>
+    // bai 1
+    function baiTap1() {
+        let number = parseInt(prompt("nhập số muốn hiển thị"));
+        for (let i = 0; i < number; i++) {
+            document.write("*******" + "<br/>");
+        }
+    }
+    // bai 2
+    function baiTap2() {
+        let inputMonth = parseInt(prompt("Nhập tháng: "));
+        let inputYear = parseInt(prompt("Nhập năm: "));
+        let checkYear = false;
+        if (inputYear % 4 === 0) {
+            if (inputYear % 100 === 0) {
+                if (inputYear % 400 === 0) {
+                    checkYear = true;
+                }
+            } else {
+                checkYear = true;
+            }
+        }
+        switch (inputMonth) {
+            case 2: {
+                if (checkYear) {
+                    console.log(inputYear + " có 366 ngày/ tháng " + inputMonth + " có 29 ngày.");
+                } else {
+                    console.log(inputYear + " có 365 ngày/ tháng " + inputMonth + " có 28 ngày.");
+                }
+            }
+            break;
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12: {
+                if (checkYear) {
+                    console.log(inputYear + " có 366 ngày/ tháng " + inputMonth + " có 31 ngày.");
+                } else {
+                    console.log(inputYear + " có 365 ngày/ tháng " + inputMonth + " có 31 ngày.");
+                }
+            }
+            break;
+            case 4:
+            case 6:
+            case 9:
+            case 11: {
+                if (checkYear) {
+                    console.log(inputYear + " có 366 ngày/ tháng " + inputMonth + " có 30 ngày.");
+                } else {
+                    console.log(inputYear + " có 365 ngày/ tháng " + inputMonth + " có 30 ngày.");
+                }
+            }
+        }
+    }
+    // bai 3
+    function baiTap3() {
+        let inputN = parseInt(prompt("nhập n: "));
+        let sum = 0;
+        for (let i = 1; i <= inputN; i++) {
+            sum += 1 / i;
+        }
+        console.log(sum);
+    }
+    
+    // bai 4
+    function factorial(n) {
+        if (n === 1){
+            return n;
+        } else {
+            return (n * factorial(n - 1));
+        }
+    }
+    factorial(5);
+    function baiTap4() {
+        let result = 15;
+        let numN = parseInt(prompt("Enter a N number: "));
+        for (let i = 1; i < numN; i++) {
+            if (i % 2 === 0) {
+                result += (1 / factorial(i));
+            } else {
+                result -= (1 / factorial(i));
+            }
+        }
+        console.log(result);
+    }
+
+    // bai 5
+    function baiTap5() {
+        let result = 0;
+        let numN = parseInt(prompt("Enter a N number: "));
+        for (let i = 1; i < numN; i++) {
+            result += (1 / factorial(2 * i - 1));
+        }
+        console.log(result);
+    }
+
+    // bai 6
+    function baiTap6() {
+        let result = 1;
+        let numN = parseInt(prompt("Enter a N number: "));
+        for (let i = 1; i < numN; i++) {
+            if (i % 2 === 0) {
+                result *= i;
+            }
+            if (i % 2 !== 0) {
+                result *= i;
+            }
+        }
+        console.log(result);
+    }
+
+    //bai 7
+    function baiTap7() {
+        let num ;
+        let sum = 0;
+        let area = 1;
+        do {
+            num = parseFloat(prompt("Enter a number: "));
+        } while (isNaN(num) || !Number.isInteger(num) || num <= 0);
+        let temp = num;
+        while (temp !== 0) {
+            sum += temp % 10;
+            area *= temp % 10;
+            temp = Math.floor(temp / 10);
+        }
+        console.log(sum + " / " + area);
+    }
+
+    //bai 8
+    function baiTap8() {
+        function UCLN(number1, number2) {
+            while (number1 !== number2) {
+                if (number1 > number2) {
+                    number1 -= number2;
+                } else {
+                    number2 -= number1;
+                }
+            }
+            console.log("UCLN: " + number1);
+            return number1;
+        }
+        function BCNN(number1, number2) {
+           result = UCLN(number1, number2);
+            console.log("BCNN: " + number1 * number2 / result);
+        }
+
+        let numberA = parseInt(prompt("Enter a number A: "));
+        let numberB = parseInt(prompt("Enter a number B: "));
+        let result;
+
+        BCNN(numberA,numberB);
+    }
+
+    // bai 9
+    function baiTap9() {
+        let string = prompt("Write something:");
+        let newString = "";
+        for (let i = string.length - 1; i >= 0; i--) {
+            newString += string[i];
+        }
+        console.log(newString);
+        console.log(string.toUpperCase());
+        console.log(string.toLowerCase());
+        let result = "";
+        for (let i = 0; i < string.length; i++) {
+            debugger
+            if (string[i] === string[i].toLowerCase()) {
+                result += string[i].toUpperCase();
+            } else {
+                result += string[i].toLowerCase();
+            }
+        }
+        console.log(result);
+    }
+
+    //bai 10
+    function baiTap10() {
+
+    }
+
+</script>
+</body>
+</html>

@@ -2,10 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="68de934e-edb3-47c6-9d21-d63641872466" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/B17. Lap_Trinh_Huong_Doi_Tuong_02/Bai_Tap/BT.  Adam và Eva/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/B17. Lap_Trinh_Huong_Doi_Tuong_02/Bai_Tap/BT. Switch lamp/test.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/B19. Thuat_Toan_02/BT. A Very Big Sum/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/B19. Thuat_Toan_02/BT. Diagonal Difference/indexx.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/B19. Thuat_Toan_02/BT. Mini-Max Sum/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/B19. Thuat_Toan_02/BT. Plus Minus/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/B19. Thuat_Toan_02/BT. Staircase/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BT_Anh_Hai/Giai_Thuat/BT1/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BT_Anh_Hai/OOP/BT1/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/B17. Lap_Trinh_Huong_Doi_Tuong_02/Bai_Tap/BT. CatAndMouse/abc.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/B13. Mang_2/Bai_Tap/BT. Luyện tập mảng 01/myJS.js" beforeDir="false" afterPath="$PROJECT_DIR$/B13. Mang_2/Bai_Tap/BT. Luyện tập mảng 01/myJS.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +21,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="CSS File" />
         <option value="HTML File" />
       </list>
     </option>
@@ -34,7 +40,8 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/CaseStudy" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -51,6 +58,9 @@
         <item itemvalue="Node.js.myJS.js" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="showServicesTree" value="false" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -89,6 +99,11 @@
       <workItem from="1598843808390" duration="19052000" />
       <workItem from="1598949015859" duration="5338000" />
       <workItem from="1599026841441" duration="576000" />
+      <workItem from="1599217546915" duration="9187000" />
+      <workItem from="1599469432220" duration="3373000" />
+      <workItem from="1599476325928" duration="3063000" />
+      <workItem from="1599479528301" duration="8130000" />
+      <workItem from="1599537564606" duration="17054000" />
     </task>
     <servers />
   </component>
@@ -112,10 +127,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="754" y="127" width="1148" height="793" key="dock-window-2/0.0.1920.1040@0.0.1920.1040" timestamp="1597668228804" />
-    <state x="1099" y="244" key="run.anything.popup" timestamp="1598950054837">
+    <state x="1099" y="244" key="run.anything.popup" timestamp="1599574363393">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1099" y="244" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1598950054837" />
+    <state x="1099" y="244" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1599574363393" />
     <state x="962" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1597663755021">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function UCLL(num1, num2) {
+        while (num1 !== num2) {
+            if (num1 > num2) {
+                num1 -= num2;
+            } else {
+                num2 -= num1;
+            }
+        }
+        return num1;
+    }
+
+    function BCNN(num1, num2) {
+        let temp = UCLL(num1, num2);
+        return num1 * num2 / temp;
+    }
+
+    class PhanSo {
+        constructor(tuSo, mauSo) {
+            this.tuSo = tuSo;
+            this.mauSo = mauSo;
+        }
+        getTuSo() {
+            return this.tuSo;
+        }
+        setTuSo(number) {
+            this.tuSo = number;
+        }
+        getMauSo() {
+            return this.mauSo;
+        }
+        setMauSo(number) {
+            this.mauSo = number;
+        }
+        congPhanSo(phanSo) {
+            let result = new PhanSo();
+            let tempUCLL;
+            result.mauSo = BCNN(this.mauSo, phanSo.mauSo);
+            result.tuSo = result.mauSo / this.mauSo * this.tuSo + result.mauSo / phanSo.mauSo * phanSo.tuSo;
+            // Rut Gon
+            tempUCLL = UCLL(result.mauSo, result.tuSo);
+            result.mauSo = result .mauSo / tempUCLL;
+            result.tuSo = result.tuSo / tempUCLL;
+            if (result.mauSo < 0) {
+                result.mauSo *= -1;
+                result.tuSo *= -1;
+            }
+            return result;
+        }
+        truPhanSo(phanSo) {
+            let temp = new PhanSo(phanSo.tuSo * (-1), phanSo.mauSo);
+            return this.congPhanSo(temp);
+        }
+        nhanPhanSo(phanSo) {
+            let result = new PhanSo();
+            let tempUCLL = UCLL(result.tuSo, result.mauSo);
+            result.tuSo = this.tuSo * phanSo.tuSo;
+            result.mauSo = this.mauSo * phanSo.mauSo;
+            // Rut gon
+            result.tuSo /= tempUCLL;
+            result.mauSo /= tempUCLL;
+            if (result.mauSo < 0) {
+                result.mauSo *= -1;
+                result.tuSo *= -1;
+            }
+            return result;
+        }
+        chiaPhanSo(phanSo) {
+            let temp = new PhanSo(phan.mauSo, phanSo.tuSo);
+            return this.nhanPhanSo(temp);
+        }
+    }
+
+    let phanSo1 = new PhanSo();
+    let phanSo2 = new PhanSo();
+    do {
+        phanSo1.setTuSo(prompt("Nhập tử số của phân số thứ nhất: "));
+    } while (!Number.isInteger(phanSo1.getTuSo()) || isNaN(phanSo1.getTuSo()));
+
+    do {
+        phanSo1.setMauSo(prompt("Nhập tử số của phân số thứ nhất: "));
+    } while (!Number.isInteger(phanSo1.getMauSo()) || isNaN(phanSo1.getMauSo()));
+
+    do {
+        phanSo2.setTuSo(prompt("Nhập tử số của phân số thứ hai: "));
+    } while (!Number.isInteger(phanSo1.getTuSo()) || isNaN(phanSo1.getTuSo()));
+
+    do {
+        phanSo2.setMauSo(prompt("Nhập tử số của phân số thứ hai: "));
+    } while (!Number.isInteger(phanSo1.getMauSo()) || isNaN(phanSo1.getMauSo()));
+    
+
+</script>
+</body>
+</html>

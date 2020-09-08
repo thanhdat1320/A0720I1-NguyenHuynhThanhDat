@@ -90,6 +90,7 @@ function baiTap5() {
     console.log(inputSomeThing);
     alert(count);
 }
+
 function baiTap6() {
     let arr = [];
     let check = false;
@@ -144,7 +145,6 @@ function baiTap8() {
     }
     let temp = "";
     let index = arr.length;
-    debugger
     for (let i = index - 1; i >= 0; i --) {
         for (let j = 1; j <= i; j ++) {
             if (arr[j - 1] > arr[j]) {
