@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Furama</title>
+</head>
+<body>
+<script>
+    class Customer {
+        constructor(name, idCard, birthday, email, address, typeOfCustomer, discount, amountOfPeople, rentDay, typeOfHouse, typeOfRoom) {
+            this.name = name;
+            this.idCard = idCard;
+            this.birthday = birthday;
+            this.email = email;
+            this.address = address;
+            this.typeOfCustomer = typeOfCustomer;
+            this.discount = discount;
+            this.amountOfPeople = amountOfPeople;
+            this.rentDay = rentDay;
+            this.typeOfHouse = typeOfHouse;
+            this.typeOfRoom = typeOfRoom;
+        }
+        setName(name){
+            this.name = name;
+        }
+        getName(){
+            return this.name;
+        }
+        setIdCard(idCard){
+            this.idCard = idCard;
+        }
+        getIdCard(){
+            return this.idCard;
+        }
+        setBirthday(birthday){
+            this.birthday = birthday;
+        }
+        getBirthday(){
+            return this.birthday
+        }
+        setEmail(email){
+            this.email = email;
+        }
+        getEmail() {
+            return this.email;
+        }
+        setAddress(address){
+            this.address = address;
+        }
+        getAddress(){
+            return this.address;
+        }
+        setTypeOfCustomer(typeOfCustomer){
+            this.typeOfCustomer = typeOfCustomer;
+        }
+        getTypeOfCustomer(){
+            return this.typeOfCustomer;
+        }
+        setDiscount(discount){
+            this.discount = discount;
+        }
+        getDiscount(){
+            return this.discount;
+        }
+        setAmountOfPeople(amountOfPeople){
+            this.amountOfPeople = amountOfPeople;
+        }
+        getAmountOfPeople(){
+            return this.amountOfPeople;
+        }
+        setRentDay(rentDay){
+            this.rentDay = rentDay;
+        }
+        getRentDay(){
+            return this.rentDay;
+        }
+        setTypeOfHouse(typeOfHouse) {
+            this.typeOfHouse = typeOfHouse;
+        }
+        getTypeOfHouse(){
+            return this.typeOfHouse;
+        }
+        setTypeOfRoom(typeOfRoom){
+            this.typeOfRoom = typeOfRoom;
+        }
+        getTypeOfRoom(){
+            return this.typeOfRoom;
+        }
+        calculateMoneyOfRoom() {
+            let pricesOfHouse = 0;
+            let totalOfMoney = 0;
+            if (this.getTypeOfHouse() === "Villa") {
+                pricesOfHouse = 500;
+            } else if (this.getTypeOfHouse() === "House" ) {
+                pricesOfHouse = 300;
+            } else if (this.getTypeOfHouse() === "Room") {
+                pricesOfHouse = 100;
+            }
+            totalOfMoney = pricesOfHouse * this.getRentDay() * (1 - this.getDiscount() / 100);
+            return totalOfMoney;
+        }
+    }
+    
+    function displayMainMenu() {
+        let choose = parseFloat(prompt("Please choose: \n 1.Add New Customer\n" +
+            "2. Display Information Customer\n" +
+            "3. Display total pay of customer \n" +
+            "4. Edit Information Customer\n" +
+            "5. Delete Customer\n" +
+            "6. Exit"));
+        switch (choose) {
+            case 1: {
+                addNewCustomer();
+                break;
+            }
+            case 3: {
+                displayTotalPay();
+                break;
+            }
+            default: {
+                alert("failed");
+            }
+        }
+    }
+    let listCustomer = [];
+    let regexEmail = /\S+@\S+\.\S+/;
+    let regexBirthday = /^\d{2}[./-]\d{2}[./-]\d{4}$/;
+    let regexIdCard = /^[\d]{8,8}$/;
+    let regexNum = /^\d+$/;
+    let regexText = /^\D+$/;
+
+    function addNewCustomer() {
+        // check name
+        let checkValid = false;
+        let customer = new Customer();
+        let name;
+        do {
+            name = prompt("Please input your name: ");
+            if (regexText.test(name)) {
+                checkValid = true;
+            } else {
+                alert("Your name is invalid.")
+            }
+        } while (!checkValid);
+        // check id
+        checkValid = false;
+        let idCard;
+        do {
+            idCard = prompt("Please input your id: ");
+            if (regexIdCard.test(idCard)) {
+                checkValid = true;
+            } else {
+                alert("Your id is invalid.")
+            }
+        } while (!checkValid);
+        // check birthday
+        checkValid = false;
+        let birthday;
+        do {
+            birthday = prompt("Please input your birthday: ")
+            if (regexBirthday.test(birthday)) {
+                checkValid = true;
+            } else {
+                alert("Your birthday is invalid.")
+            }
+        } while (!checkValid);
+        // check Email
+        checkValid = false;
+        let email;
+        do {
+            email = prompt("Please input your email: ");
+            if (regexEmail.test(email)) {
+                checkValid = true;
+            } else {
+                alert("Your email is invalid.")
+            }
+        } while (!checkValid);
+
+        let address = prompt("Please input your address: ");
+        let typeOfCustomer = prompt("Please input your type of customer: ");
+        // check discount
+        checkValid = false;
+        let discount;
+        do {
+            discount = prompt("Please input your discount: ");
+            if (regexNum.test(discount)) {
+                checkValid = true;
+            } else {
+                alert("Your discount is invalid.");
+            }
+        } while (!checkValid);
+        // check amount of people
+        checkValid = false;
+        let amount;
+        do {
+            amount = prompt("Please input your amount of people: ");
+            if (regexNum.test(amount)) {
+                checkValid = true;
+            } else {
+                alert("Your amount is invalid.");
+            }
+        } while (!checkValid);
+        // check rents day
+        checkValid = false;
+        let rentsDay;
+        do {
+            rentsDay = prompt("Please input your rent days: ");
+            if (regexNum.test(rentsDay)) {
+                checkValid = true;
+            } else {
+                alert("Your rent days is invalid.");
+            }
+        } while (!checkValid);
+        let typeOfHouse = prompt("Please input your type of house: ");
+        let typeOfRoom = prompt("Please input your type of room: ");
+        customer.setName(name);
+        customer.setIdCard(idCard);
+        customer.setBirthday(birthday);
+        customer.setEmail(email);
+        customer.setAddress(address);
+        customer.setTypeOfCustomer(typeOfCustomer);
+        customer.setDiscount(discount);
+        customer.setAmountOfPeople(amount);
+        customer.setRentDay(rentsDay);
+        customer.setTypeOfHouse(typeOfHouse);
+        customer.setTypeOfRoom(typeOfRoom);
+        listCustomer.push(customer);
+        alert("Completed!");
+        displayMainMenu();
+    }
+
+    function displayTotalPay() {
+        let result = "";
+        for (let i = 0; i < listCustomer.length; i++) {
+            result += i+1 + "Name: " + listCustomer[i].getName() + "\n";
+        }
+        let option = parseFloat(prompt("You want to review: \n" + result + "\n" + (listCustomer.length + 1) + ". exit"));
+        if (option === listCustomer.length + 1) {
+            displayMainMenu();
+        } else if (option > listCustomer.length || option < 1 || isNaN(option)) {
+            displayMainMenu();
+        }
+        alert("Total pay: " + listCustomer[option - 1].calculateMoneyOfRoom() + "$");
+    }
+    displayMainMenu();
+
+
+
+
+</script>
+</body>
+</html>

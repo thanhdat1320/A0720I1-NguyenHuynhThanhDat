@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Candidate {
+        constructor(id, name, birth, math, literature, english, sum) {
+            this.id = id;
+            this.name = name;
+            this.birth = birth;
+            this.math = math;
+            this.literature = literature;
+            this.english= english;
+            this.sum = sum;
+        }
+        getID() {
+            return this.id;
+        }
+        setID(number) {
+            this.id = number;
+        }
+        getName() {
+            return this.name;
+        }
+        setName(string) {
+            this.id = string;
+        }
+        getBirth() {
+            return this.birth;
+        }
+        setBirth(number) {
+            this.birth = number;
+        }
+        getMath(){
+            return this.math;
+        }
+        setMath(number) {
+            this.math = number;
+        }
+        getLiterature() {
+            return this.literature;
+        }
+        setLiterature(number) {
+            this.literature = number;
+        }
+        getEnglish() {
+            return this.english;
+        }
+        setEnglish(number) {
+            this.english = number;
+        }
+        sumMark() {
+             this.sum = (this.math + this.literature + this.english) / 3;
+            return this.sum;
+        }
+    }
+
+</script>
+</body>
+</html>

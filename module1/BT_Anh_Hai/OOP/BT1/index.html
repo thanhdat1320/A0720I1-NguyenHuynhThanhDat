@@ -45,7 +45,7 @@
             result.mauSo = BCNN(this.mauSo, phanSo.mauSo);
             result.tuSo = result.mauSo / this.mauSo * this.tuSo + result.mauSo / phanSo.mauSo * phanSo.tuSo;
             // Rut Gon
-            tempUCLL = UCLL(result.mauSo, result.tuSo);
+            tempUCLL = UCLL(result.tuSo, result.mauSo);
             result.mauSo = result .mauSo / tempUCLL;
             result.tuSo = result.tuSo / tempUCLL;
             if (result.mauSo < 0) {
@@ -60,10 +60,10 @@
         }
         nhanPhanSo(phanSo) {
             let result = new PhanSo();
-            let tempUCLL = UCLL(result.tuSo, result.mauSo);
             result.tuSo = this.tuSo * phanSo.tuSo;
             result.mauSo = this.mauSo * phanSo.mauSo;
             // Rut gon
+            let tempUCLL = UCLL(result.mauSo, result.tuSo);
             result.tuSo /= tempUCLL;
             result.mauSo /= tempUCLL;
             if (result.mauSo < 0) {
@@ -73,7 +73,7 @@
             return result;
         }
         chiaPhanSo(phanSo) {
-            let temp = new PhanSo(phan.mauSo, phanSo.tuSo);
+            let temp = new PhanSo(phanSo.mauSo, phanSo.tuSo);
             return this.nhanPhanSo(temp);
         }
     }
@@ -81,21 +81,25 @@
     let phanSo1 = new PhanSo();
     let phanSo2 = new PhanSo();
     do {
-        phanSo1.setTuSo(prompt("Nhập tử số của phân số thứ nhất: "));
+        phanSo1.setTuSo(parseInt(prompt("Nhập tử số của phân số thứ nhất: ")));
     } while (!Number.isInteger(phanSo1.getTuSo()) || isNaN(phanSo1.getTuSo()));
 
     do {
-        phanSo1.setMauSo(prompt("Nhập tử số của phân số thứ nhất: "));
+        phanSo1.setMauSo(parseInt(prompt("Nhập mẫu số của phân số thứ nhất: ")));
     } while (!Number.isInteger(phanSo1.getMauSo()) || isNaN(phanSo1.getMauSo()));
 
     do {
-        phanSo2.setTuSo(prompt("Nhập tử số của phân số thứ hai: "));
+        phanSo2.setTuSo(parseInt(prompt("Nhập tử số của phân số thứ hai: ")));
     } while (!Number.isInteger(phanSo1.getTuSo()) || isNaN(phanSo1.getTuSo()));
 
     do {
-        phanSo2.setMauSo(prompt("Nhập tử số của phân số thứ hai: "));
+        phanSo2.setMauSo(parseInt(prompt("Nhập mẫu số của phân số thứ hai: ")));
     } while (!Number.isInteger(phanSo1.getMauSo()) || isNaN(phanSo1.getMauSo()));
-    
+
+    console.log(phanSo1.congPhanSo(phanSo2));
+    console.log(phanSo1.truPhanSo(phanSo2));
+    console.log(phanSo1.nhanPhanSo(phanSo2));
+    console.log(phanSo1.chiaPhanSo(phanSo2));
 
 </script>
 </body>

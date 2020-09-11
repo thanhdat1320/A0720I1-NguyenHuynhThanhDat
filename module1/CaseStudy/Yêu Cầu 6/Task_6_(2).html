@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Furama</title>
+</head>
+<body>
+<script>
+ class Employee {
+     constructor(name, idCard, birthday, phoneNumber ,email, address, level, salary) {
+         this.name = name;
+         this.idCard = idCard;
+         this.birthday = birthday;
+         this.email = email;
+         this.address = address;
+         this.level = level;
+         this.phoneNumber = phoneNumber;
+         this.salary = salary;
+     }
+     getName() {
+         return this.name;
+     }
+     setName(name) {
+         this.name = name;
+     }
+     getIdCard() {
+         return this.idCard;
+     }
+     setIdCard(id) {
+         this.idCard = id;
+     }
+     getBirthday() {
+         return this.birthday;
+     }
+     setBirthday(birthday) {
+         this.birthday = birthday;
+     }
+     getEmail() {
+         return this.email;
+     }
+     setEmail(email) {
+         this.email = email;
+     }
+     getAddress() {
+         return this.address;
+     }
+     setAddress(address) {
+         this.address = address;
+     }
+     getLevel() {
+         return this.level;
+     }
+     setLevel(level) {
+         this.level = level;
+     }
+     getPhoneNumber() {
+         return this.phoneNumber;
+     }
+     setPhoneNumber(number) {
+         this.phoneNumber = number;
+     }
+     setSalary(salary) {
+         this.salary = salary;
+     }
+     getSalary() {
+         if (this.getLevel() === "Manager") {
+             this.salary = 500;
+         } else if (this.getLevel() === "Sale") {
+             this.salary = 300;
+         } else if (this.getLevel() === "Marketing") {
+             this.salary = 200;
+         }
+         return this.salary;
+     }
+ }
+
+ function displayMainMenu() {
+     let choose = parseFloat(prompt("Please choose:\n1. Add New Employee\n" +
+         "2. Display Information Employee\n" +
+         "3. Salary of Employees\n" +
+         "4. Exit"));
+     switch(choose){
+         case 1:{
+             addNewEmployee();
+             break;
+         }
+         case 2:{
+             displayEmployee();
+             break;
+         }
+         case 3:{
+             displaySalary();
+             break;
+         }
+         default:{
+             displayMainMenu();
+             break;
+         }
+     }
+ }
+ let listEmployee = [];
+ let regexEmail = /\S+@\S+\.\S+/;
+ let regexBirthday = /^\d{2}[./-]\d{2}[./-]\d{4}$/;
+ let regexIdCard = /^[\d]{8,8}$/;
+ let regexNum = /^\d+$/;
+ let regexText = /^\D+$/;
+ function addNewEmployee() {
+     let employee = new Employee();
+     // check name
+     let checkValid = false;
+     let name;
+     do {
+         name = prompt("Please input your name: ");
+         if (regexText.test(name)) {
+             checkValid = true;
+         } else {
+             alert("Your name days is invalid.")
+         }
+     } while (!checkValid);
+     // check id
+     checkValid = false;
+     let idCard;
+     do {
+         idCard = (prompt("Please input your id: "));
+         if (regexIdCard.test(idCard)) {
+             checkValid = true;
+         } else {
+             alert("Your id days is invalid.")
+         }
+     } while (!checkValid);
+     // check birthday
+     checkValid = false;
+     let birthday;
+     do {
+         birthday = prompt("Please input your birthday: ");
+         if (regexBirthday.test(birthday)) {
+             checkValid = true;
+         } else {
+             alert("Your birthday days is invalid.")
+         }
+     } while (!checkValid);
+     // check Email
+     checkValid = false;
+     let email;
+     do{
+         email = prompt("Please input your email: ");
+         if (regexEmail.test(email)) {
+             checkValid = true;
+         } else {
+             alert("Your email days is invalid.")
+         }
+     } while (!checkValid);
+     // check phone number
+     checkValid = false;
+     let phoneNumber;
+     do {
+         phoneNumber = prompt("Please input your phone number: ");
+         if (regexNum.test(phoneNumber)) {
+             checkValid = true;
+         } else {
+             alert("Your phone number days is invalid.")
+         }
+     } while (!checkValid);
+
+     let level = prompt("Please input your phone level: ");
+     let address = prompt("Please input your phone address: ");
+     employee.setName(name);
+     employee.setIdCard(idCard);
+     employee.setBirthday(birthday);
+     employee.setEmail(email);
+     employee.setPhoneNumber(phoneNumber);
+     employee.setLevel(level);
+     employee.setAddress(address);
+     listEmployee.push(employee);
+     alert("Completed!");
+     displayMainMenu();
+ }
+
+ function displayEmployee() {
+     let result = "";
+     for (let i = 0; i < listEmployee.length; i++) {
+         result += i + 1 + ". Name: " + listEmployee[i].getName() + "\n";
+     }
+     let option = parseFloat(prompt("You want to review: \n" + result + "\n" + (listEmployee.length + 1) + ". exit"));
+     if (option === listEmployee.length + 1) {
+         displayMainMenu();
+     } else if (option > listEmployee.length || option < 1 || isNaN(option)) {
+         displayMainMenu();
+     } else {
+         alert("name: " + listEmployee[option - 1].getName() + "\n"
+             + "Birthday:" + listEmployee[option - 1].getBirthday() + "\n"
+             + "Email:" + listEmployee[option - 1].getEmail() + "\n"
+             + "Phone number:" + listEmployee[option - 1].getPhoneNumber() + "\n"
+             + "Id card:" + listEmployee[option - 1].getIdCard() + "\n"
+             + "level:" + listEmployee[option - 1].getLevel() + "\n"
+             + "address:" + listEmployee[option - 1].getAddress() + "\n")
+     }
+     displayMainMenu();
+ }
+
+ function displaySalary() {
+     let result = "";
+     for(let i = 0; i < listEmployee.length; i++){
+         result += i +1 + ". Name: " + listEmployee[i].getName() +"\n";
+     }
+     let option = parseFloat(prompt("you want review: \n" + result + "\n" + (listEmployee.length+1) + ". exit"));
+     if (option === listEmployee.length +1) {
+         displayMainMenu();
+     } else if (option > listEmployee.length || option < 1 || isNaN(option)) {
+         displayMainMenu();
+     } else {
+         alert("Salary of "+ listEmployee[option - 1].getName() + " là: " + listEmployee[option - 1].getSalary() + "$\n")
+     }
+     displayMainMenu();
+ }
+ displayMainMenu();
+</script>
+</body>
+</html>

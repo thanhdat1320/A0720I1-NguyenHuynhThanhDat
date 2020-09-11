@@ -2,15 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="68de934e-edb3-47c6-9d21-d63641872466" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/B19. Thuat_Toan_02/BT. A Very Big Sum/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/B19. Thuat_Toan_02/BT. Diagonal Difference/indexx.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/B19. Thuat_Toan_02/BT. Mini-Max Sum/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/B19. Thuat_Toan_02/BT. Plus Minus/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/B19. Thuat_Toan_02/BT. Staircase/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BT_Anh_Hai/Giai_Thuat/BT1/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BT_Anh_Hai/OOP/BT1/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BT_Anh_Hai/OOP/BT2/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bootcamp_Preparation_Case_Study/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bootcamp_Preparation_Case_Study/myJS.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CaseStudy/Yêu Cầu 6/Task_6_(1).html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CaseStudy/Yêu Cầu 6/Task_6_(2).html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/B13. Mang_2/Bai_Tap/BT. Luyện tập mảng 01/myJS.js" beforeDir="false" afterPath="$PROJECT_DIR$/B13. Mang_2/Bai_Tap/BT. Luyện tập mảng 01/myJS.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B15. Ham_2/Bai_Tap/BT. Kiểm từ đối xứng/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/B15. Ham_2/Bai_Tap/BT. Kiểm từ đối xứng/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B17. Lap_Trinh_Huong_Doi_Tuong_02/Bai_Tap/BT. Switch lamp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/B17. Lap_Trinh_Huong_Doi_Tuong_02/Bai_Tap/BT. Switch lamp/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BT_Anh_Hai/OOP/BT1/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/BT_Anh_Hai/OOP/BT1/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +20,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
         <option value="HTML File" />
       </list>
     </option>
@@ -104,6 +104,13 @@
       <workItem from="1599476325928" duration="3063000" />
       <workItem from="1599479528301" duration="8130000" />
       <workItem from="1599537564606" duration="17054000" />
+      <workItem from="1599616285236" duration="1342000" />
+      <workItem from="1599617678426" duration="815000" />
+      <workItem from="1599618511772" duration="3333000" />
+      <workItem from="1599648383106" duration="8764000" />
+      <workItem from="1599696820495" duration="2539000" />
+      <workItem from="1599792470956" duration="307000" />
+      <workItem from="1599793843041" duration="9828000" />
     </task>
     <servers />
   </component>
@@ -131,9 +138,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1099" y="244" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1599574363393" />
-    <state x="962" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1597663755021">
+    <state x="962" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1599618498523">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="962" y="257" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1597663755021" />
+    <state x="962" y="257" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1599618498523" />
   </component>
 </project>
