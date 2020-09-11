@@ -114,7 +114,7 @@
          if (regexText.test(name)) {
              checkValid = true;
          } else {
-             alert("Your name days is invalid.")
+             alert("Your name is invalid.")
          }
      } while (!checkValid);
      // check id
@@ -125,7 +125,7 @@
          if (regexIdCard.test(idCard)) {
              checkValid = true;
          } else {
-             alert("Your id days is invalid.")
+             alert("Your id is invalid.")
          }
      } while (!checkValid);
      // check birthday
@@ -136,7 +136,7 @@
          if (regexBirthday.test(birthday)) {
              checkValid = true;
          } else {
-             alert("Your birthday days is invalid.")
+             alert("Your birthday is invalid.")
          }
      } while (!checkValid);
      // check Email
@@ -147,7 +147,7 @@
          if (regexEmail.test(email)) {
              checkValid = true;
          } else {
-             alert("Your email days is invalid.")
+             alert("Your email is invalid.")
          }
      } while (!checkValid);
      // check phone number
@@ -158,7 +158,7 @@
          if (regexNum.test(phoneNumber)) {
              checkValid = true;
          } else {
-             alert("Your phone number days is invalid.")
+             alert("Your phone number is invalid.")
          }
      } while (!checkValid);
 
@@ -204,7 +204,7 @@
          result += i +1 + ". Name: " + listEmployee[i].getName() +"\n";
      }
      let option = parseFloat(prompt("you want review: \n" + result + "\n" + (listEmployee.length+1) + ". exit"));
-     if (option === listEmployee.length +1) {
+     if (option === listEmployee.length + 1) {
          displayMainMenu();
      } else if (option > listEmployee.length || option < 1 || isNaN(option)) {
          displayMainMenu();

@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="68de934e-edb3-47c6-9d21-d63641872466" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/BT_Anh_Hai/OOP/BT2/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bootcamp_Preparation_Case_Study/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bootcamp_Preparation_Case_Study/myJS.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CaseStudy/Yêu Cầu 6/Task_6_(1).html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CaseStudy/Yêu Cầu 6/Task_6_(2).html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/B15. Ham_2/Bai_Tap/BT. Kiểm từ đối xứng/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/B15. Ham_2/Bai_Tap/BT. Kiểm từ đối xứng/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/B17. Lap_Trinh_Huong_Doi_Tuong_02/Bai_Tap/BT. Switch lamp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/B17. Lap_Trinh_Huong_Doi_Tuong_02/Bai_Tap/BT. Switch lamp/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BT_Anh_Hai/OOP/BT1/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/BT_Anh_Hai/OOP/BT1/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy/Yêu Cầu 6/Task_6_(2).html" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy/Yêu Cầu 6/Task_6_(2).html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +103,7 @@
       <workItem from="1599648383106" duration="8764000" />
       <workItem from="1599696820495" duration="2539000" />
       <workItem from="1599792470956" duration="307000" />
-      <workItem from="1599793843041" duration="9828000" />
+      <workItem from="1599793843041" duration="10412000" />
     </task>
     <servers />
   </component>
