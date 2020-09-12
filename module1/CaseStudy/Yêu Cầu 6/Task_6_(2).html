@@ -59,9 +59,6 @@
      setPhoneNumber(number) {
          this.phoneNumber = number;
      }
-     setSalary(salary) {
-         this.salary = salary;
-     }
      getSalary() {
          if (this.getLevel() === "Manager") {
              this.salary = 500;
@@ -114,7 +111,7 @@
          if (regexText.test(name)) {
              checkValid = true;
          } else {
-             alert("Your name is invalid.")
+             alert("Your name is invalid.");
          }
      } while (!checkValid);
      // check id
@@ -201,7 +198,7 @@
  function displaySalary() {
      let result = "";
      for(let i = 0; i < listEmployee.length; i++){
-         result += i +1 + ". Name: " + listEmployee[i].getName() +"\n";
+         result += i + 1 + ". Name: " + listEmployee[i].getName() +"\n";
      }
      let option = parseFloat(prompt("you want review: \n" + result + "\n" + (listEmployee.length+1) + ". exit"));
      if (option === listEmployee.length + 1) {
@@ -214,6 +211,7 @@
      displayMainMenu();
  }
  displayMainMenu();
+
 </script>
 </body>
 </html>
