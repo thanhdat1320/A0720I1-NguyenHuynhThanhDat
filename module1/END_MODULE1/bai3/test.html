@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Quản lý sách</h3>
+<div id="display"></div>
+<br>
+<input type="button" value="Thêm sách đã có">
+<input type="button" value="Thêm sách mới" onclick="addNewBook()">
+<input type="button" value="Mượn sách">
+<input type="button" value="Hiển thị sách nhiều nhất">
+<script>
+    class Book{
+        constructor(id, name, year, count, status){
+            this.id = id;           //mã số sách
+            this.name = name;       //tên
+            this.year = year;       //Năm sản xuất
+            this.count = count;     //Số quyển
+            this.status = status;   //tình trạng
+        }
+        setId(id){
+            this.id = id;
+        }
+        getId(){
+            return this.id;
+        }
+        setName(name){
+            this.name = name;
+        }
+        getName(){
+            return this.name;
+        }
+        setYear(year){
+            this.year = year;
+        }
+        getYear(){
+            return this.year;
+        }
+        setCount(count){
+            this.count = count;
+        }
+        getCount(){
+            return this.count;
+        }
+        setStatus(status){
+            this.status = status;
+        }
+        getStatus(){
+            return this.status;
+        }
+        checkStatus(){
+            if(this.count == 0){
+                this.status = false;
+            }else{
+                this.status = true;
+            }
+        }
+    }
+    let arrBook = new Array();
+    let regexYear = /^\d{4}$/;
+    let regexNum = /^\d+$/;
+    let regexText = /^\D+$/;
+    function display(){
+        let result = "<table border='1'>" + "<tr><td>Mã số sách</td><td>Tên sách</td><td>Năm xuất bản</td><td>số quyển</td><td>tình trạng</td></tr>";
+        for(let i=0; i< arrBook.length; i++){
+            result += "<tr>" + "<td>" + arrBook[i].id + "</td>"
+                    +"<td>" + arrBook[i].name + "</td>"
+                    +"<td>" + arrBook[i].year + "</td>"
+                    +"<td>" + arrBook[i].count + "</td>"
+                    +"<td>" + arrBook[i].status + "</td>" + "</tr>";
+        }
+        result +="</table>";
+        document.getElementById("display").innerHTML = result;
+    }
+    function addNewBook() {
+        let newBook = new Book();
+        let checkValid = false;
+        let id;
+        do{
+            id = prompt("Nhập ID sách");
+            if(parseInt(id) >10000 && parseInt(id)<60000){
+                checkValid = true;
+            }else{
+                alert("Không đúng định dạng, mời nhập id sách: ");
+            }
+        }while (!checkValid);
+        checkValid = false;
+        let name;
+        do{
+            name = prompt("Nhập tên sách");
+            if(regexText.test(name)){
+                checkValid = true;
+            }else{
+                alert("Không đúng định dạng, mời nhập lại tên sách: ");
+            }
+        }while (!checkValid);
+        checkValid = false;
+        let year;
+        do{
+            year = prompt("Nhập năm xuất bản sách");
+            if(regexYear.test(year)){
+                checkValid = true;
+            }else{
+                alert("Không đúng định dạng, mời nhập lại năm sản xuất: ");
+            }
+        }while (!checkValid);
+
+        checkValid = false;
+        let count;
+        do{
+            count = prompt("Nhập số quyển");
+            if(regexNum.test(count)){
+                checkValid = true;
+            }else{
+                alert("Không đúng định dạng, mời nhập lại số quyển: ");
+            }
+        }while (!checkValid);
+        checkValid = false;
+        newBook.setId(id);
+        newBook.setName(name);
+        newBook.setYear(year);
+        newBook.setCount(count);
+        newBook.checkStatus();
+        arrBook.push(newBook);
+        alert("Add new book complete!");
+        display();
+    }
+</script>
+</body>
+</html>

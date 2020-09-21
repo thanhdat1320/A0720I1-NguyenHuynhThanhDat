@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arrMark = [];
+    let number;
+    do {
+         number = parseInt(prompt("Nhập số lượng có trong mảng:"));
+    } while (isNaN(number));
+    for (let i = 0; i < number; i++) {
+        arrMark[i] = parseInt(prompt("Nhập điểm:"));
+    }
+
+    function findMax(arr) {
+        let max = arr[0];
+       for (let i = 0; i < arr.length; i++) {
+           if (arr[i] > max) {
+               max = arr[i];
+           }
+       }
+       alert("Điểm cao nhất: " + max);
+    }
+
+    findMax(arrMark);
+</script>
+</body>
+</html>

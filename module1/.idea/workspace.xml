@@ -2,8 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="68de934e-edb3-47c6-9d21-d63641872466" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/END_MODULE1/bai 1/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/END_MODULE1/bai 1/myJS.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/END_MODULE1/bai 2/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/END_MODULE1/bai 2/myJS.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/END_MODULE1/bai3/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/END_MODULE1/bai3/myJS.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/END_MODULE1/bai3/test.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/End/BAI_4/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/End/bai1/BAI_1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/End/bai2/BAI_2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/End/bai3/BAI_3.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CaseStudy/Yêu Cầu 6/Task_6_(2).html" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy/Yêu Cầu 6/Task_6_(2).html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,6 +114,10 @@
       <workItem from="1599696820495" duration="2539000" />
       <workItem from="1599792470956" duration="307000" />
       <workItem from="1599793843041" duration="18906000" />
+      <workItem from="1599872931247" duration="2414000" />
+      <workItem from="1600165405309" duration="3472000" />
+      <workItem from="1600214263334" duration="16381000" />
+      <workItem from="1600666682756" duration="116000" />
     </task>
     <servers />
   </component>
@@ -111,10 +125,14 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="739" y="263" key="FileChooserDialogImpl" timestamp="1599027419074">
+    <state x="788" y="364" key="#com.intellij.ide.actions.DebugLogConfigureAction" timestamp="1600666727582">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="739" y="263" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1599027419074" />
+    <state x="788" y="364" key="#com.intellij.ide.actions.DebugLogConfigureAction/0.0.1920.1040@0.0.1920.1040" timestamp="1600666727582" />
+    <state x="739" y="263" key="FileChooserDialogImpl" timestamp="1599890483238">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="739" y="263" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1599890483238" />
     <state x="1070" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1599818844222">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -127,10 +145,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="754" y="127" width="1148" height="793" key="dock-window-2/0.0.1920.1040@0.0.1920.1040" timestamp="1597668228804" />
-    <state x="1099" y="244" key="run.anything.popup" timestamp="1599574363393">
+    <state x="1099" y="244" key="run.anything.popup" timestamp="1600259682868">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1099" y="244" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1599574363393" />
+    <state x="1099" y="244" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1600259682868" />
     <state x="962" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1599618498523">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

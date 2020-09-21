@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCanvas" width="480" height="320"></canvas>
+<script>
+
+    class Circle {
+        constructor(toaDoX, toaDoY, radius, color) {
+            this.toaDoX = toaDoX;
+            this.toaDoY = toaDoY;
+            this.radius = radius;
+            this.color = color;
+        }
+        getToaDoX() {
+            return this.toaDoX;
+        }
+        setToaDoX(x) {
+             this.toaDoX = x;
+        }
+        getToaDoY() {
+            return this.toaDoY;
+        }
+        setToaDoY(y) {
+             this.toaDoY = y;
+        }
+        getRadius() {
+            return this.radius;
+        }
+        setRadius(radius) {
+            this.radius = radius;
+        }
+        render(canvas) {
+            let ctx = canvas.getContext("2d");
+            ctx.beginPath();
+            ctx.arc(this.toaDoX, this.toaDoY, this.radius, 0 , Math.PI * 2, false);
+            ctx.fillStyle = this.color;
+            ctx.fill();
+            ctx.closePath();
+        }
+    }
+
+    let newCircle = new Circle(10, 10, 100, "#000000");
+    let canvas = document.getElementById("myCanvas");
+    newCircle.render(canvas);
+
+</script>
+</body>
+</html>

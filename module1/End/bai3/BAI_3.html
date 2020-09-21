@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let numberX;
+    let check = false;
+    do {
+        numberX = parseInt(prompt("Nhập số X:"));
+    } while (isNaN(numberX) || numberX < 0);
+
+    function isFibonacci(number) {
+        if (number <= 1) {
+            return 1;
+        }
+        return isFibonacci(number - 1) + isFibonacci(number - 2);
+    }
+     alert(isFibonacci(numberX));
+</script>
+</body>
+</html>

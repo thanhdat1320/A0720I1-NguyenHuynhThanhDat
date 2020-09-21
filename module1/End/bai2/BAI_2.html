@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let countNumber;
+    let numberX;
+    let arrNumber = [];
+    let check = false;
+    do {
+        numberX = parseInt(prompt("Nhập số X:"));
+    } while (isNaN(numberX));
+
+    do {
+        countNumber = parseInt(prompt("Nhập số lượng có trong mảng:"));
+    } while (isNaN(countNumber));
+    for (let i = 0; i < countNumber; i++) {
+        arrNumber[i] = parseInt(prompt("Nhập mảng: "));
+    }
+    
+    function tryRemoveFromArray(arr, number) {
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] === number) {
+                arr.splice(i, 1);
+               check = true;
+            } else {
+                check = false;
+            }
+        }
+        if (check) {
+            console.log(arr);
+        } else {
+            console.log(arr);
+        }
+    }
+
+    tryRemoveFromArray(arrNumber, numberX);
+</script>
+</body>
+</html>
