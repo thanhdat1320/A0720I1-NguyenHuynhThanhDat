@@ -1,17 +1,16 @@
-package B3_Mang_PhuongThuc.Thuc_Hanh;
+package B3_Mang_PhuongThuc.Bai_Tap;
 
 import java.util.Scanner;
 
-public class ValueMaxInArray {
-
-    public static void maxValue(int[] array) {
-        int max = array[0];
+public class ValueMinInArray {
+    public static void minValue(int[] array) {
+        int min = array[0];
         for (int i = 0; i < array.length; i++) {
-            if (array[i] > max) {
-                max = array[i];
+            if (array[i] < min) {
+                min = array[i];
             }
         }
-        System.out.println("Max: " + max);
+        System.out.println("Min: " + min);
     }
 
     public static void main(String[] args) {
@@ -28,6 +27,6 @@ public class ValueMaxInArray {
             arrNumber[i] = input.nextInt();
         }
 
-        maxValue(arrNumber);
+        minValue(arrNumber);
     }
 }
