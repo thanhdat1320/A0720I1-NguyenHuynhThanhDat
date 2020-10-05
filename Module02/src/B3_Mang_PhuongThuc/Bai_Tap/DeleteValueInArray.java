@@ -28,7 +28,9 @@ public class DeleteValueInArray {
             if (array[i] == num) {
                 for (int j = i; j < array.length -1; j++) {
                     array[j] = array[j + 1];
-                    array[array.length - 1] = 0;
+                    if (array[array.length - 1] == array[array.length - 2]) {
+                        array[array.length - 1] = 0;
+                    }
                 }
             }
         }
