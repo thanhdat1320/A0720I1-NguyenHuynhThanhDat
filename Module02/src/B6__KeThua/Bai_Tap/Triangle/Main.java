@@ -6,8 +6,6 @@ public class Main {
     public static void main(String[] args) {
         Triangle triangle = new Triangle();
         Scanner input = new Scanner(System.in);
-        boolean check = false;
-        boolean fill;
 
         System.out.print("Enter color: ");
         triangle.setColor(input.nextLine());
@@ -19,6 +17,7 @@ public class Main {
         triangle.setSide2(input.nextDouble());
         System.out.print("Enter side3: ");
         triangle.setSide3(input.nextDouble());
+        System.out.println(triangle.toString());
         System.out.println("Area: " + triangle.getArea());
         System.out.print("Perimeter: " + triangle.getPerimeter());
 
