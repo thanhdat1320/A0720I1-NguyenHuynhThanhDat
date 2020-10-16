@@ -1,4 +1,4 @@
-package b7_abstract_interface.thuc_hanh.Comparable;
+package b7_abstract_interface.thuc_hanh.comparable;
 
 import B6__KeThua.Thuc_Hanh.Circle;
 

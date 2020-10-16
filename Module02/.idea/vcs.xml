@@ -2,5 +2,6 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/b8_clean_code_refactoring/practise/refactoring_name" vcs="Git" />
   </component>
 </project>
