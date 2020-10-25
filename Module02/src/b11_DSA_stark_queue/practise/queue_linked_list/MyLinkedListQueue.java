@@ -2,12 +2,10 @@ package b11_DSA_stark_queue.practise.queue_linked_list;
 
 public class MyLinkedListQueue {
 
-    private Node head;
-    private Node tail;
+    private Node head = null;
+    private Node tail = null;
 
     public MyLinkedListQueue() {
-        this.head = null;
-        this.tail = null;
     }
 
     public void enqueue(int key) {
