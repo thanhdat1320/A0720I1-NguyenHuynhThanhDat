@@ -1,6 +1,6 @@
 package b7_abstract_interface.thuc_hanh.comparable;
 
-import B6__KeThua.Thuc_Hanh.Circle;
+import b6_inheritance.Thuc_Hanh.Circle;
 
 public class ComparableCircle extends Circle implements Comparable<ComparableCircle> {
 
