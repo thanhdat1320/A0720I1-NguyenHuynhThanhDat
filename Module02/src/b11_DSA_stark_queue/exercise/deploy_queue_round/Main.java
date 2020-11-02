@@ -1,4 +1,4 @@
-package b11_DSA_stark_queue.exercise.queue_round;
+package b11_DSA_stark_queue.exercise.deploy_queue_round;
 
 public class Main {
     public static void main(String[] args) {
