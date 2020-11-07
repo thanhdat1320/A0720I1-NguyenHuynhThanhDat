@@ -3,6 +3,9 @@ package models;
 public class Room extends Services {
     private String freeService;
 
+    public Room() {
+    }
+
     public Room(String freeService) {
         this.freeService = freeService;
     }
@@ -12,10 +15,18 @@ public class Room extends Services {
         this.freeService = freeService;
     }
 
+    public String getFreeService() {
+        return freeService;
+    }
+
+    public void setFreeService(String freeService) {
+        this.freeService = freeService;
+    }
+
     @Override
     public void showInfo() {
         System.out.println("Room[" +
-                "freeService: '" + freeService + '\'' +
+                "freeService: '" + getFreeService() + '\'' +
                 ']');
     }
 }

@@ -5,6 +5,9 @@ public class House extends Services {
     private String otherFacilities;
     private int floor;
 
+    public House() {
+    }
+
     public House(String standardRoom, String otherFacilities, int floor) {
         this.standardRoom = standardRoom;
         this.otherFacilities = otherFacilities;
@@ -19,12 +22,36 @@ public class House extends Services {
         this.floor = floor;
     }
 
+    public String getStandardRoom() {
+        return standardRoom;
+    }
+
+    public void setStandardRoom(String standardRoom) {
+        this.standardRoom = standardRoom;
+    }
+
+    public String getOtherFacilities() {
+        return otherFacilities;
+    }
+
+    public void setOtherFacilities(String otherFacilities) {
+        this.otherFacilities = otherFacilities;
+    }
+
+    public int getFloor() {
+        return floor;
+    }
+
+    public void setFloor(int floor) {
+        this.floor = floor;
+    }
+
     @Override
     public void showInfo() {
         System.out.println("House[" +
-                "standardRoom: '" + standardRoom + '\'' +
-                ", otherFacilities: '" + otherFacilities + '\'' +
-                ", floor: " + floor +
+                "standardRoom: '" + getStandardRoom() + '\'' +
+                ", otherFacilities: '" + getOtherFacilities() + '\'' +
+                ", floor: " + getFloor() +
                 ']');
     }
 }

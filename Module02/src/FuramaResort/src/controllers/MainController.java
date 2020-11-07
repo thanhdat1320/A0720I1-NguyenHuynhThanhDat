@@ -20,7 +20,7 @@ public class MainController {
 
         switch (choose) {
             case 1: {
-
+                addNewServices();
             }
         }
     }
