@@ -13,26 +13,34 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FuncFileCSV {
-    private static final String COMMA_DELIMITER = ",";
     private static final String NEW_LINE_SEPARATOR = "\n";
-    private static final String FILE_HEADER_VILLA = "StandardRoom - AreaPool - Floor - OtherFacilities";
-    private static final String FILE_VILLA = "src/data/Villa.csv";
+    private static final String HEADER_VILLA = "StandardRoom - AreaPool - Floor - OtherFacilities";
+    private static final String HEADER_HOUSE = "StandardRoom - Floor - OtherFacilities";
+    private static final String HEADER_ROOM = "FreeService";
+    private static final String FILE_VILLA = "src/furama_resort/data/Villa.csv";
+    private static final String FILE_HOUSE = "src/furama_resort/data/House.csv";
+    private static final String FILE_ROOM = "src/furama_resort/data/Room.csv";
 
-    public static void writeVillaToFileCSV(List<Villa> listVilla) {
+    public static <T> void writeVillaToFileCSV(List<T> list, String value) {
         FileWriter fileWriter = null;
 
         try {
-            fileWriter = new FileWriter(FILE_VILLA);
-            fileWriter.append(FILE_HEADER_VILLA);
-            fileWriter.append(NEW_LINE_SEPARATOR);
-            for (Villa villa : listVilla) {
-                fileWriter.append(villa.getStandardRoom());
-                fileWriter.append(COMMA_DELIMITER);
-                fileWriter.append((villa.getAreaPool() + ""));
-                fileWriter.append(COMMA_DELIMITER);
-                fileWriter.append((villa.getFloor()) + "");
-                fileWriter.append(COMMA_DELIMITER);
-                fileWriter.append(villa.getOtherFacilities());
+            if (value.equals("villa")) {
+                fileWriter = new FileWriter(FILE_VILLA);
+                fileWriter.append(HEADER_VILLA);
+                fileWriter.append(NEW_LINE_SEPARATOR);
+            } else if (value.equals("house")) {
+                fileWriter = new FileWriter(FILE_HOUSE);
+                fileWriter.append(HEADER_HOUSE);
+                fileWriter.append(NEW_LINE_SEPARATOR);
+            } else {
+                fileWriter = new FileWriter(FILE_ROOM);
+                fileWriter.append(HEADER_ROOM);
+                fileWriter.append(NEW_LINE_SEPARATOR);
+            }
+
+            for (T t : list) {
+                fileWriter.append(t.toString());
                 fileWriter.append(NEW_LINE_SEPARATOR);
             }
         } catch (Exception ex) {
@@ -47,25 +55,24 @@ public class FuncFileCSV {
         }
     }
 
-    public static ArrayList<Villa> readFileToListVilla() {
-        // tao biến br de luu file củ
+    public static List<Villa> readFileToListVilla() {
         BufferedReader br = null;
-        ArrayList<Villa> listVilla = new ArrayList<>();
+        List<Villa> listVilla = new ArrayList<>();
 
-//        // Kiem tra file csv co ton tai hay khong
-//        Path path = Paths.get(FILE_VILLA);
-//        if (!Files.exists(path)) {
-//            try {
-//                Writer writer = new FileWriter(FILE_VILLA) ;
-//                } catch(Exception ex){
-//                    System.out.println(ex.getMessage());
-//                }
-//            }
-//        // ------------------------------------------------
+        // Kiem tra file csv co ton tai hay khong
+        Path path = Paths.get(FILE_VILLA);
+        if (!Files.exists(path)) {
+            try {
+                Writer writer = new FileWriter(FILE_VILLA) ;
+                } catch(Exception ex){
+                    System.out.println(ex.getMessage());
+                }
+            }
+        // ------------------------------------------------
 
         try {
             br = new BufferedReader(new FileReader(FILE_VILLA));
-            String line;                              // đọc từng dòng br
+            String line;                             
             while ((line = br.readLine()) != null) {
                 String[] splitData = line.split(",");
                 if (splitData[0].equals("StandardRoom")) {

@@ -28,7 +28,6 @@ public class MainController {
         System.out.print("Your choose: ");
         String choose = input.nextLine();
 
-
         switch (choose) {
             case "1": {
                 addNewServices();
@@ -117,31 +116,53 @@ public class MainController {
         System.out.print("Floor: ");
         villa.setFloor(input.nextLine());
         System.out.print("Other Facilities: ");
-        villa.setOtherFacilities(input.next());
+        villa.setOtherFacilities(input.nextLine());
         villaList.add(villa);
 
-        FuncFileCSV.writeVillaToFileCSV(villaList);
-
-        System.out.println("Add new villa completed!\n");
+        System.out.println("\nAdd new Villa completed!\n");
+        FuncFileCSV.writeVillaToFileCSV(villaList, "villa");
         addNewServices();
     }
 
     public static void addNewHouse() {
+        House house = new House();
+
+        System.out.print("Standard Room: ");
+        house.setStandardRoom(input.nextLine());
+        System.out.print("Floor: ");
+        house.setFloor(input.nextLine());
+        System.out.print("Other Facilities: ");
+        house.setOtherFacilities(input.nextLine());
+        houseList.add(house);
+
+        System.out.println("\nAdd new House completed!\n");
+        FuncFileCSV.writeVillaToFileCSV(houseList, "house");
+        addNewServices();
     }
 
     public static void addNewRoom() {
+        Room room = new Room();
+
+        System.out.print("Free Service: ");
+        room.setFreeService(input.nextLine());
+
+        roomList.add(room);
+
+        System.out.println("\nAdd new Room completed!\n");
+        FuncFileCSV.writeVillaToFileCSV(roomList, "room");
+        addNewServices();
     }
 
     public static void showServices() {
         System.out.println("========== SHOW SERVICES ==========");
         System.out.println("1.Show all Villa");
         System.out.println("2.Show all House");
-        System.out.println("3. Show all Room");
+        System.out.println("3.Show all Room");
         System.out.println("4.Show All Name Villa Not Duplicate");
         System.out.println("5.Show All Name House Not Duplicate");
         System.out.println("6.Show All Name Room Not Duplicate");
         System.out.println("7.Back To Menu");
-        System.out.println("8. Exit");
+        System.out.println("8.Exit");
         System.out.println("===================================");
         System.out.print("Your choose: ");
         String choose = input.nextLine();

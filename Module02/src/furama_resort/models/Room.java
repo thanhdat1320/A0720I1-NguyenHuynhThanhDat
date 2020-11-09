@@ -29,4 +29,9 @@ public class Room extends Services {
                 "freeService: '" + getFreeService() + '\'' +
                 ']');
     }
+
+    @Override
+    public String toString() {
+        return freeService;
+    }
 }

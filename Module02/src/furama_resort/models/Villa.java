@@ -5,6 +5,7 @@ public class Villa extends Services {
     private String areaPool;            // hỏi tutor chuyển sang int thì file csv không đọc được
     private String floor;               // hỏi tutor chuyển sang int thì file csv không đọc được
     private String otherFacilities;
+
     public Villa() {
     }
 
@@ -65,5 +66,12 @@ public class Villa extends Services {
                 ", areaPool:" + getAreaPool() +
                 ", floor:" + getFloor() +
                 ']');
+    }
+
+    @Override
+    public String toString() {
+        int count = 1;
+        return (count++) + standardRoom + "," + areaPool + "," + floor + "," + otherFacilities;
+
     }
 }
