@@ -60,11 +60,16 @@ public class Villa extends Services {
 
     @Override
     public String showInfo() {
-       return "Villa[ " +
-                "standardRoom:'" + getStandardRoom() + '\'' +
-                ", otherFacilities:'" + getOtherFacilities() + '\'' +
-                ", areaPool:" + getAreaPool() +
-                ", floor:" + getFloor() +
+       return "Villa[ ID: "+ getId() +
+               ", Name: " + getName() +
+               ", Area: " + getArea() +
+               ", Price: " + getPrice() +
+               ", Amount: " + getAmount() +
+               ", TypeRent: " + getTypeRents() +
+                ", standardRoom: " + getStandardRoom() +
+                ", otherFacilities: " + getOtherFacilities() +
+                ", areaPool: " + getAreaPool() +
+                ", floor: " + getFloor() +
                 ']';
     }
 

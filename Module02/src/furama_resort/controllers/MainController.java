@@ -3,6 +3,7 @@ package furama_resort.controllers;
 import furama_resort.commons.FuncFileCSV;
 import furama_resort.models.House;
 import furama_resort.models.Room;
+import furama_resort.models.Services;
 import furama_resort.models.Villa;
 
 import java.util.ArrayList;
@@ -11,9 +12,9 @@ import java.util.Scanner;
 
 public class MainController {
     static Scanner input = new Scanner(System.in);
-    private static List<Villa> villaList = new ArrayList<>();
-    static List<House> houseList = new ArrayList<>();
-    static List<Room> roomList = new ArrayList<>();
+    static List<Services> villaList = FuncFileCSV.readFileCSV("Villa");
+    static List<Services> houseList = FuncFileCSV.readFileCSV("House");
+    static List<Services> roomList = FuncFileCSV.readFileCSV("Room");
 
     public static void displayMainMenu() {
         System.out.println("=========== MAIN MENU ===========");
@@ -106,7 +107,6 @@ public class MainController {
     }
 
     public static void addNewVilla() {
-//        villaList = FuncFileCSV.readFileToListVilla();
         Villa villa = new Villa();
 
         System.out.print("Standard Room: ");
@@ -209,8 +209,7 @@ public class MainController {
     }
 
     public static void showAllVilla() {
-        villaList = FuncFileCSV.readFileCSV();
-        for (Villa villa : villaList) {
+        for (Services villa : villaList) {
             System.out.println(villa.showInfo());
         }
     }
