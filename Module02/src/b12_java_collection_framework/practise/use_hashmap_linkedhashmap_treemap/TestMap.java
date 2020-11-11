@@ -12,6 +12,7 @@ public class TestMap {
         hashMap.put("Anderson", 31);
         hashMap.put("Lewis", 29);
         hashMap.put("Cook", 29);
+        hashMap.put("Cook", 20);
         System.out.println(hashMap);
 
         System.out.println("====================");

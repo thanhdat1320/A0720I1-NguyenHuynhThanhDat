@@ -48,9 +48,14 @@ public class House extends Services {
 
     @Override
     public String showInfo() {
-        return "House[" +
-                "standardRoom: '" + getStandardRoom() + '\'' +
-                ", otherFacilities: '" + getOtherFacilities() + '\'' +
+        return "House[ ID: " + getId() +
+                ", Name: " + getName() +
+                ", Area: " + getArea() +
+                ", Price: " + getPrice() +
+                ", Amount: " + getAmount() +
+                ", TypeRent: " + getTypeRents() +
+                ", standardRoom: " + getStandardRoom() +
+                ", otherFacilities: " + getOtherFacilities() +
                 ", floor: " + getFloor() +
                 ']';
     }
@@ -58,6 +63,5 @@ public class House extends Services {
     @Override
     public String toString() {
         return standardRoom + "," + floor + "," + otherFacilities;
-
     }
 }

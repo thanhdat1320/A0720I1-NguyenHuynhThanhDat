@@ -12,9 +12,9 @@ import java.util.Scanner;
 
 public class MainController {
     static Scanner input = new Scanner(System.in);
-    static List<Services> villaList = FuncFileCSV.readFileCSV("Villa");
-    static List<Services> houseList = FuncFileCSV.readFileCSV("House");
-    static List<Services> roomList = FuncFileCSV.readFileCSV("Room");
+    static List<Services> villaList = new ArrayList<>();
+    static List<Services> houseList = new ArrayList<>();
+    static List<Services> roomList = new ArrayList<>();
 
     public static void displayMainMenu() {
         System.out.println("=========== MAIN MENU ===========");
@@ -107,6 +107,7 @@ public class MainController {
     }
 
     public static void addNewVilla() {
+        villaList = FuncFileCSV.readFileCSV("Villa");
         Villa villa = new Villa();
 
         System.out.print("Standard Room: ");
@@ -125,6 +126,7 @@ public class MainController {
     }
 
     public static void addNewHouse() {
+        houseList = FuncFileCSV.readFileCSV("House");
         House house = new House();
 
         System.out.print("Standard Room: ");
@@ -141,6 +143,7 @@ public class MainController {
     }
 
     public static void addNewRoom() {
+        roomList = FuncFileCSV.readFileCSV("Room");
         Room room = new Room();
 
         System.out.print("Free Service: ");
@@ -209,15 +212,26 @@ public class MainController {
     }
 
     public static void showAllVilla() {
+        villaList = FuncFileCSV.readFileCSV("Villa");
         for (Services villa : villaList) {
             System.out.println(villa.showInfo());
         }
+        showServices();
     }
 
     public static void showAllHouse() {
+        houseList = FuncFileCSV.readFileCSV("House");
+        for (Services house : houseList) {
+            System.out.println(house.showInfo());
+        }
+        showServices();
     }
 
     public static void showAllRoom() {
+        houseList = FuncFileCSV.readFileCSV("Room");
+        for (Services room : roomList) {
+            System.out.println(room.showInfo());
+        }
     }
 
     public static void showNameVilla() {

@@ -25,8 +25,13 @@ public class Room extends Services {
 
     @Override
     public String showInfo() {
-        return "Room[" +
-                "freeService: '" + getFreeService() + '\'' +
+        return "Room[ ID: " + getId() +
+                ", Name: " + getName() +
+                ", Area: " + getArea() +
+                ", Price: " + getPrice() +
+                ", Amount: " + getAmount() +
+                ", TypeRent: " + getTypeRents() +
+                ", FreeService: " + getFreeService() +
                 ']';
     }
 

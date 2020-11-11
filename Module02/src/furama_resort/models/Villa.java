@@ -60,12 +60,12 @@ public class Villa extends Services {
 
     @Override
     public String showInfo() {
-       return "Villa[ ID: "+ getId() +
-               ", Name: " + getName() +
-               ", Area: " + getArea() +
-               ", Price: " + getPrice() +
-               ", Amount: " + getAmount() +
-               ", TypeRent: " + getTypeRents() +
+        return "Villa[ ID: " + getId() +
+                ", Name: " + getName() +
+                ", Area: " + getArea() +
+                ", Price: " + getPrice() +
+                ", Amount: " + getAmount() +
+                ", TypeRent: " + getTypeRents() +
                 ", standardRoom: " + getStandardRoom() +
                 ", otherFacilities: " + getOtherFacilities() +
                 ", areaPool: " + getAreaPool() +
@@ -75,7 +75,7 @@ public class Villa extends Services {
 
     @Override
     public String toString() {
-        return  standardRoom + "," + areaPool + "," + floor + "," + otherFacilities;
+        return standardRoom + "," + areaPool + "," + floor + "," + otherFacilities;
 
     }
 }
