@@ -14,14 +14,14 @@ import java.util.List;
 
 public class FuncFileCSV {
     private static final String NEW_LINE_SEPARATOR = "\n";
-    private static final String HEADER_VILLA = "StandardRoom - AreaPool - Floor - OtherFacilities";
-    private static final String HEADER_HOUSE = "StandardRoom - Floor - OtherFacilities";
+    private static final String HEADER_VILLA = "StandardRoom,AreaPool,Floor,OtherFacilities";
+    private static final String HEADER_HOUSE = "StandardRoom,Floor,OtherFacilities";
     private static final String HEADER_ROOM = "FreeService";
     private static final String FILE_VILLA = "src/furama_resort/data/Villa.csv";
     private static final String FILE_HOUSE = "src/furama_resort/data/House.csv";
     private static final String FILE_ROOM = "src/furama_resort/data/Room.csv";
 
-    public static <T> void writeVillaToFileCSV(List<T> list, String value) {
+    public static <T> void writeFileCSV(List<T> list, String value) {
         FileWriter fileWriter = null;
 
         try {
@@ -55,25 +55,56 @@ public class FuncFileCSV {
         }
     }
 
-    public static List<Villa> readFileToListVilla() {
-        BufferedReader br = null;
-        List<Villa> listVilla = new ArrayList<>();
+    public static List<Villa> readFileCSV() {
+//        BufferedReader br = null;
+//        List<Villa> list = new ArrayList<>();
+//
+////        // Kiem tra file csv co ton tai hay khong
+////        Path path = Paths.get(FILE_VILLA);
+////        if (!Files.exists(path)) {
+////            try {
+////                Writer writer = new FileWriter(FILE_VILLA) ;
+////                } catch(Exception ex){
+////                    System.out.println(ex.getMessage());
+////                }
+////            }
+////        // ------------------------------------------------
+//
+//        try {
+//            br = new BufferedReader(new FileReader(FILE_VILLA));
+//            String line;
+//            while ((line = br.readLine()) != null) {
+//                String[] splitData = line.split(",");
+//                if (splitData[0].equals("StandardRoom")) {
+//                    continue;
+//                }
+//                Villa villa = new Villa();
+//                villa.setStandardRoom(splitData[0]);
+//                villa.setAreaPool(splitData[1]);
+//                villa.setFloor(splitData[2]);
+//                villa.setOtherFacilities(splitData[3]);
+//                list.add(villa);
+//            }
+//        } catch (Exception ex) {
+//            System.out.println(ex.getMessage());
+//        } finally {
+//            try {
+//                br.close();
+//            } catch (Exception ex) {
+//                System.out.println(ex.getMessage());
+//            }
+//        }
+//        return list;
+//    }
 
-        // Kiem tra file csv co ton tai hay khong
-        Path path = Paths.get(FILE_VILLA);
-        if (!Files.exists(path)) {
-            try {
-                Writer writer = new FileWriter(FILE_VILLA) ;
-                } catch(Exception ex){
-                    System.out.println(ex.getMessage());
-                }
-            }
-        // ------------------------------------------------
+        BufferedReader brReader = null;
+        List<Villa> villaList = new ArrayList<>();
 
         try {
-            br = new BufferedReader(new FileReader(FILE_VILLA));
-            String line;                             
-            while ((line = br.readLine()) != null) {
+            brReader = new BufferedReader(new FileReader(FILE_VILLA));
+            String line;
+
+            while ((line = brReader.readLine()) != null) {
                 String[] splitData = line.split(",");
                 if (splitData[0].equals("StandardRoom")) {
                     continue;
@@ -83,17 +114,17 @@ public class FuncFileCSV {
                 villa.setAreaPool(splitData[1]);
                 villa.setFloor(splitData[2]);
                 villa.setOtherFacilities(splitData[3]);
-                listVilla.add(villa);
+                villaList.add(villa);
             }
         } catch (Exception ex) {
-            System.out.println(ex.getMessage());
+            System.out.println("Error When Read File CSV");
         } finally {
             try {
-                br.close();
+                brReader.close();
             } catch (Exception ex) {
-                System.out.println(ex.getMessage());
+                System.out.println("Error In Close BufferedReader");
             }
         }
-        return listVilla;
+        return villaList;
     }
 }

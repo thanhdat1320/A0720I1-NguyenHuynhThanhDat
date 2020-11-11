@@ -11,7 +11,7 @@ import java.util.Scanner;
 
 public class MainController {
     static Scanner input = new Scanner(System.in);
-    static List<Villa> villaList = new ArrayList<>();
+    private static List<Villa> villaList = new ArrayList<>();
     static List<House> houseList = new ArrayList<>();
     static List<Room> roomList = new ArrayList<>();
 
@@ -105,7 +105,7 @@ public class MainController {
         }
     }
 
-    public static void  addNewVilla() {
+    public static void addNewVilla() {
 //        villaList = FuncFileCSV.readFileToListVilla();
         Villa villa = new Villa();
 
@@ -120,7 +120,7 @@ public class MainController {
         villaList.add(villa);
 
         System.out.println("\nAdd new Villa completed!\n");
-        FuncFileCSV.writeVillaToFileCSV(villaList, "villa");
+        FuncFileCSV.writeFileCSV(villaList, "villa");
         addNewServices();
     }
 
@@ -136,7 +136,7 @@ public class MainController {
         houseList.add(house);
 
         System.out.println("\nAdd new House completed!\n");
-        FuncFileCSV.writeVillaToFileCSV(houseList, "house");
+        FuncFileCSV.writeFileCSV(houseList, "house");
         addNewServices();
     }
 
@@ -149,7 +149,7 @@ public class MainController {
         roomList.add(room);
 
         System.out.println("\nAdd new Room completed!\n");
-        FuncFileCSV.writeVillaToFileCSV(roomList, "room");
+        FuncFileCSV.writeFileCSV(roomList, "room");
         addNewServices();
     }
 
@@ -182,6 +182,7 @@ public class MainController {
             }
             case "4": {
                 showNameVilla();
+                break;
             }
             case "5": {
                 showNameHouse();
@@ -198,7 +199,6 @@ public class MainController {
             case "8": {
                 System.exit(0);
                 break;
-
             }
             default: {
                 System.out.println("Fail!!! Please Choose again! Enter to continue.");
@@ -209,6 +209,10 @@ public class MainController {
     }
 
     public static void showAllVilla() {
+        villaList = FuncFileCSV.readFileCSV();
+        for (Villa villa : villaList) {
+            System.out.println(villa.showInfo());
+        }
     }
 
     public static void showAllHouse() {

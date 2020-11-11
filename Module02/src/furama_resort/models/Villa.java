@@ -2,8 +2,8 @@ package furama_resort.models;
 
 public class Villa extends Services {
     private String standardRoom;
-    private String areaPool;            // hỏi tutor chuyển sang int thì file csv không đọc được
-    private String floor;               // hỏi tutor chuyển sang int thì file csv không đọc được
+    private String areaPool;
+    private String floor;
     private String otherFacilities;
 
     public Villa() {
@@ -59,19 +59,18 @@ public class Villa extends Services {
 
 
     @Override
-    public void showInfo() {
-        System.out.println("Villa[ " +
+    public String showInfo() {
+       return "Villa[ " +
                 "standardRoom:'" + getStandardRoom() + '\'' +
                 ", otherFacilities:'" + getOtherFacilities() + '\'' +
                 ", areaPool:" + getAreaPool() +
                 ", floor:" + getFloor() +
-                ']');
+                ']';
     }
 
     @Override
     public String toString() {
-        int count = 1;
-        return (count++) + standardRoom + "," + areaPool + "," + floor + "," + otherFacilities;
+        return  standardRoom + "," + areaPool + "," + floor + "," + otherFacilities;
 
     }
 }

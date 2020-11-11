@@ -47,12 +47,12 @@ public class House extends Services {
     }
 
     @Override
-    public void showInfo() {
-        System.out.println("House[" +
+    public String showInfo() {
+        return "House[" +
                 "standardRoom: '" + getStandardRoom() + '\'' +
                 ", otherFacilities: '" + getOtherFacilities() + '\'' +
                 ", floor: " + getFloor() +
-                ']');
+                ']';
     }
 
     @Override

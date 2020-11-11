@@ -24,10 +24,10 @@ public class Room extends Services {
     }
 
     @Override
-    public void showInfo() {
-        System.out.println("Room[" +
+    public String showInfo() {
+        return "Room[" +
                 "freeService: '" + getFreeService() + '\'' +
-                ']');
+                ']';
     }
 
     @Override
