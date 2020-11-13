@@ -14,7 +14,7 @@ public class House extends Services {
         this.floor = floor;
     }
 
-    public House(String id, String name, int area, int price, int amount, String typeRents, String standardRoom,
+    public House(String id, String name, String area, String price, String amount, String typeRents, String standardRoom,
                  String otherFacilities, String floor) {
         super(id, name, area, price, amount, typeRents);
         this.standardRoom = standardRoom;
@@ -48,8 +48,8 @@ public class House extends Services {
 
     @Override
     public String showInfo() {
-        return "House[ ID: " + getId() +
-                ", Name: " + getName() +
+        return "House[ ID: " + getName() +
+                ", ID: " + getId() +
                 ", Area: " + getArea() +
                 ", Price: " + getPrice() +
                 ", Amount: " + getAmount() +
@@ -62,6 +62,7 @@ public class House extends Services {
 
     @Override
     public String toString() {
-        return standardRoom + "," + floor + "," + otherFacilities;
+        return getName() + "," + getId() + "," + getArea() + "," + getAmount() + "," + getPrice() + "," +
+                getTypeRents() + "," + standardRoom + "," + floor + "," + otherFacilities;
     }
 }

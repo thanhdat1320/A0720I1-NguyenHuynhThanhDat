@@ -10,7 +10,7 @@ public class Room extends Services {
         this.freeService = freeService;
     }
 
-    public Room(String id, String name, int area, int price, int amount, String typeRents, String freeService) {
+    public Room(String id, String name, String area, String price, String amount, String typeRents, String freeService) {
         super(id, name, area, price, amount, typeRents);
         this.freeService = freeService;
     }
@@ -25,8 +25,8 @@ public class Room extends Services {
 
     @Override
     public String showInfo() {
-        return "Room[ ID: " + getId() +
-                ", Name: " + getName() +
+        return "Room[ Name: " + getName() +
+                ", ID: " + getId() +
                 ", Area: " + getArea() +
                 ", Price: " + getPrice() +
                 ", Amount: " + getAmount() +
@@ -37,6 +37,7 @@ public class Room extends Services {
 
     @Override
     public String toString() {
-        return freeService;
+        return getName() + "," + getId() + "," + getArea() + "," + getAmount() + "," + getPrice() + "," +
+                getTypeRents() + "," + freeService;
     }
 }

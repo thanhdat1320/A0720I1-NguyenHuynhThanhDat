@@ -17,9 +17,9 @@ import java.util.List;
 
 public class FuncFileCSV {
     private static final String NEW_LINE_SEPARATOR = "\n";
-    private static final String HEADER_VILLA = "VILLA,StandardRoom,AreaPool,Floor,OtherFacilities";
-    private static final String HEADER_HOUSE = "HOUSE,StandardRoom,Floor,OtherFacilities";
-    private static final String HEADER_ROOM = "ROOM,FreeService";
+    private static final String HEADER_VILLA = "Name,ID,Area,Amount,Price,TypeRents,StandardRoom,AreaPool,Floor,OtherFacilities";
+    private static final String HEADER_HOUSE = "Name,ID,Area,Amount,Price,TypeRents,StandardRoom,Floor,OtherFacilities";
+    private static final String HEADER_ROOM = "Name,ID,Area,Amount,Price,TypeRents,FreeService";
     private static final String FILE_VILLA = "src/furama_resort/data/Villa.csv";
     private static final String FILE_HOUSE = "src/furama_resort/data/House.csv";
     private static final String FILE_ROOM = "src/furama_resort/data/Room.csv";
@@ -63,12 +63,16 @@ public class FuncFileCSV {
         List<Services> list = new ArrayList<>();
         String filePath = null;
 
-        if (value.equals("Villa")) {
-            filePath = FILE_VILLA;
-        } else if (value.equals("House")) {
-            filePath = FILE_HOUSE;
-        } else if (value.equals("Room")) {
-            filePath = FILE_ROOM;
+        switch (value) {
+            case "villa":
+                filePath = FILE_VILLA;
+                break;
+            case "house":
+                filePath = FILE_HOUSE;
+                break;
+            case "room":
+                filePath = FILE_ROOM;
+                break;
         }
         Path path = Paths.get(filePath);
         if (!Files.exists(path)) {
@@ -85,28 +89,46 @@ public class FuncFileCSV {
 
             while ((line = brReader.readLine()) != null) {
                 String[] splitData = line.split(",");
-                if (splitData[0].equals("VILLA") || splitData[0].equals("HOUSE") || splitData[0].equals("ROOM")) {
+                if (splitData[0].equals("Name") ) {
                     continue;
                 }
                 switch (value) {
-                    case "Villa":
+                    case "villa":
                         Villa villa = new Villa();
-                        villa.setStandardRoom(splitData[0]);
-                        villa.setAreaPool(splitData[1]);
-                        villa.setFloor(splitData[2]);
-                        villa.setOtherFacilities(splitData[3]);
+                        villa.setName(splitData[0]);
+                        villa.setId(splitData[1]);
+                        villa.setArea(splitData[2]);
+                        villa.setAmount(splitData[3]);
+                        villa.setPrice(splitData[4]);
+                        villa.setTypeRents(splitData[5]);
+                        villa.setStandardRoom(splitData[6]);
+                        villa.setAreaPool(splitData[7]);
+                        villa.setFloor(splitData[8]);
+                        villa.setOtherFacilities(splitData[9]);
                         list.add(villa);
                         break;
-                    case "House":
+                    case "house":
                         House house = new House();
-                        house.setStandardRoom(splitData[0]);
-                        house.setFloor(splitData[1]);
-                        house.setOtherFacilities(splitData[2]);
+                        house.setName(splitData[0]);
+                        house.setId(splitData[1]);
+                        house.setArea(splitData[2]);
+                        house.setAmount(splitData[3]);
+                        house.setPrice(splitData[4]);
+                        house.setTypeRents(splitData[5]);
+                        house.setStandardRoom(splitData[6]);
+                        house.setFloor(splitData[7]);
+                        house.setOtherFacilities(splitData[8]);
                         list.add(house);
                         break;
-                    case "ROOM":
+                    case "room":
                         Room room = new Room();
-                        room.setFreeService(splitData[0]);
+                        room.setName(splitData[0]);
+                        room.setId(splitData[1]);
+                        room.setArea(splitData[2]);
+                        room.setAmount(splitData[3]);
+                        room.setPrice(splitData[4]);
+                        room.setTypeRents(splitData[5]);
+                        room.setFreeService(splitData[6]);
                         list.add(room);
                         break;
                 }

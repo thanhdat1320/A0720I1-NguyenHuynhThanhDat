@@ -1,5 +1,2 @@
-VILLA,StandardRoom,AreaPool,Floor,OtherFacilities
-thanh dat,15x15,5,nope
-nguyen huỳnh,55,9,nope
-thao,9,8,ád
-ád,aád,aád,aád
+Name,ID,Area,Amount,Price,TypeRents,StandardRoom,AreaPool,Floor,OtherFacilities
+

@@ -3,15 +3,15 @@ package furama_resort.models;
 public abstract class Services {
     private String id;
     private String name;
-    private int area;
-    private int price;
-    private int amount;
+    private String area;
+    private String price;
+    private String amount;
     private String typeRents;
 
     public Services() {
     }
 
-    public Services(String id, String name, int area, int price, int amount, String typeRents) {
+    public Services(String id, String name, String area, String price, String amount, String typeRents) {
         this.id = id;
         this.name = name;
         this.area = area;
@@ -36,27 +36,27 @@ public abstract class Services {
         this.name = name;
     }
 
-    public int getArea() {
+    public String getArea() {
         return area;
     }
 
-    public void setArea(int area) {
+    public void setArea(String area) {
         this.area = area;
     }
 
-    public int getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 
-    public int getAmount() {
+    public String getAmount() {
         return amount;
     }
 
-    public void setAmount(int amount) {
+    public void setAmount(String amount) {
         this.amount = amount;
     }
 

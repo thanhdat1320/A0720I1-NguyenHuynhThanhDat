@@ -6,15 +6,16 @@ import furama_resort.models.Room;
 import furama_resort.models.Services;
 import furama_resort.models.Villa;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class MainController {
     static Scanner input = new Scanner(System.in);
     static List<Services> villaList = new ArrayList<>();
     static List<Services> houseList = new ArrayList<>();
     static List<Services> roomList = new ArrayList<>();
+    static Set<String> nameVillaNotDuplicate = new TreeSet<>();
+    static Set<String> nameHouseNotDuplicate = new TreeSet<>();
+    static Set<String> nameRoomNotDuplicate = new TreeSet<>();
 
     public static void displayMainMenu() {
         System.out.println("=========== MAIN MENU ===========");
@@ -107,9 +108,22 @@ public class MainController {
     }
 
     public static void addNewVilla() {
-        villaList = FuncFileCSV.readFileCSV("Villa");
+        villaList = FuncFileCSV.readFileCSV("villa");
         Villa villa = new Villa();
 
+        System.out.print("Name: ");
+        villa.setName(input.nextLine());
+        System.out.print("ID: ");
+        villa.setId(input.nextLine());
+        System.out.print("Area: ");
+        villa.setArea(input.nextLine());
+        System.out.print("Amount: ");
+        villa.setAmount(input.nextLine());
+        System.out.print("Price: ");
+        villa.setPrice(input.nextLine());
+        System.out.print("Type Rents: ");
+
+        villa.setTypeRents(input.nextLine());
         System.out.print("Standard Room: ");
         villa.setStandardRoom(input.nextLine());
         System.out.print("Area Pool: ");
@@ -126,8 +140,21 @@ public class MainController {
     }
 
     public static void addNewHouse() {
-        houseList = FuncFileCSV.readFileCSV("House");
+        houseList = FuncFileCSV.readFileCSV("house");
         House house = new House();
+
+        System.out.print("Name: ");
+        house.setName(input.nextLine());
+        System.out.print("ID: ");
+        house.setId(input.nextLine());
+        System.out.print("Area: ");
+        house.setArea(input.nextLine());
+        System.out.print("Amount: ");
+        house.setAmount(input.nextLine());
+        System.out.print("Price: ");
+        house.setPrice(input.nextLine());
+        System.out.print("Type Rents: ");
+        house.setTypeRents(input.nextLine());
 
         System.out.print("Standard Room: ");
         house.setStandardRoom(input.nextLine());
@@ -143,8 +170,21 @@ public class MainController {
     }
 
     public static void addNewRoom() {
-        roomList = FuncFileCSV.readFileCSV("Room");
+        roomList = FuncFileCSV.readFileCSV("room");
         Room room = new Room();
+
+        System.out.print("Name: ");
+        room.setName(input.nextLine());
+        System.out.print("ID: ");
+        room.setId(input.nextLine());
+        System.out.print("Area: ");
+        room.setArea(input.nextLine());
+        System.out.print("Amount: ");
+        room.setAmount(input.nextLine());
+        System.out.print("Price: ");
+        room.setPrice(input.nextLine());
+        System.out.print("Type Rents: ");
+        room.setTypeRents(input.nextLine());
 
         System.out.print("Free Service: ");
         room.setFreeService(input.nextLine());
@@ -212,7 +252,7 @@ public class MainController {
     }
 
     public static void showAllVilla() {
-        villaList = FuncFileCSV.readFileCSV("Villa");
+        villaList = FuncFileCSV.readFileCSV("villa");
         for (Services villa : villaList) {
             System.out.println(villa.showInfo());
         }
@@ -220,7 +260,7 @@ public class MainController {
     }
 
     public static void showAllHouse() {
-        houseList = FuncFileCSV.readFileCSV("House");
+        houseList = FuncFileCSV.readFileCSV("house");
         for (Services house : houseList) {
             System.out.println(house.showInfo());
         }
@@ -228,19 +268,38 @@ public class MainController {
     }
 
     public static void showAllRoom() {
-        houseList = FuncFileCSV.readFileCSV("Room");
+        houseList = FuncFileCSV.readFileCSV("room");
         for (Services room : roomList) {
             System.out.println(room.showInfo());
         }
+        showServices();
     }
 
     public static void showNameVilla() {
+        villaList = FuncFileCSV.readFileCSV("villa");
+        for (Services nameVilla : villaList) {
+            nameVillaNotDuplicate.add(nameVilla.getName());
+        }
+        System.out.println(nameVillaNotDuplicate);
+        displayMainMenu();
     }
 
     public static void showNameHouse() {
+        houseList = FuncFileCSV.readFileCSV("house");
+        for (Services nameHouse : houseList) {
+            nameHouseNotDuplicate.add(nameHouse.getName());
+        }
+        System.out.println(nameHouseNotDuplicate);
+        displayMainMenu();
     }
 
     public static void showNameRoom() {
+        roomList = FuncFileCSV.readFileCSV("room");
+        for (Services nameRoom : roomList) {
+            nameRoomNotDuplicate.add(nameRoom.getName());
+        }
+        System.out.println(nameRoomNotDuplicate);
+        displayMainMenu();
     }
 
 

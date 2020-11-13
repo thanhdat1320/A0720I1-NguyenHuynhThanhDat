@@ -16,7 +16,7 @@ public class Villa extends Services {
         this.floor = floor;
     }
 
-    public Villa(String id, String name, int area, int price, int amount, String typeRents, String standardRoom,
+    public Villa(String id, String name, String area, String price, String amount, String typeRents, String standardRoom,
                  String otherFacilities, String areaPool, String floor) {
         super(id, name, area, price, amount, typeRents);
         this.standardRoom = standardRoom;
@@ -60,11 +60,11 @@ public class Villa extends Services {
 
     @Override
     public String showInfo() {
-        return "Villa[ ID: " + getId() +
-                ", Name: " + getName() +
+        return "Villa[ Name: " + getName() +
+                ", ID: " + getId() +
                 ", Area: " + getArea() +
-                ", Price: " + getPrice() +
                 ", Amount: " + getAmount() +
+                ", Price: " + getPrice() +
                 ", TypeRent: " + getTypeRents() +
                 ", standardRoom: " + getStandardRoom() +
                 ", otherFacilities: " + getOtherFacilities() +
@@ -75,7 +75,7 @@ public class Villa extends Services {
 
     @Override
     public String toString() {
-        return standardRoom + "," + areaPool + "," + floor + "," + otherFacilities;
-
+        return getName() + "," + getId() + "," + getArea() + "," + getAmount() + "," + getPrice() + "," +
+                getTypeRents() + "," + standardRoom + "," + areaPool + "," + floor + "," + otherFacilities;
     }
 }
