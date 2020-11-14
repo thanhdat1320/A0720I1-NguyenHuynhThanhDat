@@ -67,9 +67,9 @@ public class Villa extends Services {
                 ", Price: " + getPrice() +
                 ", TypeRent: " + getTypeRents() +
                 ", standardRoom: " + getStandardRoom() +
-                ", otherFacilities: " + getOtherFacilities() +
+                ", Floor: " + getFloor() +
                 ", areaPool: " + getAreaPool() +
-                ", floor: " + getFloor() +
+                ", OtherFacilities: " + getOtherFacilities() +
                 ']';
     }
 

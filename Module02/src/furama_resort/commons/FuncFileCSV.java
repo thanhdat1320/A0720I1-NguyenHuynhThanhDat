@@ -1,10 +1,8 @@
 package furama_resort.commons;
-
 import furama_resort.models.House;
 import furama_resort.models.Room;
 import furama_resort.models.Services;
 import furama_resort.models.Villa;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;

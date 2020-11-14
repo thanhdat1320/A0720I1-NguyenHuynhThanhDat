@@ -54,9 +54,9 @@ public class House extends Services {
                 ", Price: " + getPrice() +
                 ", Amount: " + getAmount() +
                 ", TypeRent: " + getTypeRents() +
-                ", standardRoom: " + getStandardRoom() +
-                ", otherFacilities: " + getOtherFacilities() +
-                ", floor: " + getFloor() +
+                ", StandardRoom: " + getStandardRoom() +
+                ", Floor: " + getFloor() +
+                ", OtherFacilities: " + getOtherFacilities() +
                 ']';
     }
 

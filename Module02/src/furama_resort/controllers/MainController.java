@@ -7,6 +7,7 @@ import furama_resort.models.Services;
 import furama_resort.models.Villa;
 
 import java.util.*;
+import java.util.regex.Pattern;
 
 public class MainController {
     static Scanner input = new Scanner(System.in);
@@ -16,6 +17,15 @@ public class MainController {
     static Set<String> nameVillaNotDuplicate = new TreeSet<>();
     static Set<String> nameHouseNotDuplicate = new TreeSet<>();
     static Set<String> nameRoomNotDuplicate = new TreeSet<>();
+
+    private static Villa villa = new Villa();
+    private static House house = new House();
+    private static Room room = new Room();
+
+    private static final Pattern REGEX_ID_VILLA = Pattern.compile("[S][V][V][L][-]\\d{4}");
+    private static final Pattern REGEX_ID_HOUSE = Pattern.compile("[S][V][H][O][-]\\d{4}");
+    private static final Pattern REGEX_ID_ROOM = Pattern.compile("[S][V][R][O][-]\\d{4}");
+    private static final Pattern REGEX_NAME_TYPE_RENTS_STANDARD = Pattern.compile("([A-Z])\\w+");
 
     public static void displayMainMenu() {
         System.out.println("=========== MAIN MENU ===========");
@@ -109,27 +119,17 @@ public class MainController {
 
     public static void addNewVilla() {
         villaList = FuncFileCSV.readFileCSV("villa");
-        Villa villa = new Villa();
 
-        System.out.print("Name: ");
-        villa.setName(input.nextLine());
-        System.out.print("ID: ");
-        villa.setId(input.nextLine());
-        System.out.print("Area: ");
-        villa.setArea(input.nextLine());
-        System.out.print("Amount: ");
-        villa.setAmount(input.nextLine());
-        System.out.print("Price: ");
-        villa.setPrice(input.nextLine());
-        System.out.print("Type Rents: ");
+        checkName("villa");
+        checkID("villa");
+        checkAreaAndPool("villa");
+        checkAmount("villa");
+        checkPrice("villa");
+        checkTypeRents("villa");
+        checkStandard("villa");
+        checkAreaAndPool("villa");
+        checkFloor("villa");
 
-        villa.setTypeRents(input.nextLine());
-        System.out.print("Standard Room: ");
-        villa.setStandardRoom(input.nextLine());
-        System.out.print("Area Pool: ");
-        villa.setAreaPool(input.nextLine());
-        System.out.print("Floor: ");
-        villa.setFloor(input.nextLine());
         System.out.print("Other Facilities: ");
         villa.setOtherFacilities(input.nextLine());
         villaList.add(villa);
@@ -141,25 +141,16 @@ public class MainController {
 
     public static void addNewHouse() {
         houseList = FuncFileCSV.readFileCSV("house");
-        House house = new House();
 
-        System.out.print("Name: ");
-        house.setName(input.nextLine());
-        System.out.print("ID: ");
-        house.setId(input.nextLine());
-        System.out.print("Area: ");
-        house.setArea(input.nextLine());
-        System.out.print("Amount: ");
-        house.setAmount(input.nextLine());
-        System.out.print("Price: ");
-        house.setPrice(input.nextLine());
-        System.out.print("Type Rents: ");
-        house.setTypeRents(input.nextLine());
+        checkName("house");
+        checkID("house");
+        checkAreaAndPool("house");
+        checkAmount("house");
+        checkPrice("house");
+        checkTypeRents("house");
+        checkStandard("house");
+        checkFloor("house");
 
-        System.out.print("Standard Room: ");
-        house.setStandardRoom(input.nextLine());
-        System.out.print("Floor: ");
-        house.setFloor(input.nextLine());
         System.out.print("Other Facilities: ");
         house.setOtherFacilities(input.nextLine());
         houseList.add(house);
@@ -171,20 +162,13 @@ public class MainController {
 
     public static void addNewRoom() {
         roomList = FuncFileCSV.readFileCSV("room");
-        Room room = new Room();
 
-        System.out.print("Name: ");
-        room.setName(input.nextLine());
-        System.out.print("ID: ");
-        room.setId(input.nextLine());
-        System.out.print("Area: ");
-        room.setArea(input.nextLine());
-        System.out.print("Amount: ");
-        room.setAmount(input.nextLine());
-        System.out.print("Price: ");
-        room.setPrice(input.nextLine());
-        System.out.print("Type Rents: ");
-        room.setTypeRents(input.nextLine());
+        checkName("room");
+        checkID("room");
+        checkAreaAndPool("room");
+        checkAmount("room");
+        checkPrice("room");
+        checkTypeRents("room");
 
         System.out.print("Free Service: ");
         room.setFreeService(input.nextLine());
@@ -194,6 +178,217 @@ public class MainController {
         System.out.println("\nAdd new Room completed!\n");
         FuncFileCSV.writeFileCSV(roomList, "room");
         addNewServices();
+    }
+
+    // Check Name
+    private static void checkName(String value) {
+        while (true) {
+            if (value.equals("villa")) {
+                System.out.print("Name: ");
+                String nameCheck = input.nextLine();
+                if (REGEX_NAME_TYPE_RENTS_STANDARD.matcher(nameCheck).matches()) {
+                    villa.setName(nameCheck);
+                    break;
+                }
+            } else if (value.equals("house")) {
+                System.out.print("Name: ");
+                String nameCheck = input.nextLine();
+                if (REGEX_NAME_TYPE_RENTS_STANDARD.matcher(nameCheck).matches()) {
+                    house.setName(nameCheck);
+                    break;
+                }
+            } else if (value.equals("room")) {
+                System.out.print("Name: ");
+                String nameCheck = input.nextLine();
+                if (REGEX_NAME_TYPE_RENTS_STANDARD.matcher(nameCheck).matches()) {
+                    room.setName(nameCheck);
+                    break;
+                }
+            }
+        }
+    }
+
+    // Check ID
+    private static void checkID(String value) {
+        while (true) {
+            if (value.equals("villa")) {
+                System.out.print("ID: ");
+                String checkID = input.nextLine();
+                if (REGEX_ID_VILLA.matcher(checkID).matches()) {
+                    villa.setId(checkID);
+                    break;
+                }
+            } else if (value.equals("house")) {
+                System.out.print("ID: ");
+                String checkID = input.nextLine();
+                if (REGEX_ID_HOUSE.matcher(checkID).matches()) {
+                    house.setId(checkID);
+                    break;
+                }
+            } else if (value.equals("room")) {
+                System.out.print("ID: ");
+                String checkID = input.nextLine();
+                if (REGEX_ID_ROOM.matcher(checkID).matches()) {
+                    room.setId(checkID);
+                    break;
+                }
+            }
+        }
+    }
+
+    // Check Area
+    private static void checkAreaAndPool(String value) {
+
+        while (true) {
+            if (value.equals("villa")) {
+                System.out.print("Area: ");
+                String area = input.nextLine();
+                if (Double.parseDouble(area) > 30) {
+                    villa.setArea(area);
+                    break;
+                }
+            } else if (value.equals("house")) {
+                System.out.print("Area: ");
+                String area = input.nextLine();
+                if (Double.parseDouble(area) > 30) {
+                    house.setArea(area);
+                    break;
+                }
+            } else if (value.equals("room")) {
+                System.out.print("Area: ");
+                String area = input.nextLine();
+                if (Double.parseDouble(area) > 30) {
+                    room.setArea(area);
+                    break;
+                }
+            }
+        }
+    }
+
+    // Check Amount
+    private static void checkAmount(String value) {
+        while (true) {
+            if (value.equals("villa")) {
+                System.out.print("Amount: ");
+                String amount = input.nextLine();
+                if (Double.parseDouble(amount) > 0 && Double.parseDouble(amount) < 20) {
+                    villa.setAmount(amount);
+                    break;
+                }
+            } else if (value.equals("house")) {
+                System.out.print("Amount: ");
+                String amount = input.nextLine();
+                if (Double.parseDouble(amount) > 0 && Double.parseDouble(amount) < 20) {
+                    house.setAmount(amount);
+                    break;
+                }
+            } else if (value.equals("room")) {
+                System.out.print("Amount: ");
+                String amount = input.nextLine();
+                if (Double.parseDouble(amount) > 0 && Double.parseDouble(amount) < 20) {
+                    room.setAmount(amount);
+                    break;
+                }
+            }
+        }
+    }
+
+    // Check Price
+    private static void checkPrice(String value) {
+        while (true) {
+            if (value.equals("villa")) {
+                System.out.print("Price: ");
+                String price = input.nextLine();
+                if (Double.parseDouble(price) > 0 || Integer.parseInt(price) > 0) {
+                    villa.setPrice(price);
+                    break;
+                }
+            } else if (value.equals("house")) {
+                System.out.print("Price: ");
+                String price = input.nextLine();
+                if (Double.parseDouble(price) > 0 || Integer.parseInt(price) > 0) {
+                    house.setPrice(price);
+                    break;
+                }
+            } else if (value.equals("room")) {
+                System.out.print("Price: ");
+                String price = input.nextLine();
+                if (Double.parseDouble(price) > 0 || Integer.parseInt(price) > 0) {
+                    room.setPrice(price);
+                    break;
+                }
+            }
+        }
+    }
+
+    // Check Floor
+    private static void checkFloor(String value) {
+        while (true) {
+            if (value.equals("villa")) {
+                System.out.print("Floor: ");
+                String floor = input.nextLine();
+                if (Integer.parseInt(floor) > 0) {
+                    villa.setFloor(floor);
+                    break;
+                }
+            } else if (value.equals("house")) {
+                System.out.print("Floor: ");
+                String floor = input.nextLine();
+                if (Integer.parseInt(floor) > 0) {
+                    house.setFloor(floor);
+                    break;
+                }
+            }
+        }
+    }
+
+    // Check TypeRents
+    private static void checkTypeRents(String value) {
+        while (true) {
+            if (value.equals("villa")) {
+                System.out.print("Type Rents: ");
+                String typeRents = input.nextLine();
+                if (REGEX_NAME_TYPE_RENTS_STANDARD.matcher(typeRents).matches()) {
+                    villa.setTypeRents(typeRents);
+                    break;
+                }
+            } else if (value.equals("house")) {
+                System.out.print("Type Rents: ");
+                String typeRents = input.nextLine();
+                if (REGEX_NAME_TYPE_RENTS_STANDARD.matcher(typeRents).matches()) {
+                    house.setTypeRents(typeRents);
+                    break;
+                }
+            } else if (value.equals("room")) {
+                System.out.print("Type Rents: ");
+                String typeRents = input.nextLine();
+                if (REGEX_NAME_TYPE_RENTS_STANDARD.matcher(typeRents).matches()) {
+                    room.setTypeRents(typeRents);
+                    break;
+                }
+            }
+        }
+    }
+
+    // Check Standard
+    private static void checkStandard(String value) {
+        while (true) {
+            if (value.equals("villa")) {
+                System.out.print("Standard Room: ");
+                String standard = input.nextLine();
+                if (REGEX_NAME_TYPE_RENTS_STANDARD.matcher(standard).matches()) {
+                    villa.setStandardRoom(standard);
+                    break;
+                }
+            } else if (value.equals("house")) {
+                System.out.print("Standard Room: ");
+                String standard = input.nextLine();
+                if (REGEX_NAME_TYPE_RENTS_STANDARD.matcher(standard).matches()) {
+                    house.setStandardRoom(standard);
+                    break;
+                }
+            }
+        }
     }
 
     public static void showServices() {
