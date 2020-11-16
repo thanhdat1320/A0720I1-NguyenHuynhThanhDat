@@ -6,15 +6,15 @@ import furama_resort.commons.FuncValidation;
 import furama_resort.models.*;
 
 import java.util.*;
-import java.util.regex.Pattern;
 
 public class MainController {
     static Scanner input = new Scanner(System.in);
+    static List<Customer> customerList = new ArrayList<>();
+
     static List<Services> villaList = new ArrayList<>();
     static List<Services> houseList = new ArrayList<>();
     static List<Services> roomList = new ArrayList<>();
-
-    static List<Customer> customerList = new ArrayList<>();
+    static List<Customer> bookingList = new ArrayList<>();
 
     static Set<String> nameVillaNotDuplicate = new TreeSet<>();
     static Set<String> nameHouseNotDuplicate = new TreeSet<>();
@@ -111,7 +111,6 @@ public class MainController {
     }
 
     public static void addNewVilla() {
-        villaList = FuncFileCSV.readFileCSV("villa");
         Villa villa = new Villa();
 
         String name;
@@ -192,7 +191,6 @@ public class MainController {
     }
 
     public static void addNewHouse() {
-        houseList = FuncFileCSV.readFileCSV("house");
         House house = new House();
 
         String name;
@@ -245,7 +243,7 @@ public class MainController {
         house.setStandardRoom(standard);
 
         String floor;
-        do{
+        do {
             System.out.print("Floor: ");
             floor = input.nextLine();
         } while (!FuncValidation.checkFloor(floor));
@@ -266,7 +264,6 @@ public class MainController {
     }
 
     public static void addNewRoom() {
-        roomList = FuncFileCSV.readFileCSV("room");
         Room room = new Room();
 
         String name;
@@ -425,7 +422,6 @@ public class MainController {
         displayMainMenu();
     }
 
-
     public static void addNewCustomer() {
         Customer customer = new Customer();
         System.out.print("Name: ");
@@ -464,17 +460,61 @@ public class MainController {
         for (Customer customer : customerList) {
             System.out.println((customerList.indexOf(customer) + 1) + ". " + (customer.showInfo()));
         }
+        System.out.print("Enter customer: ");
+        String choose = input.nextLine();
+        int index = Integer.parseInt(choose) - 1;
+        Customer customer = customerList.get(index);
+        System.out.println(customer);
+
+        System.out.println("1.Booking Villa");
+        System.out.println("1.Booking House");
+        System.out.println("1.Booking Room");
+        System.out.print("Your Choose: ");
+        String chooseBooking =  input.nextLine();
+
+        switch (chooseBooking) {
+            case "1": {
+                Services villa = selectServices(villaList);
+                if (bookingList.contains(customer)) {
+                    customer.setServices(villa);
+                } else {
+                    customer.setServices(villa);
+                    bookingList.add(customer);
+                }
+                break;
+            }
+            case "2": showAllHouse(); break;
+            case "3": showAllRoom(); break;
+        }
+        FuncFileCSV.writeFileCustomerToCSV(customerList);
+        FuncFileCSV.writeFileBookingToCSV(bookingList);
         displayMainMenu();
     }
+
+    public static Services selectServices(List<Services> list) {
+        for (Services services : list) {
+            System.out.println((list.indexOf(services) + 1) + ". " + (services.showInfo()));
+        }
+        System.out.print("Enter services: ");
+        String choose = input.nextLine();
+        int index = Integer.parseInt(choose) - 1;
+        Services services = list.get(index);
+        return services;
+    }
+
 
     public static void showInformationOfEmployee() {
     }
 
     public static void main(String[] args) {
+        villaList = FuncFileCSV.readFileCSV("villa");
+        houseList = FuncFileCSV.readFileCSV("house");
+        roomList = FuncFileCSV.readFileCSV("room");
         customerList = FuncFileCSV.readFileCustomer(villaList, "SVVL");
         customerList.addAll(FuncFileCSV.readFileCustomer(houseList, "SVHO"));
         customerList.addAll(FuncFileCSV.readFileCustomer(roomList, "SVRO"));
-        customerList.addAll(FuncFileCSV.readFileCustomer(roomList, "null"));
+        bookingList.addAll(customerList);
+        customerList.addAll(FuncFileCSV.readFileCustomer(null, "null"));
 
         displayMainMenu();
     }

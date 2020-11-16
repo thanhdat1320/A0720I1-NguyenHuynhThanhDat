@@ -9,19 +9,23 @@ import java.io.Writer;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
 
 public class FuncFileCSV {
     private static final String NEW_LINE_SEPARATOR = "\n";
+
     private static final String HEADER_VILLA = "Name,ID,Area,Amount,Price,TypeRents,StandardRoom,AreaPool,Floor,OtherFacilities";
     private static final String HEADER_HOUSE = "Name,ID,Area,Amount,Price,TypeRents,StandardRoom,Floor,OtherFacilities";
     private static final String HEADER_ROOM = "Name,ID,Area,Amount,Price,TypeRents,FreeService";
     private static final String HEADER_CUSTOMER = "Name,Birthday,Gender,IdCard,PhoneNumber,Email,TypeCustomer,Address,Services";
     private static final String FILE_VILLA = "src/furama_resort/data/Villa.csv";
+
     private static final String FILE_HOUSE = "src/furama_resort/data/House.csv";
     private static final String FILE_ROOM = "src/furama_resort/data/Room.csv";
     private static final String FILE_CUSTOMER = "src/furama_resort/data/Customer.csv";
+    private static final String FILE_BOOKING = "src/furama_resort/data/Booking.csv";
 
     public static <T> void writeFileCSV(List<T> list, String value) {
         FileWriter fileWriter = null;
@@ -173,7 +177,7 @@ public class FuncFileCSV {
         List<Customer> list = new ArrayList<>();
         Path path =  Paths.get(FILE_CUSTOMER);
 
-        if (Files.exists(path)) {
+        if (!Files.exists(path)) {
             try {
                 Writer writer = new FileWriter(FILE_CUSTOMER);
             } catch (Exception ex) {
@@ -219,6 +223,31 @@ public class FuncFileCSV {
             }
         }
         return list;
+    }
+
+    public static void writeFileBookingToCSV(List<Customer> listBooking) {
+        FileWriter fileWriter = null;
+
+        try {
+            fileWriter = new FileWriter(FILE_BOOKING);
+            fileWriter.append(HEADER_CUSTOMER);
+            fileWriter.append(NEW_LINE_SEPARATOR);
+
+            for (Customer customer : listBooking) {
+                fileWriter.append(customer.toString());
+                fileWriter.append(NEW_LINE_SEPARATOR);
+            }
+        } catch (Exception ex) {
+            System.out.println("ERROR IN WRITE CUSTOMER TO FILE CSV");
+        } finally {
+            try {
+                fileWriter.flush();
+                fileWriter.close();
+            } catch (Exception ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
+
     }
 }
 
