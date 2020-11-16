@@ -1,8 +1,7 @@
 package furama_resort.commons;
-import furama_resort.models.House;
-import furama_resort.models.Room;
-import furama_resort.models.Services;
-import furama_resort.models.Villa;
+
+import furama_resort.models.*;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -18,9 +17,11 @@ public class FuncFileCSV {
     private static final String HEADER_VILLA = "Name,ID,Area,Amount,Price,TypeRents,StandardRoom,AreaPool,Floor,OtherFacilities";
     private static final String HEADER_HOUSE = "Name,ID,Area,Amount,Price,TypeRents,StandardRoom,Floor,OtherFacilities";
     private static final String HEADER_ROOM = "Name,ID,Area,Amount,Price,TypeRents,FreeService";
+    private static final String HEADER_CUSTOMER = "Name,Birthday,Gender,IdCard,PhoneNumber,Email,TypeCustomer,Address,Services";
     private static final String FILE_VILLA = "src/furama_resort/data/Villa.csv";
     private static final String FILE_HOUSE = "src/furama_resort/data/House.csv";
     private static final String FILE_ROOM = "src/furama_resort/data/Room.csv";
+    private static final String FILE_CUSTOMER = "src/furama_resort/data/Customer.csv";
 
     public static <T> void writeFileCSV(List<T> list, String value) {
         FileWriter fileWriter = null;
@@ -45,13 +46,13 @@ public class FuncFileCSV {
                 fileWriter.append(NEW_LINE_SEPARATOR);
             }
         } catch (Exception ex) {
-            System.out.println("Error in FileWriteCSV ");
+            System.out.println("ERROR IN WRITE SERVICES TO FILE CSV");
         } finally {
             try {
                 fileWriter.flush();
                 fileWriter.close();
             } catch (Exception ex) {
-                System.out.println("Error when Flush or Close");
+                System.out.println("ERROR WHEN FLUSH OR CLOSE FILE CSV");
             }
         }
     }
@@ -87,7 +88,7 @@ public class FuncFileCSV {
 
             while ((line = brReader.readLine()) != null) {
                 String[] splitData = line.split(",");
-                if (splitData[0].equals("Name") ) {
+                if (splitData[0].equals("Name")) {
                     continue;
                 }
                 switch (value) {
@@ -142,6 +143,84 @@ public class FuncFileCSV {
         }
         return list;
     }
+
+    public static void writeFileCustomerToCSV(List<Customer> listCustomer) {
+        FileWriter fileWriter = null;
+
+        try {
+            fileWriter = new FileWriter(FILE_CUSTOMER);
+            fileWriter.append(HEADER_CUSTOMER);
+            fileWriter.append(NEW_LINE_SEPARATOR);
+
+            for (Customer customer : listCustomer) {
+                fileWriter.append(customer.toString());
+                fileWriter.append(NEW_LINE_SEPARATOR);
+            }
+        } catch (Exception ex) {
+            System.out.println("ERROR IN WRITE CUSTOMER TO FILE CSV");
+        } finally {
+            try {
+                fileWriter.flush();
+                fileWriter.close();
+            } catch (Exception ex) {
+                System.out.println("ERROR WHEN FLUSH OR CLOSE FILE CSV");
+            }
+        }
+    }
+
+    public static List<Customer> readFileCustomer(List<Services> servicesList, String servicesCode) {
+        BufferedReader brReader = null;
+        List<Customer> list = new ArrayList<>();
+        Path path =  Paths.get(FILE_CUSTOMER);
+
+        if (Files.exists(path)) {
+            try {
+                Writer writer = new FileWriter(FILE_CUSTOMER);
+            } catch (Exception ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
+
+        try {
+            brReader = new BufferedReader(new FileReader(FILE_CUSTOMER));
+            String line;
+            while ((line = brReader.readLine()) != null) {
+                String[] splitData = line.split(",");
+                if (splitData[0].equals("Name")) {
+                    continue;
+                }
+                Customer customer = new Customer();
+                customer.setName(splitData[0]);
+                customer.setBirthday(splitData[1]);
+                customer.setGender(splitData[2]);
+                customer.setIdCard(splitData[3]);
+                customer.setPhoneNumber(splitData[4]);
+                customer.setEmail(splitData[5]);
+                customer.setTypeCustomer(splitData[6]);
+                customer.setAddress(splitData[7]);
+                String serviceID = splitData[8];
+                if (serviceID.substring(0, 4).equals(servicesCode)) {
+                    for (Services services : servicesList) {
+                        if (services.getId().equals(serviceID)) {
+                            customer.setServices(services);
+                            list.add(customer);
+                            break;
+                        }
+                    }
+                }
+            }
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            try {
+                brReader.close();
+            } catch (Exception ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
+        return list;
+    }
 }
+
 
 

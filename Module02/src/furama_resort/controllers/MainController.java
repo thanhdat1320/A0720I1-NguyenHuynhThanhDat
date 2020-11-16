@@ -1,10 +1,9 @@
 package furama_resort.controllers;
 
+import furama_resort.commons.CustomerComparator;
 import furama_resort.commons.FuncFileCSV;
-import furama_resort.models.House;
-import furama_resort.models.Room;
-import furama_resort.models.Services;
-import furama_resort.models.Villa;
+import furama_resort.commons.FuncValidation;
+import furama_resort.models.*;
 
 import java.util.*;
 import java.util.regex.Pattern;
@@ -14,18 +13,12 @@ public class MainController {
     static List<Services> villaList = new ArrayList<>();
     static List<Services> houseList = new ArrayList<>();
     static List<Services> roomList = new ArrayList<>();
+
+    static List<Customer> customerList = new ArrayList<>();
+
     static Set<String> nameVillaNotDuplicate = new TreeSet<>();
     static Set<String> nameHouseNotDuplicate = new TreeSet<>();
     static Set<String> nameRoomNotDuplicate = new TreeSet<>();
-
-    private static Villa villa = new Villa();
-    private static House house = new House();
-    private static Room room = new Room();
-
-    private static final Pattern REGEX_ID_VILLA = Pattern.compile("[S][V][V][L][-]\\d{4}");
-    private static final Pattern REGEX_ID_HOUSE = Pattern.compile("[S][V][H][O][-]\\d{4}");
-    private static final Pattern REGEX_ID_ROOM = Pattern.compile("[S][V][R][O][-]\\d{4}");
-    private static final Pattern REGEX_NAME_TYPE_RENTS_STANDARD = Pattern.compile("([A-Z])\\w+");
 
     public static void displayMainMenu() {
         System.out.println("=========== MAIN MENU ===========");
@@ -119,19 +112,78 @@ public class MainController {
 
     public static void addNewVilla() {
         villaList = FuncFileCSV.readFileCSV("villa");
+        Villa villa = new Villa();
 
-        checkName("villa");
-        checkID("villa");
-        checkAreaAndPool("villa");
-        checkAmount("villa");
-        checkPrice("villa");
-        checkTypeRents("villa");
-        checkStandard("villa");
-        checkAreaAndPool("villa");
-        checkFloor("villa");
+        String name;
+        do {
+            System.out.print("Name: ");
+            name = input.nextLine();
+        } while (!FuncValidation.checkNameAndStandard(name));
+        villa.setName(name);
 
-        System.out.print("Other Facilities: ");
-        villa.setOtherFacilities(input.nextLine());
+        String checkID;
+        do {
+            System.out.print("ID: ");
+            checkID = input.nextLine();
+        } while (!FuncValidation.checkIDVilla(checkID));
+        villa.setId(checkID);
+
+        String checkArea;
+        do {
+            System.out.print("Area: ");
+            checkArea = input.nextLine();
+        } while (!FuncValidation.checkArea(checkArea));
+        villa.setArea(checkArea);
+
+        String amount;
+        do {
+            System.out.print("Amount: ");
+            amount = input.nextLine();
+        } while (!FuncValidation.checkAmount(amount));
+        villa.setAmount(amount);
+
+        String checkPrice;
+        do {
+            System.out.print("Price: ");
+            checkPrice = input.nextLine();
+        } while (!FuncValidation.checkPrice(checkPrice));
+        villa.setPrice(checkPrice);
+
+        String checkTypeRents;
+        do {
+            System.out.print("Type Rents: ");
+            checkTypeRents = input.nextLine();
+        } while (!FuncValidation.checkTypeRent(checkTypeRents));
+        villa.setTypeRents(checkTypeRents);
+
+        String standard;
+        do {
+            System.out.print("Standard Room: ");
+            standard = input.nextLine();
+        } while (!FuncValidation.checkNameAndStandard(standard));
+        villa.setStandardRoom(standard);
+
+        String checkAreaPool;
+        do {
+            System.out.print("Area Pool: ");
+            checkAreaPool = input.nextLine();
+        } while (!FuncValidation.checkArea(checkAreaPool));
+        villa.setAreaPool(checkAreaPool);
+
+        String floor;
+        do {
+            System.out.print("Floor: ");
+            floor = input.nextLine();
+        } while (!FuncValidation.checkFloor(floor));
+        villa.setFloor(floor);
+
+        String facilities;
+        do {
+            System.out.print("Other Facilities: ");
+            facilities = input.nextLine();
+        } while (!FuncValidation.checkFacilities(facilities));
+        villa.setOtherFacilities(facilities);
+
         villaList.add(villa);
 
         System.out.println("\nAdd new Villa completed!\n");
@@ -141,18 +193,71 @@ public class MainController {
 
     public static void addNewHouse() {
         houseList = FuncFileCSV.readFileCSV("house");
+        House house = new House();
 
-        checkName("house");
-        checkID("house");
-        checkAreaAndPool("house");
-        checkAmount("house");
-        checkPrice("house");
-        checkTypeRents("house");
-        checkStandard("house");
-        checkFloor("house");
+        String name;
+        do {
+            System.out.print("Name: ");
+            name = input.nextLine();
+        } while (!FuncValidation.checkNameAndStandard(name));
+        house.setName(name);
 
-        System.out.print("Other Facilities: ");
-        house.setOtherFacilities(input.nextLine());
+        String id;
+        do {
+            System.out.print("ID: ");
+            id = input.nextLine();
+        } while (!FuncValidation.checkIDHouse(id));
+        house.setId(id);
+
+        String area;
+        do {
+            System.out.print("Area: ");
+            area = input.nextLine();
+        } while (!FuncValidation.checkArea(area));
+        house.setArea(area);
+
+        String amount;
+        do {
+            System.out.print("Amount: ");
+            amount = input.nextLine();
+        } while (!FuncValidation.checkAmount(amount));
+        house.setAmount(amount);
+
+        String price;
+        do {
+            System.out.print("Price: ");
+            price = input.nextLine();
+        } while (!FuncValidation.checkPrice(price));
+        house.setPrice(price);
+
+        String typeRents;
+        do {
+            System.out.print("Type Rents: ");
+            typeRents = input.nextLine();
+        } while (!FuncValidation.checkTypeRent(typeRents));
+        house.setTypeRents(typeRents);
+
+        String standard;
+        do {
+            System.out.print("Standard Room: ");
+            standard = input.nextLine();
+        } while (!FuncValidation.checkNameAndStandard(standard));
+        house.setStandardRoom(standard);
+
+        String floor;
+        do{
+            System.out.print("Floor: ");
+            floor = input.nextLine();
+        } while (!FuncValidation.checkFloor(floor));
+        house.setFloor(floor);
+
+        String facilities;
+        do {
+            System.out.print("Other Facilities: ");
+            facilities = input.nextLine();
+        } while (!FuncValidation.checkFacilities(facilities));
+        house.setOtherFacilities(facilities);
+
         houseList.add(house);
 
         System.out.println("\nAdd new House completed!\n");
@@ -162,233 +267,62 @@ public class MainController {
 
     public static void addNewRoom() {
         roomList = FuncFileCSV.readFileCSV("room");
+        Room room = new Room();
 
-        checkName("room");
-        checkID("room");
-        checkAreaAndPool("room");
-        checkAmount("room");
-        checkPrice("room");
-        checkTypeRents("room");
+        String name;
+        do {
+            System.out.print("Name: ");
+            name = input.nextLine();
+        } while (!FuncValidation.checkNameAndStandard(name));
+        room.setName(name);
 
-        System.out.print("Free Service: ");
-        room.setFreeService(input.nextLine());
+        String id;
+        do {
+            System.out.print("ID: ");
+            id = input.nextLine();
+        } while (!FuncValidation.checkIDRoom(id));
+        room.setId(id);
+
+        String area;
+        do {
+            System.out.print("Area: ");
+            area = input.nextLine();
+        } while (!FuncValidation.checkArea(area));
+        room.setArea(area);
+
+        String amount;
+        do {
+            System.out.print("Amount: ");
+            amount = input.nextLine();
+        } while (!FuncValidation.checkAmount(amount));
+        room.setAmount(amount);
+
+        String price;
+        do {
+            System.out.print("Price: ");
+            price = input.nextLine();
+        } while (!FuncValidation.checkPrice(price));
+        room.setPrice(price);
+
+        String typeRents;
+        do {
+            System.out.print("Type Rents: ");
+            typeRents = input.nextLine();
+        } while (!FuncValidation.checkTypeRent(typeRents));
+        room.setTypeRents(typeRents);
+
+        String facilities;
+        do {
+            System.out.print("Other Facilities: ");
+            facilities = input.nextLine();
+        } while (!FuncValidation.checkFacilities(facilities));
+        room.setFreeService(facilities);
 
         roomList.add(room);
 
         System.out.println("\nAdd new Room completed!\n");
         FuncFileCSV.writeFileCSV(roomList, "room");
         addNewServices();
-    }
-
-    // Check Name
-    private static void checkName(String value) {
-        while (true) {
-            if (value.equals("villa")) {
-                System.out.print("Name: ");
-                String nameCheck = input.nextLine();
-                if (REGEX_NAME_TYPE_RENTS_STANDARD.matcher(nameCheck).matches()) {
-                    villa.setName(nameCheck);
-                    break;
-                }
-            } else if (value.equals("house")) {
-                System.out.print("Name: ");
-                String nameCheck = input.nextLine();
-                if (REGEX_NAME_TYPE_RENTS_STANDARD.matcher(nameCheck).matches()) {
-                    house.setName(nameCheck);
-                    break;
-                }
-            } else if (value.equals("room")) {
-                System.out.print("Name: ");
-                String nameCheck = input.nextLine();
-                if (REGEX_NAME_TYPE_RENTS_STANDARD.matcher(nameCheck).matches()) {
-                    room.setName(nameCheck);
-                    break;
-                }
-            }
-        }
-    }
-
-    // Check ID
-    private static void checkID(String value) {
-        while (true) {
-            if (value.equals("villa")) {
-                System.out.print("ID: ");
-                String checkID = input.nextLine();
-                if (REGEX_ID_VILLA.matcher(checkID).matches()) {
-                    villa.setId(checkID);
-                    break;
-                }
-            } else if (value.equals("house")) {
-                System.out.print("ID: ");
-                String checkID = input.nextLine();
-                if (REGEX_ID_HOUSE.matcher(checkID).matches()) {
-                    house.setId(checkID);
-                    break;
-                }
-            } else if (value.equals("room")) {
-                System.out.print("ID: ");
-                String checkID = input.nextLine();
-                if (REGEX_ID_ROOM.matcher(checkID).matches()) {
-                    room.setId(checkID);
-                    break;
-                }
-            }
-        }
-    }
-
-    // Check Area
-    private static void checkAreaAndPool(String value) {
-
-        while (true) {
-            if (value.equals("villa")) {
-                System.out.print("Area: ");
-                String area = input.nextLine();
-                if (Double.parseDouble(area) > 30) {
-                    villa.setArea(area);
-                    break;
-                }
-            } else if (value.equals("house")) {
-                System.out.print("Area: ");
-                String area = input.nextLine();
-                if (Double.parseDouble(area) > 30) {
-                    house.setArea(area);
-                    break;
-                }
-            } else if (value.equals("room")) {
-                System.out.print("Area: ");
-                String area = input.nextLine();
-                if (Double.parseDouble(area) > 30) {
-                    room.setArea(area);
-                    break;
-                }
-            }
-        }
-    }
-
-    // Check Amount
-    private static void checkAmount(String value) {
-        while (true) {
-            if (value.equals("villa")) {
-                System.out.print("Amount: ");
-                String amount = input.nextLine();
-                if (Double.parseDouble(amount) > 0 && Double.parseDouble(amount) < 20) {
-                    villa.setAmount(amount);
-                    break;
-                }
-            } else if (value.equals("house")) {
-                System.out.print("Amount: ");
-                String amount = input.nextLine();
-                if (Double.parseDouble(amount) > 0 && Double.parseDouble(amount) < 20) {
-                    house.setAmount(amount);
-                    break;
-                }
-            } else if (value.equals("room")) {
-                System.out.print("Amount: ");
-                String amount = input.nextLine();
-                if (Double.parseDouble(amount) > 0 && Double.parseDouble(amount) < 20) {
-                    room.setAmount(amount);
-                    break;
-                }
-            }
-        }
-    }
-
-    // Check Price
-    private static void checkPrice(String value) {
-        while (true) {
-            if (value.equals("villa")) {
-                System.out.print("Price: ");
-                String price = input.nextLine();
-                if (Double.parseDouble(price) > 0 || Integer.parseInt(price) > 0) {
-                    villa.setPrice(price);
-                    break;
-                }
-            } else if (value.equals("house")) {
-                System.out.print("Price: ");
-                String price = input.nextLine();
-                if (Double.parseDouble(price) > 0 || Integer.parseInt(price) > 0) {
-                    house.setPrice(price);
-                    break;
-                }
-            } else if (value.equals("room")) {
-                System.out.print("Price: ");
-                String price = input.nextLine();
-                if (Double.parseDouble(price) > 0 || Integer.parseInt(price) > 0) {
-                    room.setPrice(price);
-                    break;
-                }
-            }
-        }
-    }
-
-    // Check Floor
-    private static void checkFloor(String value) {
-        while (true) {
-            if (value.equals("villa")) {
-                System.out.print("Floor: ");
-                String floor = input.nextLine();
-                if (Integer.parseInt(floor) > 0) {
-                    villa.setFloor(floor);
-                    break;
-                }
-            } else if (value.equals("house")) {
-                System.out.print("Floor: ");
-                String floor = input.nextLine();
-                if (Integer.parseInt(floor) > 0) {
-                    house.setFloor(floor);
-                    break;
-                }
-            }
-        }
-    }
-
-    // Check TypeRents
-    private static void checkTypeRents(String value) {
-        while (true) {
-            if (value.equals("villa")) {
-                System.out.print("Type Rents: ");
-                String typeRents = input.nextLine();
-                if (REGEX_NAME_TYPE_RENTS_STANDARD.matcher(typeRents).matches()) {
-                    villa.setTypeRents(typeRents);
-                    break;
-                }
-            } else if (value.equals("house")) {
-                System.out.print("Type Rents: ");
-                String typeRents = input.nextLine();
-                if (REGEX_NAME_TYPE_RENTS_STANDARD.matcher(typeRents).matches()) {
-                    house.setTypeRents(typeRents);
-                    break;
-                }
-            } else if (value.equals("room")) {
-                System.out.print("Type Rents: ");
-                String typeRents = input.nextLine();
-                if (REGEX_NAME_TYPE_RENTS_STANDARD.matcher(typeRents).matches()) {
-                    room.setTypeRents(typeRents);
-                    break;
-                }
-            }
-        }
-    }
-
-    // Check Standard
-    private static void checkStandard(String value) {
-        while (true) {
-            if (value.equals("villa")) {
-                System.out.print("Standard Room: ");
-                String standard = input.nextLine();
-                if (REGEX_NAME_TYPE_RENTS_STANDARD.matcher(standard).matches()) {
-                    villa.setStandardRoom(standard);
-                    break;
-                }
-            } else if (value.equals("house")) {
-                System.out.print("Standard Room: ");
-                String standard = input.nextLine();
-                if (REGEX_NAME_TYPE_RENTS_STANDARD.matcher(standard).matches()) {
-                    house.setStandardRoom(standard);
-                    break;
-                }
-            }
-        }
     }
 
     public static void showServices() {
@@ -447,7 +381,6 @@ public class MainController {
     }
 
     public static void showAllVilla() {
-        villaList = FuncFileCSV.readFileCSV("villa");
         for (Services villa : villaList) {
             System.out.println(villa.showInfo());
         }
@@ -455,7 +388,6 @@ public class MainController {
     }
 
     public static void showAllHouse() {
-        houseList = FuncFileCSV.readFileCSV("house");
         for (Services house : houseList) {
             System.out.println(house.showInfo());
         }
@@ -463,7 +395,6 @@ public class MainController {
     }
 
     public static void showAllRoom() {
-        houseList = FuncFileCSV.readFileCSV("room");
         for (Services room : roomList) {
             System.out.println(room.showInfo());
         }
@@ -471,7 +402,6 @@ public class MainController {
     }
 
     public static void showNameVilla() {
-        villaList = FuncFileCSV.readFileCSV("villa");
         for (Services nameVilla : villaList) {
             nameVillaNotDuplicate.add(nameVilla.getName());
         }
@@ -480,7 +410,6 @@ public class MainController {
     }
 
     public static void showNameHouse() {
-        houseList = FuncFileCSV.readFileCSV("house");
         for (Services nameHouse : houseList) {
             nameHouseNotDuplicate.add(nameHouse.getName());
         }
@@ -489,7 +418,6 @@ public class MainController {
     }
 
     public static void showNameRoom() {
-        roomList = FuncFileCSV.readFileCSV("room");
         for (Services nameRoom : roomList) {
             nameRoomNotDuplicate.add(nameRoom.getName());
         }
@@ -499,18 +427,55 @@ public class MainController {
 
 
     public static void addNewCustomer() {
+        Customer customer = new Customer();
+        System.out.print("Name: ");
+        customer.setName(input.nextLine());
+        System.out.print("Birthday: ");
+        customer.setBirthday(input.nextLine());
+        System.out.print("Gender: ");
+        customer.setGender(input.nextLine());
+        System.out.print("IdCard: ");
+        customer.setIdCard(input.nextLine());
+        System.out.print("PhoneNumber: ");
+        customer.setPhoneNumber(input.nextLine());
+        System.out.print("Email: ");
+        customer.setEmail(input.nextLine());
+        System.out.print("TypeCustomer: ");
+        customer.setTypeCustomer(input.nextLine());
+        System.out.print("Address: ");
+        customer.setAddress(input.nextLine());
+        customer.setServices(null);
+
+        customerList.add(customer);
+        FuncFileCSV.writeFileCustomerToCSV(customerList);
+        displayMainMenu();
     }
 
     public static void showCustomer() {
+        Comparator<Customer> customerComparator = new CustomerComparator();
+        Collections.sort(customerList, customerComparator);
+        for (Customer customer : customerList) {
+            System.out.println(customer.showInfo());
+        }
+        displayMainMenu();
     }
 
     public static void addNewBooking() {
+        for (Customer customer : customerList) {
+            System.out.println((customerList.indexOf(customer) + 1) + ". " + (customer.showInfo()));
+        }
+        displayMainMenu();
     }
 
     public static void showInformationOfEmployee() {
     }
 
     public static void main(String[] args) {
+        customerList = FuncFileCSV.readFileCustomer(villaList, "SVVL");
+        customerList.addAll(FuncFileCSV.readFileCustomer(houseList, "SVHO"));
+        customerList.addAll(FuncFileCSV.readFileCustomer(roomList, "SVRO"));
+        customerList.addAll(FuncFileCSV.readFileCustomer(roomList, "null"));
+
         displayMainMenu();
     }
 
