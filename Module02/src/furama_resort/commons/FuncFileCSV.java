@@ -11,7 +11,9 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.sql.SQLOutput;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 public class FuncFileCSV {
     private static final String NEW_LINE_SEPARATOR = "\n";
@@ -26,8 +28,9 @@ public class FuncFileCSV {
     private static final String FILE_ROOM = "src/furama_resort/data/Room.csv";
     private static final String FILE_CUSTOMER = "src/furama_resort/data/Customer.csv";
     private static final String FILE_BOOKING = "src/furama_resort/data/Booking.csv";
+    private static final String FILE_EMPLOYEE = "src/furama_resort/data/Employee.csv";
 
-    public static <T> void writeFileCSV(List<T> list, String value) {
+    public static <T> void writeServicesFileCSV(List<T> list, String value) {
         FileWriter fileWriter = null;
 
         try {
@@ -61,7 +64,7 @@ public class FuncFileCSV {
         }
     }
 
-    public static List<Services> readFileCSV(String value) {
+    public static List<Services> readServicesFileCSV(String value) {
         BufferedReader brReader = null;
         List<Services> list = new ArrayList<>();
         String filePath = null;
@@ -175,7 +178,7 @@ public class FuncFileCSV {
     public static List<Customer> readFileCustomer(List<Services> servicesList, String servicesCode) {
         BufferedReader brReader = null;
         List<Customer> list = new ArrayList<>();
-        Path path =  Paths.get(FILE_CUSTOMER);
+        Path path = Paths.get(FILE_CUSTOMER);
 
         if (!Files.exists(path)) {
             try {
@@ -249,7 +252,48 @@ public class FuncFileCSV {
         }
 
     }
+
+    public static Map<String, Employee> readFileEmployee() {
+        BufferedReader brReader = null;
+        Map<String, Employee> employeeMap = new LinkedHashMap<>();
+        Path path = Paths.get(FILE_EMPLOYEE);
+
+        if (!Files.exists(path)) {
+            try {
+                Writer writer = new FileWriter(FILE_EMPLOYEE);
+            } catch (Exception ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
+
+        try {
+            brReader = new BufferedReader(new FileReader(FILE_EMPLOYEE));
+            String line;
+            while ((line = brReader.readLine()) != null) {
+                String[] splitdata = line.split(",");
+                if (splitdata[0].equals("Name")) {
+                    continue;
+                }
+                Employee employee = new Employee();
+                employee.setName(splitdata[0]);
+                employee.setAge(Integer.parseInt(splitdata[1]));
+                employee.setAddress(splitdata[2]);
+                String idEmployee = String.format("NV%d", employeeMap.size() + 1);
+                employeeMap.put(idEmployee,employee);
+            }
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            try {
+                brReader.close();
+            }catch (Exception ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
+        return employeeMap;
+    }
 }
+
 
 
 

@@ -20,6 +20,8 @@ public class MainController {
     static Set<String> nameHouseNotDuplicate = new TreeSet<>();
     static Set<String> nameRoomNotDuplicate = new TreeSet<>();
 
+    static Map<String, Employee> employeeMap = new LinkedHashMap<>();
+
     public static void displayMainMenu() {
         System.out.println("=========== MAIN MENU ===========");
         System.out.println("1. Add New Services");
@@ -186,7 +188,7 @@ public class MainController {
         villaList.add(villa);
 
         System.out.println("\nAdd new Villa completed!\n");
-        FuncFileCSV.writeFileCSV(villaList, "villa");
+        FuncFileCSV.writeServicesFileCSV(villaList, "villa");
         addNewServices();
     }
 
@@ -259,7 +261,7 @@ public class MainController {
         houseList.add(house);
 
         System.out.println("\nAdd new House completed!\n");
-        FuncFileCSV.writeFileCSV(houseList, "house");
+        FuncFileCSV.writeServicesFileCSV(houseList, "house");
         addNewServices();
     }
 
@@ -318,7 +320,7 @@ public class MainController {
         roomList.add(room);
 
         System.out.println("\nAdd new Room completed!\n");
-        FuncFileCSV.writeFileCSV(roomList, "room");
+        FuncFileCSV.writeServicesFileCSV(roomList, "room");
         addNewServices();
     }
 
@@ -483,8 +485,26 @@ public class MainController {
                 }
                 break;
             }
-            case "2": showAllHouse(); break;
-            case "3": showAllRoom(); break;
+            case "2": {
+                Services house = selectServices(houseList);
+                if (bookingList.contains(customer)) {
+                    customer.setServices(house);
+                } else {
+                    customer.setServices(house);
+                    bookingList.add(customer);
+                }
+                break;
+            }
+            case "3": {
+                Services room = selectServices(roomList);
+                if (bookingList.contains(customer)) {
+                    customer.setServices(room);
+                } else {
+                    customer.setServices(room);
+                    bookingList.add(customer);
+                }
+                break;
+            }
         }
         FuncFileCSV.writeFileCustomerToCSV(customerList);
         FuncFileCSV.writeFileBookingToCSV(bookingList);
@@ -502,20 +522,24 @@ public class MainController {
         return services;
     }
 
-
     public static void showInformationOfEmployee() {
+        for (Map.Entry<String, Employee> entry : employeeMap.entrySet()) {
+            System.out.println(entry.getKey() + " " + entry.getValue());
+        }
+        displayMainMenu();
     }
 
     public static void main(String[] args) {
-        villaList = FuncFileCSV.readFileCSV("villa");
-        houseList = FuncFileCSV.readFileCSV("house");
-        roomList = FuncFileCSV.readFileCSV("room");
+        villaList = FuncFileCSV.readServicesFileCSV("villa");
+        houseList = FuncFileCSV.readServicesFileCSV("house");
+        roomList = FuncFileCSV.readServicesFileCSV("room");
         customerList = FuncFileCSV.readFileCustomer(villaList, "SVVL");
         customerList.addAll(FuncFileCSV.readFileCustomer(houseList, "SVHO"));
         customerList.addAll(FuncFileCSV.readFileCustomer(roomList, "SVRO"));
         bookingList.addAll(customerList);
         customerList.addAll(FuncFileCSV.readFileCustomer(null, "null"));
 
+        employeeMap = FuncFileCSV.readFileEmployee();
         displayMainMenu();
     }
 

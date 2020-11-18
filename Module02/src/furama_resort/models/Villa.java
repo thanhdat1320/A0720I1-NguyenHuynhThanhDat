@@ -51,7 +51,7 @@ public class Villa extends Services {
 
     public String getFloor() {
         return floor;
-    }
+    } 
 
     public void setFloor(String floor) {
         this.floor = floor;

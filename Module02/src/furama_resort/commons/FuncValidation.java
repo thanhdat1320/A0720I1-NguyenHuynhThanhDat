@@ -63,7 +63,7 @@ public class FuncValidation {
         return facilities.matches(regex);
     }
 
-    public static boolean checkFloor (String floor) {
+    public static boolean checkFloor(String floor) {
         int floorNum;
         try {
             floorNum = Integer.parseInt(floor);
