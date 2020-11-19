@@ -1,3 +1,4 @@
 Name,ID,Area,Amount,Price,TypeRents,StandardRoom,AreaPool,Floor,OtherFacilities
-Happy,SVVL-0222,30.5,9,30,day,Sascas,30.5,8,food
-Cool,SVVL-1234,30.5,8,30,month,Sasc,60,9,food
+Happy Villa,SVVL-0002,30.5,9,30.6,day,Game,30.5,9,food
+Cool Viila,SVVL-2220,305,5,305,hour,Aasc,306,9,food
+Beau Villa,SVVL-0005,30.5,5,305,day,Scsc,30.5,9,food

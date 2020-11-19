@@ -217,7 +217,7 @@ public class FuncFileCSV {
                 }
             }
         } catch (Exception ex) {
-            System.out.println(ex.getMessage());
+            System.out.println("");
         } finally {
             try {
                 brReader.close();
@@ -252,7 +252,6 @@ public class FuncFileCSV {
         }
 
     }
-
     public static Map<String, Employee> readFileEmployee() {
         BufferedReader brReader = null;
         Map<String, Employee> employeeMap = new LinkedHashMap<>();

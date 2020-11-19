@@ -533,6 +533,7 @@ public class MainController {
         villaList = FuncFileCSV.readServicesFileCSV("villa");
         houseList = FuncFileCSV.readServicesFileCSV("house");
         roomList = FuncFileCSV.readServicesFileCSV("room");
+
         customerList = FuncFileCSV.readFileCustomer(villaList, "SVVL");
         customerList.addAll(FuncFileCSV.readFileCustomer(houseList, "SVHO"));
         customerList.addAll(FuncFileCSV.readFileCustomer(roomList, "SVRO"));
@@ -542,7 +543,5 @@ public class MainController {
         employeeMap = FuncFileCSV.readFileEmployee();
         displayMainMenu();
     }
-
-
 }
 
