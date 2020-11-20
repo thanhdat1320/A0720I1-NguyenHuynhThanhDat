@@ -1,5 +1,6 @@
 package furama_resort.controllers;
 
+import furama_resort.Exception.*;
 import furama_resort.commons.CustomerComparator;
 import furama_resort.commons.FuncFileCSV;
 import furama_resort.commons.FuncValidation;
@@ -426,18 +427,49 @@ public class MainController {
 
     public static void addNewCustomer() {
         Customer customer = new Customer();
-        System.out.print("Name: ");
-        customer.setName(input.nextLine());
-        System.out.print("Birthday: ");
-        customer.setBirthday(input.nextLine());
-        System.out.print("Gender: ");
-        customer.setGender(input.nextLine());
-        System.out.print("IdCard: ");
-        customer.setIdCard(input.nextLine());
-        System.out.print("PhoneNumber: ");
-        customer.setPhoneNumber(input.nextLine());
-        System.out.print("Email: ");
-        customer.setEmail(input.nextLine());
+
+        String name;
+        do {
+            System.out.print("Name: ");
+             name = input.nextLine();
+        } while (!NameException.checkName(name));
+        customer.setName(name);
+
+        String birthday;
+        do {
+            System.out.print("Birthday: ");
+            birthday = input.nextLine();
+        } while (!BirthdayException.checkBirthday(birthday));
+        customer.setBirthday(birthday);
+
+        String gender;
+        do {
+            System.out.print("Gender: ");
+            gender = input.nextLine();
+        }while (!GenderException.checkGender(gender));
+        customer.setGender(gender);
+
+        String id;
+        do {
+            System.out.print("IdCard: ");
+            id = input.nextLine();
+        }while (!IdCardException.checkID(id));
+        customer.setIdCard(id);
+
+        String number;
+        do {
+            System.out.print("PhoneNumber: ");
+            number = input.nextLine();
+        } while (!PhoneNumberException.checkPhoneNumber(number));
+        customer.setPhoneNumber(number);
+
+        String email;
+        do {
+            System.out.print("Email: ");
+            email = input.nextLine();
+        } while (EmailException.checkEmail(email));
+        customer.setEmail(email);
+
         System.out.print("TypeCustomer: ");
         customer.setTypeCustomer(input.nextLine());
         System.out.print("Address: ");
