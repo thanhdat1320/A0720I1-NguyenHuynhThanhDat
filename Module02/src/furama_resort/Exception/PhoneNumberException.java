@@ -7,6 +7,7 @@ public class PhoneNumberException extends UserException {
 
     public static boolean checkPhoneNumber(String number) {
         String regex = "^(090|091|\\(84\\)\\+90|\\(84\\)\\+91)[\\d]{7}$";
+//        String regex = "^$";
         boolean check = number.matches(regex);
         try {
             if (!check) {

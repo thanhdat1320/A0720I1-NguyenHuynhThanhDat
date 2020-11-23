@@ -9,7 +9,7 @@ public class BirthdayException extends UserException {
     }
 
     public static boolean checkBirthday(String birthdayCheck) {
-        String regex = "^(0[1-9]|1[012])[-/.](0[1-9]|[12][0-9]|3[01])[-/.](19|20)\\d\\d$";
+        String regex = "^[\\d]{2}/[\\d]{2}/[\\d]{4}$";
         boolean check = birthdayCheck.matches(regex);
         try {
             if (check) {
@@ -19,7 +19,7 @@ public class BirthdayException extends UserException {
                 LocalDate today = LocalDate.now();
                 LocalDate birthday = null;
                 try {
-                    birthday = LocalDate.of(day, month, year);
+                    birthday = LocalDate.of(year, month, day);
                 } catch (Exception ex) {
                     System.out.println(ex.getMessage());
                 }

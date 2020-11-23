@@ -83,6 +83,7 @@ public class MainController {
         System.out.print("Price: ");
         product.setPrice(Integer.parseInt(input.nextLine()));
 
+        // id tu tang
         if (listProduct.isEmpty()) {
             product.setId(0);
         } else {
@@ -108,6 +109,7 @@ public class MainController {
                 String name = input.nextLine();
                 Product product = searchNameProduct(name);
                 listProduct.remove(product);
+                FuncFileCSV.writeProductToFileCSV(listProduct);
                 break;
             }
             case "2": {
@@ -115,6 +117,7 @@ public class MainController {
                 int id = Integer.parseInt(input.nextLine());
                 Product product = searchIDProduct(id);
                 listProduct.remove(product);
+                FuncFileCSV.writeProductToFileCSV(listProduct);
                 break;
             }
             default: {
@@ -140,6 +143,7 @@ public class MainController {
                 System.out.print("Name you edit: ");
                 String newName = input.nextLine();
                 product.setName(newName);
+                FuncFileCSV.writeProductToFileCSV(listProduct);
                 displayProduct();
                 break;
             }
@@ -150,6 +154,7 @@ public class MainController {
                 System.out.print("Price you edit: ");
                 int newPrice = input.nextInt();
                 product.setPrice(newPrice);
+                FuncFileCSV.writeProductToFileCSV(listProduct);
                 displayProduct();
                 break;
             }
@@ -227,6 +232,7 @@ public class MainController {
     }
 
     public static void main(String[] args) {
+        listProduct = FuncFileCSV.readFileCSVProduct();
         mainMenu();
     }
 }

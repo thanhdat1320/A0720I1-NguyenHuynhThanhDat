@@ -431,7 +431,7 @@ public class MainController {
         String name;
         do {
             System.out.print("Name: ");
-             name = input.nextLine();
+            name = input.nextLine();
         } while (!NameException.checkName(name));
         customer.setName(name);
 
@@ -446,14 +446,14 @@ public class MainController {
         do {
             System.out.print("Gender: ");
             gender = input.nextLine();
-        }while (!GenderException.checkGender(gender));
+        } while (!GenderException.checkGender(gender));
         customer.setGender(gender);
 
         String id;
         do {
             System.out.print("IdCard: ");
             id = input.nextLine();
-        }while (!IdCardException.checkID(id));
+        } while (!IdCardException.checkID(id));
         customer.setIdCard(id);
 
         String number;
@@ -467,7 +467,7 @@ public class MainController {
         do {
             System.out.print("Email: ");
             email = input.nextLine();
-        } while (EmailException.checkEmail(email));
+        } while (!EmailException.checkEmail(email));
         customer.setEmail(email);
 
         System.out.print("TypeCustomer: ");
@@ -504,7 +504,7 @@ public class MainController {
         System.out.println("1.Booking House");
         System.out.println("1.Booking Room");
         System.out.print("Your Choose: ");
-        String chooseBooking =  input.nextLine();
+        String chooseBooking = input.nextLine();
 
         switch (chooseBooking) {
             case "1": {
@@ -570,7 +570,7 @@ public class MainController {
         customerList.addAll(FuncFileCSV.readFileCustomer(houseList, "SVHO"));
         customerList.addAll(FuncFileCSV.readFileCustomer(roomList, "SVRO"));
         bookingList.addAll(customerList);
-        customerList.addAll(FuncFileCSV.readFileCustomer(null, "null"));
+//        customerList.addAll(FuncFileCSV.readFileCustomer(null, "null"));
 
         employeeMap = FuncFileCSV.readFileEmployee();
         displayMainMenu();

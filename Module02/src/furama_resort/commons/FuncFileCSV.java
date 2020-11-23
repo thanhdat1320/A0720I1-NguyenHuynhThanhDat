@@ -80,6 +80,8 @@ public class FuncFileCSV {
                 filePath = FILE_ROOM;
                 break;
         }
+
+        // check file is exit
         Path path = Paths.get(filePath);
         if (!Files.exists(path)) {
             try {
@@ -252,6 +254,7 @@ public class FuncFileCSV {
         }
 
     }
+
     public static Map<String, Employee> readFileEmployee() {
         BufferedReader brReader = null;
         Map<String, Employee> employeeMap = new LinkedHashMap<>();
@@ -278,14 +281,14 @@ public class FuncFileCSV {
                 employee.setAge(Integer.parseInt(splitdata[1]));
                 employee.setAddress(splitdata[2]);
                 String idEmployee = String.format("NV%d", employeeMap.size() + 1);
-                employeeMap.put(idEmployee,employee);
+                employeeMap.put(idEmployee, employee);
             }
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         } finally {
             try {
                 brReader.close();
-            }catch (Exception ex) {
+            } catch (Exception ex) {
                 System.out.println(ex.getMessage());
             }
         }

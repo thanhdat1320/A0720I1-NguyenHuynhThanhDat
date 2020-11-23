@@ -105,7 +105,7 @@ public class Customer {
         int day = Integer.parseInt(this.birthday.substring(0,2));
         int month = Integer.parseInt(this.birthday.substring(3,5));
         int year = Integer.parseInt(this.birthday.substring(6,10));
-        Date date = new Date(day, month, year);
+        Date date = new Date(year, month, day);
         return date;
     }
 

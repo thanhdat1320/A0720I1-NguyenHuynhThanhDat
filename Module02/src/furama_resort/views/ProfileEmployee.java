@@ -49,14 +49,27 @@ public class ProfileEmployee {
         for (Map.Entry<String, Employee> entry : employeeMap.entrySet()) {
             employeeStack.add(entry.getValue());
         }
-        for (Employee employee : employeeStack) {
+//        for (Employee employee : employeeStack) {
+//            if (name.equals(employee.getName())) {
+//                System.out.println(employee.toString());
+//            } else {
+//                System.out.println("Don't have");
+//            }
+//            break;
+//        }
+        boolean flag = false;
+        while (!employeeStack.isEmpty()) {
+            Employee employee = employeeStack.pop();
             if (name.equals(employee.getName())) {
                 System.out.println(employee.toString());
-            } else {
-                System.out.println("Don't have");
+                flag = true;
+                break;
             }
-            break;
         }
+        if (!flag) {
+            System.out.println("Don't Have");
+        }
+
         displayMainMenu();
     }
 
