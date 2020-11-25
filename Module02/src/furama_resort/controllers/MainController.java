@@ -550,8 +550,7 @@ public class MainController {
         System.out.print("Enter services: ");
         String choose = input.nextLine();
         int index = Integer.parseInt(choose) - 1;
-        Services services = list.get(index);
-        return services;
+        return list.get(index);
     }
 
     public static void showInformationOfEmployee() {

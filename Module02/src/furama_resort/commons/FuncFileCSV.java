@@ -219,7 +219,6 @@ public class FuncFileCSV {
                 }
             }
         } catch (Exception ex) {
-            System.out.println("");
         } finally {
             try {
                 brReader.close();
