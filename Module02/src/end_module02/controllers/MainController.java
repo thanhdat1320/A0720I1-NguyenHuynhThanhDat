@@ -77,7 +77,7 @@ public class MainController {
             default: {
                 System.out.println("Fail! Please choose again! Enter to continue.");
                 input.nextLine();
-                displayMainMenu();
+                themMoiSoTietKiem();
             }
         }
     }
@@ -202,8 +202,13 @@ public class MainController {
                 for (SoTietKiem soTietKiem : ListSotietKiemVoThoiHan) {
                     System.out.println(soTietKiem.toString());
                 }
+                break;
             }
-            break;
+            default: {
+                System.out.println("Fail Enter to continue");
+                input.nextLine();
+                danhSachSoTietKiem();
+            }
         }
 
         displayMainMenu();

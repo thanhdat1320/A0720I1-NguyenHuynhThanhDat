@@ -19,11 +19,11 @@ public class Validate {
     }
 
     public static boolean checkLaiSuat(String str) {
-        regex = "^\\d%$";
+        regex = "^\\d+%$";
         return str.matches(regex);
     }
     public static boolean checkMaKhachHang(String str) {
-        regex = "^KH-\\d{3}\\s\\d{3}\\s\\d{3}$";
+        regex = "^KV-\\d{3}\\s\\d{3}\\s\\d{3}$";
         return str.matches(regex);
     }
 

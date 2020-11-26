@@ -17,8 +17,8 @@ import java.util.List;
 
 public class DocGhiFile {
     private static final String NEW_LINE_SEPARATOR = "\n";
-    private static final String HEADER_DAI_HAN = "maSo,maKhachHang,NgayMoSo,ThoiGainBatDau,SoTieuGui,LaiSuat,KyHan,UuDai";
-    private static final String HEADER_VO_THOI_HAN = "maSo,maKhachHang,NgayMoSo,SoTieuGui,kyhan";
+    private static final String HEADER_DAI_HAN = "MaSO,maKhachHang,NgayMoSo,ThoiGainBatDau,SoTieuGui,LaiSuat,KyHan,UuDai";
+    private static final String HEADER_VO_THOI_HAN = "MsSo,maKhachHang,NgayMoSo,SoTieuGui,LaiSuat";
 
     private static final String FILE_DAI_HAN = "src/end_module02/data/SoTietKiemDaiHan.csv";
     private static final String FILE_VO_THOI_HAN = "src/end_module02/data/SoTietKiemVoThoiHan.csv";
