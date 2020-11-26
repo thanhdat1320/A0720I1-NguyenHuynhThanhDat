@@ -1,5 +1,6 @@
 package end_module02.controllers;
 
+import end_module02.Exception.MaSoTietKiemException;
 import end_module02.commons.DocGhiFile;
 import end_module02.commons.Validate;
 import end_module02.models.SoTietKiem;
@@ -224,13 +225,24 @@ public class MainController {
                 for (SoTietKiem soTietKiem : listSotietKiemDaiHan) {
                     System.out.println(soTietKiem.toString());
                 }
-                System.out.print("Nhap ma so muon xoa: ");
-                String maSo = input.nextLine();
+
+                String maSo;
+                do {
+                    System.out.print("Nhap ma so muon xoa: ");
+                    maSo = input.nextLine();
+                } while (!MaSoTietKiemException.checkMaSo(maSo));
+
+                boolean flag = false;
                 for (SoTietKiem soTietKiem : listSotietKiemDaiHan) {
                     if (maSo.equals(soTietKiem.getMaSo())) {
                         listSotietKiemDaiHan.remove(soTietKiem);
+                        flag = true;
                         break;
                     }
+                }
+                if (!flag) {
+                    System.out.println("Ma So Ban Nhap Khong Co Trong He Thong");
+                    displayMainMenu();
                 }
                 break;
             }
@@ -238,13 +250,24 @@ public class MainController {
                 for (SoTietKiem soTietKiem : ListSotietKiemVoThoiHan) {
                     System.out.println(soTietKiem.toString());
                 }
-                System.out.print("Nhap ma so muon xoa: ");
-                String maSo = input.nextLine();
+
+                String maSo;
+                do {
+                    System.out.print("Nhap ma so muon xoa: ");
+                    maSo = input.nextLine();
+                } while (!MaSoTietKiemException.checkMaSo(maSo));
+
+                boolean flag = false;
                 for (SoTietKiem soTietKiem : ListSotietKiemVoThoiHan) {
                     if (maSo.equals(soTietKiem.getMaSo())) {
                         ListSotietKiemVoThoiHan.remove(soTietKiem);
+                        flag = true;
                         break;
                     }
+                }
+                if (!flag) {
+                    System.out.println("Ma So Ban Nhap Khong Co Trong He Thong");
+                    displayMainMenu();
                 }
                 break;
             }
@@ -267,24 +290,44 @@ public class MainController {
 
         switch (choose) {
             case "1": {
-                System.out.print("Nhap ma so muon tim kiem: ");
-                String maSo = input.nextLine();
+                String maSo;
+                do {
+                    System.out.print("Nhap ma so muon xoa: ");
+                    maSo = input.nextLine();
+                } while (!MaSoTietKiemException.checkMaSo(maSo));
+
+                boolean flag = false;
                 for (SoTietKiem soTietKiem : listSotietKiemDaiHan) {
                     if (maSo.equals(soTietKiem.getMaSo())) {
                         System.out.println(soTietKiem.toString());
+                        flag = true;
                         break;
                     }
+                }
+                if (!flag) {
+                    System.out.println("Ma So Ban Nhap Khong Co Trong He Thong");
+                    displayMainMenu();
                 }
                 break;
             }
             case "2": {
-                System.out.print("Nhap ma so muon tim kiem: ");
-                String maSo = input.nextLine();
+                String maSo;
+                do {
+                    System.out.print("Nhap ma so muon xoa: ");
+                    maSo = input.nextLine();
+                } while (!MaSoTietKiemException.checkMaSo(maSo));
+
+                boolean flag = false;
                 for (SoTietKiem soTietKiem : ListSotietKiemVoThoiHan) {
                     if (maSo.equals(soTietKiem.getMaSo())) {
                         System.out.println(soTietKiem.toString());
+                        flag = true;
                         break;
                     }
+                }
+                if (!flag) {
+                    System.out.println("Ma So Ban Nhap Khong Co Trong He Thong");
+                    displayMainMenu();
                 }
                 break;
             }
@@ -296,7 +339,6 @@ public class MainController {
         }
         displayMainMenu();
     }
-
 
     public static void main(String[] args) {
         listSotietKiemDaiHan = DocGhiFile.readFileDaiHan();

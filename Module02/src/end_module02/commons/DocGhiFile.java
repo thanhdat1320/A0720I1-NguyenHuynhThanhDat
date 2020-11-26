@@ -1,10 +1,7 @@
 package end_module02.commons;
-
-import _12_java_collection_framework.exercise.manage_product_use_arraylist.models.Product;
 import end_module02.models.SoTietKiem;
 import end_module02.models.SoTietKiemDaiHan;
 import end_module02.models.SoTietKiemVoThoiHan;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -17,7 +14,7 @@ import java.util.List;
 
 public class DocGhiFile {
     private static final String NEW_LINE_SEPARATOR = "\n";
-    private static final String HEADER_DAI_HAN = "MaSO,maKhachHang,NgayMoSo,ThoiGainBatDau,SoTieuGui,LaiSuat,KyHan,UuDai";
+    private static final String HEADER_DAI_HAN = "MaSo,maKhachHang,NgayMoSo,ThoiGainBatDau,SoTieuGui,LaiSuat,KyHan,UuDai";
     private static final String HEADER_VO_THOI_HAN = "MsSo,maKhachHang,NgayMoSo,SoTieuGui,LaiSuat";
 
     private static final String FILE_DAI_HAN = "src/end_module02/data/SoTietKiemDaiHan.csv";
@@ -65,7 +62,7 @@ public class DocGhiFile {
             String line;
             while ((line = brRead.readLine()) != null) {
                 String[] splitDta = line.split(",");
-                if (splitDta[0].equals("maSo")) {
+                if (splitDta[0].equals("MaSo")) {
                     continue;
                 }
                 SoTietKiemDaiHan soTietKiemDaiHan = new SoTietKiemDaiHan();
@@ -132,7 +129,7 @@ public class DocGhiFile {
             String line;
             while ((line = brRead.readLine()) != null) {
                 String[] splitDta = line.split(",");
-                if (splitDta[0].equals("maSo")) {
+                if (splitDta[0].equals("MaSo")) {
                     continue;
                 }
                 SoTietKiemVoThoiHan soTietKiemVoThoiHan = new SoTietKiemVoThoiHan();
