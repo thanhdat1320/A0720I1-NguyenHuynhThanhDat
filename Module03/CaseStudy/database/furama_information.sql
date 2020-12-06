@@ -9,22 +9,29 @@ CREATE DATABASE furama_information;
 INSERT INTO type_services(name_type_services) VALUE 
 ('Villa'), 
 ('House'), 
-('room');
+('Room'),
+('Villa'),
+('House'),
+('Viila'),
+('Room');
 
 INSERT INTO type_rents(name_type_rents, price_type_rents ) VALUE 
 ('Year', 105000), 
 ('Month', 35000), 
-('Day', 25000);
--- ('Hour', 15000);
+('Day', 25000),
+('Year', 15000),
+('Day', 900),
+('Hour', 1150),
+('Hour', 7984);
 
 INSERT INTO services (name_services,area_services,floor_services,amounts_services,price_services,id_type_rents_services,id_type_services,status_services) VALUE 
 ('Villa', 30, 99, 30, 900, 1, 1,'booked'),
 ('House', 20, 15, 45, 800, 2, 2,'booked'),
-('House', 20, 15, 45, 800, 3, 3,'booked');
--- ('Rooom', 10, 66, 15, 500,'booked'),
--- ('Room', 5, 75, 15, 400,'booked'),
--- ('Villa', 50, 12, 6, 900,'booked'),
--- ('Villa', 60, 78, 69, 899,'booked');
+('House', 20, 15, 45, 800, 3, 3,'booked'),
+('Rooom', 10, 66, 15, 500, 4, 4, 'booked'),
+('Room', 5, 75, 15, 400, 5, 5, 'booked'),
+('Villa', 50, 12, 6, 900, 6, 6, 'booked'),
+('Villa', 60, 78, 69, 899, 7, 7,'booked');
 
 -- add information employee
 INSERT INTO department_employee (name_department_employee) VALUE
@@ -64,20 +71,17 @@ INSERT INTO services_include (name_id_services_include, unit_services_include, p
 ('karaoke', 6000, 9000000, 'blocked'),
 ('car', 99510, 999000, 'nope');
 
-INSERT INTO contract_detail (amount_contract, id_contract, id_services_include) VALUE
-(1, 1, 1),
-(3, 2, 2),
-(4, 3, 3);
-
 INSERT INTO contract (start_date_contract, end_date_contract, deposit_money_contract, total_money_contract, id_services, id_customer, id_employee) VALUE
 ('2018-12-06', '2019-02-24', 5000000, 99999999, 1, 1, 1),
 ('2017-01-06', '2018-02-18', 6000000, 1560000000, 2, 2, 2),
 ('2019-03-06', '2020-01-03', 66666666, 65165116, 3, 3, 3);
 
+INSERT INTO contract_detail (amount_contract, id_contract, id_services_include) VALUE
+(1, 1, 1),
+(3, 2, 2),
+(4, 3, 3);
 
-
-ALTER TABLE contract AUTO_INCREMENT = 1;
-
+ALTER TABLE contract_detail AUTO_INCREMENT = 1;
 
 
 
