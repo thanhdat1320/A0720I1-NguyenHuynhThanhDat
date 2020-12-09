@@ -141,15 +141,31 @@ CREATE TABLE ct_services_include (
     status_services_include VARCHAR(50) NOT NULL
 );
 
--- Task1: Hiển thị thông tin của tất cả nhân viên có trong hệ thống có tên bắt đầu là một trong các ký tự “H”, “T” hoặc “K” và có tối đa 15 ký tự.
-SELECT *, substring_index(name_employee, ' ', -1) AS Name
+-- 2: Hiển thị thông tin của tất cả nhân viên có trong hệ thống có tên bắt đầu là một trong các ký tự “H”, “T” hoặc “K” và có tối đa 15 ký tự.
+SELECT *,  SUBSTRING_INDEX(name_employee, '  ', 2) AS Name
 FROM ep_employee
-HAVING (name_employee LIKE 'h%'
-    OR name_employee LIKE 't%'
-    OR name_employee LIKE 'k%')
-    AND LENGTH(name_employee) <= 15;
+HAVING Name LIKE 'h%'
+  --   OR Name LIKE 't%'
+--     OR Name LIKE 'k%')
+    AND LENGTH(name_employee) > 15;
     
--- Task2: Hiển thị thông tin của tất cả khách hàng có độ tuổi từ 18 đến 50 tuổi và có địa chỉ ở “Đà Nẵng” hoặc “Quảng Trị”.  
+-- 3: Hiển thị thông tin của tất cả khách hàng có độ tuổi từ 18 đến 50 tuổi và có địa chỉ ở “Đà Nẵng” hoặc “Quảng Trị”.  
+SELECT *, year(curdate()) - year(brthday_customer) AS Age
+FROM cs_customer
+HAVING (Age >= 18 AND Age <= 50) AND (address_customer = 'Da Nang' OR address_customer = 'Quang Tri');
+
+/* 4: Đếm tương ứng mỗi khách hàng từng đặt phòng bao nhiêu lần. 
+		KQ hiểu thị tăng dần theo số lần đặt. 
+        Chỉ đếm customer có loại khách là "Dinamond"
+*/
+SELECT cs_customer.id_customer, cs_customer.name_customer, count(ct_contract.id_customer) AS Amount
+from cs_customer left join ct_contract on cs_customer.id_customer = ct_contract.id_customer
+where cs_customer.id_type_customer = 4
+group by cs_customer.id_customer
+order by Amount;
+
+
+
 
 
 
