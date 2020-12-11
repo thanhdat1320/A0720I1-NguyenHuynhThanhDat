@@ -142,29 +142,94 @@ CREATE TABLE ct_services_include (
 );
 
 -- 2: Hiển thị thông tin của tất cả nhân viên có trong hệ thống có tên bắt đầu là một trong các ký tự “H”, “T” hoặc “K” và có tối đa 15 ký tự.
-SELECT *,  SUBSTRING_INDEX(name_employee, '  ', 2) AS Name
-FROM ep_employee
-HAVING Name LIKE 'h%'
-  --   OR Name LIKE 't%'
---     OR Name LIKE 'k%')
-    AND LENGTH(name_employee) > 15;
-    
--- 3: Hiển thị thông tin của tất cả khách hàng có độ tuổi từ 18 đến 50 tuổi và có địa chỉ ở “Đà Nẵng” hoặc “Quảng Trị”.  
-SELECT *, year(curdate()) - year(brthday_customer) AS Age
-FROM cs_customer
-HAVING (Age >= 18 AND Age <= 50) AND (address_customer = 'Da Nang' OR address_customer = 'Quang Tri');
+SELECT *,  SUBSTRING_INDEX(name_employee, ' ', -1) AS Name
+ FROM ep_employee
+ HAVING (Name LIKE 'h%'
+ 	OR Name LIKE 't%'
+    OR Name LIKE 'k%')
+    AND LENGTH(name_employee) <= 15;
 
+-- select *
+-- from ep_employee
+-- where (SUBSTRING_INDEX(name_employee, ' ', -1) LIKE 'd%' OR SUBSTRING_INDEX(name_employee, ' ', -1) LIKE 'k%'OR SUBSTRING_INDEX(name_employee, ' ', -1) LIKE 't%')
+-- AND LENGTH(name_employee) <= 15;
+    
+--   select *
+--     from ep_employee
+--     where name_employee regexp '^[HKT]{1}(.)*$';
+    
+/* 3: Hiển thị thông tin của tất cả khách hàng có độ tuổi từ 18 đến 50 tuổi và có địa chỉ ở “Đà Nẵng” hoặc “Quảng Trị”.  */
+   select *, year(curdate()) - year(brthday_customer) AS Age 
+    from cs_customer
+    where address_customer = 'da nang' 
+		or address_customer = 'quang tri' 
+	having Age between 18 and 50;
+    
 /* 4: Đếm tương ứng mỗi khách hàng từng đặt phòng bao nhiêu lần. 
 		KQ hiểu thị tăng dần theo số lần đặt. 
         Chỉ đếm customer có loại khách là "Dinamond"
 */
-SELECT cs_customer.id_customer, cs_customer.name_customer, count(ct_contract.id_customer) AS Amount
+SELECT  count(ct_contract.id_customer) AS Amount, cs_customer.id_customer, cs_customer.name_customer, cs_type_customer.name_type_customer
 from cs_customer left join ct_contract on cs_customer.id_customer = ct_contract.id_customer
-where cs_customer.id_type_customer = 4
+				join cs_type_customer on cs_customer.id_customer =  cs_type_customer.id_type_customer
+where cs_type_customer.name_type_customer = 'Diamond'
 group by cs_customer.id_customer
 order by Amount;
 
+/* 5: Hiển thị IDKhachHang, HoTen, TenLoaiKhach, IDHopDong, TenDichVu, NgayLamHopDong, NgayKetThuc, TongTien 
+		TongTien được tính theo công thức như sau: ChiPhiThue + SoLuong*Gia, SoLuong và Giá là từ bảng DichVuDiKem
+        cho tất cả các Khách hàng đã từng đặt phòng. (Những Khách hàng nào chưa từng đặt phòng cũng phải hiển thị ra).
+*/
+SELECT 
+    cs_customer.id_customer,
+    cs_customer.name_customer,
+    cs_type_customer.name_type_customer,
+    ct_contract.id_contract,
+    ct_contract.start_date_contract,
+    ct_contract.end_date_contract,
+    sv_services.name_services,
+    (sv_services.price_services + ct_contract_detail.amount_contract * ct_services_include.price_services_include) AS Total
+FROM cs_customer
+	left JOIN  
+    cs_type_customer ON cs_customer.id_customer = cs_type_customer.id_type_customer
+   left join
+   ct_contract on ct_contract.id_customer = cs_customer.id_customer
+   left join
+   ct_contract_detail on ct_contract.id_contract = ct_contract_detail.id_contract
+   left join
+   ct_services_include on ct_services_include.id_services_include = ct_contract_detail.id_services_include
+   left join 
+   sv_services on sv_services.id_services = ct_contract.id_services
+   group by cs_customer.name_customer;
+    
+    /* 6: Hiển thị IDDichVu, TenDichVu, DienTich, ChiPhiThue, TenLoaiDichVu 
+    của tất cả các loại Dịch vụ chưa từng được Khách hàng thực hiện đặt 
+    từ quý 1 của năm 2019 (Quý 1 là tháng 1, 2, 3).
+    */
+     select sv_services.id_services, sv_services.name_services, sv_services.area_services, sv_services.price_services, sv_type_services.name_type_services, temp.start_date_contract
+    from sv_services 
+		 left join (select * from ct_contract
+				where ct_contract.start_date_contract between '2019-01-01' and '2019-03-31') AS Temp
+                on sv_services.id_services = temp.id_services
+		 inner join sv_type_services on sv_services.id_type_services = sv_type_services.id_type_services
+	group by sv_services.name_services
+    having temp.start_date_contract is null;
 
+/* 7: Hiển thị IDDichVu, TenDichVu, DienTich, SoNguoiToiDa, ChiPhiThue, TenLoaiDichVu 
+ tất cả loại dịch vụ đã từng được Khách hàng đặt phòng trong năm 2018 
+ nhưng chưa từng được Khách hàng đặt phòng  trong năm 2019.
+*/
+    select sv_services.id_services, sv_services.name_services,sv_services.area_services, sv_services.amounts_services,sv_services.price_services,
+			sv_type_services.name_type_services
+	from sv_services
+		inner join sv_type_services on sv_services.id_type_services = sv_type_services.id_type_services
+		inner join (select * from ct_contract where year(start_date_contract) = 2018) AS contract2018 
+			on sv_services.id_services = contract2018.id_services
+		left join (select * from ct_contract where year(start_date_contract) = 2019) AS contract2019
+			on sv_services.id_services = contract2019.id_services
+	where contract2019.id_services is null
+
+/* 8: Hiển thị HoTenKhachHang không trùng nhau (làm 3 cách)*/
 
 
 
