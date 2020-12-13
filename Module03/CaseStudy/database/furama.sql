@@ -227,13 +227,17 @@ FROM cs_customer
 			on sv_services.id_services = contract2018.id_services
 		left join (select * from ct_contract where year(start_date_contract) = 2019) AS contract2019
 			on sv_services.id_services = contract2019.id_services
-	where contract2019.id_services is null
+	where contract2019.id_services is null;
 
 /* 8: Hiển thị HoTenKhachHang không trùng nhau (làm 3 cách)*/
+-- cách 1
+select distinct cs_customer.name_customer
+from cs_customer;
 
-
-
-
-
-
+-- cách 2
+select cs_customer.name_customer
+from cs_customer
+group by cs_customer.name_customer;
+	
+-- cách 3
 
