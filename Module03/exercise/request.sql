@@ -212,13 +212,56 @@ create view discount as
 select products.discount 
 from products;
 
-select * from discount
+select distinct * from discount
 group by discount;
 
 /*Hiển thị tất cả danh mục (Categories) với tổng số tiền bán được trong mỗi danh mục*/
+select categories.id, categories.name, categories.description, ifnull(sum(products.price * ((100 - products.discount) / 100) * order_details.quantity), 0) as total
+from categories
+	left join products on categories.id = products.categoriesID
+    left join order_details on order_details.productId = products.id
+    left join orders on orders.id = order_details.orderId
+group by categories.id;
 
+select categories.id, categories.name, categories.description, ifnull(sum(sub_product.price * ((100 - sub_product.discount) / 100) * sub_product.quantity), 0) as total
+from categories 
+	left join (select products.id, products.price, products.discount, products.categoriesID, order_details.quantity
+				from products
+				left join order_details on order_details.productId = products.id) as sub_product
+                on sub_product.id = categories.id
+group by categories.id;
 
+/*Hiển thị tất cả đơn hàng với tổng số tiền mà đã được giao hàng thành công trong khoảng từ ngày, đến ngày*/
+    select products.id, products.name, orders.status, sum(products.price * ((100 - products.discount) / 100) * order_details.quantity) as total
+    from products
+		inner join order_details on order_details.productId = products.id
+        inner join orders on orders.id = order_details.orderId
+	group by products.id
+    having status = 'COMPLETED';
     
+/*Hiển thị tất cả đơn hàng có tổng số tiền bán hàng nhiều nhất trong khoảng từ ngày, đến ngày*/
+	select products.id, products.name, sum(products.price * ((100 - products.discount) / 100) * order_details.quantity) as total
+	from products
+		join order_details on products.id = order_details.productId
+        join orders on orders.id = order_details.orderId
+	where orders.createdDate between '2017-05-05' and '2019-03-03'
+	group by products.id
+    order by total desc;
+    
+/*Hiển thị tất cả đơn hàng có tổng số tiền bán hàng ít nhất trong khoảng từ ngày, đến ngày*/
+	select products.id, products.name, products.price * ((100 - products.discount) / 100) * order_details.quantity as total
+	from products
+		join order_details on products.id = order_details.productId
+        join orders on orders.id = order_details.orderId
+	where orders.createdDate between '2017-05-05' and '2019-03-03'
+	group by products.id
+    order by total;
 
-
-
+/*Hiển thị trung bình cộng giá trị các đơn hàng trong khoảng từ ngày, đến ngày*/
+	select products.id, products.name, avg(products.price * ((100 - products.discount) / 100) * order_details.quantity) as total
+	from products
+		join order_details on products.id = order_details.productId
+        join orders on orders.id = order_details.orderId
+	where orders.createdDate between '2017-05-05' and '2019-03-03'
+	group by products.id
+    order by total;
