@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="68de934e-edb3-47c6-9d21-d63641872466" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Module02/src/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Module02/src/.idea/src.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Module02/src/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Module02/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../Module02/src/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Module02/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Module02/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Module02/src/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Module02/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Module02/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Module02/Module02.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Module02/Module02.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module03/CaseStudy/database/furama.mwb" beforeDir="false" afterPath="$PROJECT_DIR$/../Module03/CaseStudy/database/furama.mwb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module03/CaseStudy/database/furama.mwb.bak" beforeDir="false" afterPath="$PROJECT_DIR$/../Module03/CaseStudy/database/furama.mwb.bak" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module03/CaseStudy/database/furama.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../Module03/CaseStudy/database/furama.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,7 +36,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Module02" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Module03" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
@@ -121,6 +115,7 @@
       <workItem from="1604640837005" duration="83000" />
       <workItem from="1604659875024" duration="99000" />
       <workItem from="1604660025781" duration="623000" />
+      <workItem from="1607947091423" duration="150000" />
     </task>
     <servers />
   </component>
@@ -132,22 +127,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="788" y="364" key="#com.intellij.ide.actions.DebugLogConfigureAction/0.0.1920.1040@0.0.1920.1040" timestamp="1600666727582" />
-    <state x="739" y="263" key="FileChooserDialogImpl" timestamp="1604660048823">
+    <state x="739" y="263" key="FileChooserDialogImpl" timestamp="1607947240514">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="739" y="263" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1604660048823" />
+    <state x="739" y="263" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1607947240514" />
     <state x="1070" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1599818844222">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1070" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1599818844222" />
-    <state x="754" y="127" width="1148" height="793" key="dock-window-1" timestamp="1597668228804">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="754" y="127" width="1148" height="793" key="dock-window-1/0.0.1920.1040@0.0.1920.1040" timestamp="1597668228804" />
-    <state x="754" y="127" width="1148" height="793" key="dock-window-2" timestamp="1597668228804">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="754" y="127" width="1148" height="793" key="dock-window-2/0.0.1920.1040@0.0.1920.1040" timestamp="1597668228804" />
     <state x="1099" y="244" key="run.anything.popup" timestamp="1600259682868">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
