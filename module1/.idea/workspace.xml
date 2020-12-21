@@ -2,9 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="68de934e-edb3-47c6-9d21-d63641872466" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../Module03/_06_css/exercise/create_pages_commic/commic.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module03/_06_css/exercise/create_pages_commic/commic.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module03/_06_css/exercise/dip_css_in_html/test.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module03/_06_css/exercise/dip_css_in_html/test.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module03/_06_css/exercise/format_text/formatText.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module03/_06_css/exercise/format_text/formatText.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module03/_07_design_layout_page_web/practise/create_layout/createLayout.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module03/_07_design_layout_page_web/practise/create_layout/myCSS.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module03/_07_design_layout_page_web/practise/use_box_model/myCSS.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module03/_07_design_layout_page_web/practise/use_box_model/useBoxModel.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Module03/CaseStudy/database/furama.mwb" beforeDir="false" afterPath="$PROJECT_DIR$/../Module03/CaseStudy/database/furama.mwb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Module03/CaseStudy/database/furama.mwb.bak" beforeDir="false" afterPath="$PROJECT_DIR$/../Module03/CaseStudy/database/furama.mwb.bak" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Module03/CaseStudy/database/furama.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../Module03/CaseStudy/database/furama.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module03/CaseStudy/database/request.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../Module03/CaseStudy/database/request.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module03/exercise/manager.mwb" beforeDir="false" afterPath="$PROJECT_DIR$/../Module03/exercise_sql/manager.mwb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module03/exercise/manager.mwb.bak" beforeDir="false" afterPath="$PROJECT_DIR$/../Module03/exercise_sql/manager.mwb.bak" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module03/exercise/manager.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../Module03/exercise_sql/manager.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module03/exercise/request.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../Module03/exercise_sql/request.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -116,6 +130,8 @@
       <workItem from="1604659875024" duration="99000" />
       <workItem from="1604660025781" duration="623000" />
       <workItem from="1607947091423" duration="150000" />
+      <workItem from="1608090964311" duration="1466000" />
+      <workItem from="1608200463438" duration="616000" />
     </task>
     <servers />
   </component>
@@ -127,10 +143,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="788" y="364" key="#com.intellij.ide.actions.DebugLogConfigureAction/0.0.1920.1040@0.0.1920.1040" timestamp="1600666727582" />
-    <state x="739" y="263" key="FileChooserDialogImpl" timestamp="1607947240514">
+    <state x="739" y="263" key="FileChooserDialogImpl" timestamp="1608202299738">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="739" y="263" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1607947240514" />
+    <state x="739" y="263" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1608202299738" />
     <state x="1070" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1599818844222">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

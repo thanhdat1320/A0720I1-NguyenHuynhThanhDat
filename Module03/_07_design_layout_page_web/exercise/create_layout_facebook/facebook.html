@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        #main {
+            background-color: #f0f2f5;
+            height: 720px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+        #right-main-flex {
+            float: right;
+        }
+        #right {
+            width: 55%;
+            height: 720px;
+        }
+        .images-fb {
+            width: 70%;
+            height: 100px;
+            margin-top: 150px;
+        }
+        #right-images {
+            padding-left: 0;
+            padding-right: 100px;
+        }
+        .title-fb {
+            font-family: SFProDisplay-Regular, Helvetica, Arial, sans-serif;
+            font-size: 28px;
+            font-weight: normal;
+            line-height: 32px;
+            width: 500px;
+            padding-left: 40px;
+        }
+
+        #left {
+            width: 45%;
+            height: 720px;
+        }
+        #left-table {
+            height: 350px;
+            width: 400px;
+            margin-top: 150px;
+            box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+            background-color: #ffffff;
+            border: 1px solid #c6c6c6;
+            color: #222;
+            border-radius: 5px;
+        }
+        #left-form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-left: 24px;
+        }
+        #left-form input {
+            margin-top: 15px;
+            width: 320px;
+            height: 35px;
+        }
+        .hr {
+            border: 1px solid #e5e7ea;
+            width: 350px;
+            margin-left: 20px;
+        }
+        .left-table-signUp {
+            font-size: 25px;
+        }
+        .left-table-1 input {
+            font-family: inherit;
+            border-radius: 6px;
+            font-size: 17px;
+            padding: 14px 16px;
+            width: 330px;
+            border: 1px solid #e2e4e8;
+        }
+        .left-table-2 {
+            padding-left: 30px;
+        }
+        .left-table-2 input {
+            font-family: inherit;
+            font-weight: bold;
+            font-size: 30px;
+            border-radius: 6px;
+            border: 1px solid #e2e4e8;
+            color: white;
+            background-color: #1877f2;
+            margin-top: 15px;
+            width: 340px;
+            height: 56px;
+        }
+        .left-table-2 input:hover {
+            background-color: #2356F2;
+        }
+
+        .left-table-3 {
+            padding-left: 140px;
+            margin-top: 15px;
+            margin-bottom: 10px;
+        }
+        .left-table-3 a {
+            text-decoration: none;
+        }
+        .left-table-3 a:hover {
+            text-decoration-line: underline ;
+        }
+        .left-table-submit {
+            width: 250px;
+            height: 50px;
+            margin-top: 10px;
+            margin-left: 75px;
+            font-family: inherit;
+            font-weight: bold;
+            font-size: 25px;
+            border-radius: 6px;
+            border: 1px solid #e2e4e8;
+            background-color: #42b72a;
+            color: white;
+        }
+        .left-table-submit:hover {
+            background-color: #2EB719;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id="right">
+            <div id="right-main-flex">
+                <div id="right-images">
+                    <img src="images/facebook.svg" alt="facebook" class="images-fb">
+                </div>
+                <h2 class="title-fb">
+                    Facebook giúp bạn kết nối và chia sẻ với mọi người trong cuộc sống của bạn.
+                </h2>
+            </div>
+        </div>
+
+        <div id="left">
+            <div id="left-table">
+                <div id="left-form">
+                    <div class="left-table-1">
+                        <input type="text" name="textEmail" placeholder="Email hoặc số điện thoại" class="left-table-email">
+                        <input type="text" name="textPassWord" placeholder="Mật khẩu" class="left-table-pass">
+                    </div>
+                </div>
+                    <div class="left-table-2">
+                        <input type="button" name="signUp" value="Đăng nhập" class="left-table-signUp">
+                    </div>
+                    <div class="left-table-3">
+                        <a href="#"> Quên Mật Khẩu</a>
+                    </div>
+                    <hr class="hr">
+                <div>
+                    <input type="submit" name="create" value="Tạo tài khoản mới" class="left-table-submit">
+                </div>
+            </div>
+            <div id="left-text">
+                <p>Tạo Trang dành cho người nổi tiếng, nhãn hiệu hoặc doanh nghiệp.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer"></div>
+</body>
+</html>

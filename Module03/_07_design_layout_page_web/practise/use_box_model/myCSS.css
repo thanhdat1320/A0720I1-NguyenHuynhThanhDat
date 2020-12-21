@@ -1,0 +1,15 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+#main {
+    border-top: 10px solid greenyellow;
+    border-bottom: 10px solid blue;
+    border-right: 10px solid #3FFFD8;
+    border-left: 10px solid purple;
+    padding: 10px;
+}
+p {
+border:5px dotted red;
+    padding: 10px;
+}

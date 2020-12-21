@@ -107,11 +107,13 @@ from ct_services_include
 where cs_type_customer.name = 'Diamond' and (cs_customer.address = 'da nang' or cs_customer.address = 'da lat')
 group by ct_services_include.id, cs_customer.id;
             
-/*Hiển thị 
-IDHopDong, TenNhanVien, TenKhachHang, SoDienThoaiKhachHang, TenDichVu, SoLuongDichVuDikem 
-  tính trên tổng Hợp đồng chi tiết, tienDatCoc 
-	đặt 3 tháng cuối năm 2019 nhưng chưa từng được khách hàng đặt vào 6 tháng đầu năm 2019.
-*/
+/*12: Hiển thị IDHopDong, TenNhanVien, TenKhachHang, SoDienThoaiKhachHang, TenDichVu, SoLuongDichVuDikem tính trên tổng Hợp đồng chi tiết, tienDatCoc 
+	đặt 3 tháng cuối năm 2019 nhưng chưa từng được khách hàng đặt vào 6 tháng đầu năm 2019.*/
 
-            
+select * 
+from (select distinct ct_contract.id  from ct_contract where ct_contract.start_date between '2019-10-01' and '2019-12-31') as contract1012
+	left join
+		(select distinct ct_contract.id  from ct_contract where ct_contract.start_date between '2019-01-01' and '2019-06-01')  as contract0106
+	on contract1012.id = contract0106.id
+where contract0106.id is null;
     
