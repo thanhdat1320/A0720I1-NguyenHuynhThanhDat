@@ -97,7 +97,7 @@ group by ct_contract.id
 order by ct_contract.id;
 
 /*11: Hiển thị thông tin các Dịch vụ đi kèm đã được sử dụng bởi những Khách hàng có TenLoaiKhachHang là “Diamond” và 
-		có địa chỉ là “Vinh” hoặc “Quảng Ngãi”.*/
+		có địa chỉ là “Da Lat” hoặc “Quảng Ngãi”.*/
 select ct_services_include.id, ct_services_include.name, ct_services_include.price, cs_customer.id as id_customer, cs_customer.name, cs_type_customer.name
 from ct_services_include
 	join ct_contract_detail on ct_contract_detail.id_services_include = ct_services_include.id
@@ -116,4 +116,34 @@ from (select distinct ct_contract.id  from ct_contract where ct_contract.start_d
 		(select distinct ct_contract.id  from ct_contract where ct_contract.start_date between '2019-01-01' and '2019-06-01')  as contract0106
 	on contract1012.id = contract0106.id
 where contract0106.id is null;
+
+/*13: Hiển thị thông tin các Dịch vụ đi kèm được sử dụng nhiều nhất 
+bởi các Khách hàng đã đặt phòng. (Lưu ý là có thể có nhiều dịch vụ có số lần sử dụng nhiều như nhau).*/
+select * , count(ct_contract_detail.id_services_include) as count
+from ct_services_include
+join ct_contract_detail on ct_contract_detail.id_services_include = ct_services_include.id
+group by id_services_include
+order by count desc;
     
+/*14: Hiển thị thông tin tất cả các Dịch vụ đi kèm chỉ mới được sử dụng một lần duy nhất
+ Thông tin hiển thị bao gồm IDHopDong, TenLoaiDichVu, TenDichVuDiKem, SoLanSuDung.*/
+ select ct_contract.id, sv_services.name as nameServices, ct_services_include.name, count(ct_contract_detail.id_services_include) as amount
+ from  ct_services_include
+ join ct_contract_detail on ct_contract_detail.id_services_include = ct_services_include.id
+ join ct_contract on ct_contract.id = ct_contract_detail.id_contract
+ join sv_services on sv_services.id = ct_contract.id_services
+ group by ct_contract.id
+ having amount = 1;
+ 
+ /*15: Hiển thi thông tin của tất cả nhân viên bao gồm IDNhanVien, HoTen, TrinhDo, TenBoPhan, SoDienThoai, DiaChi 
+ mới chỉ lập được tối đa 3 hợp đồng từ năm 2018 đến 2019.*/
+select ep_employee.id, ep_employee.name, ep_level_employee.name, ep_department_employee.name, ep_employee.phone_number, count(ct_contract.id_employee) as count,
+year(start_date) st, year(end_date) as ed
+from ep_employee
+join ep_department_employee on ep_department_employee.id = ep_employee.id_department_employee
+join ep_level_employee on ep_level_employee.id = ep_employee.id_level_employee
+join ct_contract on ct_contract.id_employee = ep_employee.id
+group by ep_employee.id
+having count <= 3 and (st between '2018' and '2019');
+
+ /*16: Xóa những Nhân viên chưa từng lập được hợp đồng nào từ năm 2017 đến năm 2019.*/
