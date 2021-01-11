@@ -146,4 +146,31 @@ join ct_contract on ct_contract.id_employee = ep_employee.id
 group by ep_employee.id
 having count <= 3 and (st between '2018' and '2019');
 
- /*16: Xóa những Nhân viên chưa từng lập được hợp đồng nào từ năm 2017 đến năm 2019.*/
+ /*16: Xóa những Nhân viên chưa từng lập được hợp đồng từ năm 2017 đến năm 2019.*/
+ delete from ep_employee
+ where ep_employee.id not in 
+	(select ct_contract.id_employee
+		from ct_contract
+        where year(ct_contract.start_date) between 2017 and 2019);
+ 
+ /*17: Cập nhật thông tin những khách hàng có TenLoaiKhachHang từ  Platinium lên Diamond, 
+ chỉ cập nhật những khách hàng đã từng đặt phòng với tổng Tiền thanh toán trong năm 2019 là lớn hơn 10.000.000 VNĐ.*/
+ update cs_customer
+ set cs_customer.id_type_customer = 1
+ where cs_customer.id_type_customer = 2 and cs_customer.id_type_customer in
+	(select ct_contract.id_customer 
+     from ct_contract
+     where ct_contract.total >= 10000000 and year(ct_contract.start_date) = 2019);
+  
+  /*18: Xóa những khách hàng có hợp đồng trước năm 2016 (chú ý ràng buộc giữa các bảng).*/
+     delete from cs_customer
+     where cs_customer.id in  
+		(select ct_contract.id_customer 
+		from ct_contract
+        where year(ct_contract.start_date) < 2016);
+     
+     
+     
+     
+     
+     
