@@ -15,21 +15,14 @@
 </head>
 <body>
     <h1>Products</h1>
-    <a href="products?action=create">Create new product</a>
-<%--    <form action="products" method="post">--%>
-<%--        <table>--%>
-<%--            <tr>--%>
-<%--                <td><input type="text" name="search"></td>--%>
-<%--                <td><input type="submit" value="Search"></td>--%>
-<%--                <td><input type="reset" value="Reset"></td>--%>
-<%--            </tr>--%>
-<%--            <input type="hidden" name="action" value="search">--%>
-<%--        </table>--%>
-<%--    </form>--%>
+    <a href="products?action=create">Create new product</a> <br>
 
-    Customer Name: <input type="text" id="customerName">
-    <button id="search">Search</button>
+    <label for="customerName"> Search product
+        <input type="text" id="customerName">
+        <button id="search">Search</button>
+    </label>
     <hr>
+
     <div id="result">
         <table border="1px">
             <tr>
@@ -52,5 +45,6 @@
             </c:forEach>
         </table>
     </div>
+
 </body>
 </html>

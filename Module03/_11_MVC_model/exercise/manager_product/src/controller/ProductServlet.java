@@ -68,11 +68,6 @@ public class ProductServlet extends HttpServlet {
 
     private void searchProduct(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String name = request.getParameter("search");
-//        for (Product product: productService.findAll()) {
-//            if ((product.getName().contains(name))) {
-//                request.setAttribute("product",this.productService.findById(product.getId()));
-//            }
-//        }
         List<Product> productList = name == null ? productService.findAll() : productService.findByName(name);
         if (productList.size() == 0) {
             response.setContentType("text/plain");

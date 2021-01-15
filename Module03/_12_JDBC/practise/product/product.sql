@@ -1,0 +1,2 @@
+alter USER 'dat123'@'%' IDENTIFIED BY '123123';
+GRANT ALL PRIVILEGES ON product.* TO 'dat123'@'%';
