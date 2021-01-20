@@ -1,0 +1,28 @@
+a {
+    text-decoration: none;
+}
+
+table tr {
+    text-align: center;
+}
+
+/*List*/
+#content {
+    padding-top: 20px;
+}
+
+/*View*/
+.viewPatient tr td {
+    color: blue;
+}
+
+/*Create*/
+.create {
+    padding-top: 10px;
+}
+
+/*Edit*/ /*Lỗi */
+.edit {
+    padding-top: 10px;
+}
+

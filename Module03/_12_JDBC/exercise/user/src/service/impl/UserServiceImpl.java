@@ -19,6 +19,7 @@ public class UserServiceImpl implements IUserService {
 //        } catch (SQLException e) {
 //            e.printStackTrace();
 //        }
+
         try {
             userDAO.insertUserUseStore(user);
         } catch (SQLException e) {
@@ -37,20 +38,17 @@ public class UserServiceImpl implements IUserService {
 
     @Override
     public User getUserById(int id) {
-        // 1)
 //        try {
 //            return userDAO.getUserById(id);
 //        } catch (SQLException e) {
 //            return null;
 //        }
-        // 1)
-        // 2)
+
         try {
             return userDAO.getUserUseStore(id);
         } catch (SQLException e) {
             return null;
         }
-        // 2)
     }
 
     @Override
