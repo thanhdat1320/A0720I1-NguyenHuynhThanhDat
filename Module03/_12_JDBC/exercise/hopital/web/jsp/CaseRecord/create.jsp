@@ -18,16 +18,17 @@
 <div class="create">
     <form action="hospital" method="post">
         <div class="container">
+
             <div class="form-group row">
-                <label for="id" class="col-sm-2 col-form-label">ID</label>
+                <label class="col-sm-2 col-form-label">ID</label>
                 <div class="col-sm">
-                    <input type="text" class="form-control" id="id" name="id" value="${id}" readonly>
+                    <input type="text" class="form-control" name="id" value="${id}" readonly>
                 </div>
             </div>
+
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">Name Patient</label>
                 <div class="col-sm">
-                    <%--                        <input type="text" class="form-control" id="idPatient" name="idPatient">--%>
                     <form action="hospital" method="post">
                         <select name="patient">
                             <c:forEach items="${patientList}" var="patient">
@@ -38,6 +39,7 @@
                     </form>
                 </div>
             </div>
+
             <div class="form-group row">
                 <label for="start" class="col-sm-2 col-form-label">Start</label>
                 <div class="col-sm">
@@ -47,6 +49,7 @@
                     </c:if>
                 </div>
             </div>
+
             <div class="form-group row">
                 <label for="end" class="col-sm-2 col-form-label">End</label>
                 <div class="col-sm">
@@ -56,17 +59,18 @@
                     </c:if>
                 </div>
             </div>
+
             <div class="form-group row">
                 <label for="reason" class="col-sm-2 col-form-label">Reason</label>
                 <div class="col-sm">
                     <input type="text" class="form-control" id="reason" name="reason">
                 </div>
             </div>
+
             <hr>
             <input type="submit" class="btn btn-outline-success" value="Create">
             <a class="btn btn-outline-secondary" href="hospital" role="button">Back to list</a>
         </div>
-        <input type="hidden" name="action" value="create">
     </form>
 </div>
 

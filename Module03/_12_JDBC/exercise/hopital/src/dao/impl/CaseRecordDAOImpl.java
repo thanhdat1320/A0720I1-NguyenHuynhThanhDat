@@ -36,7 +36,6 @@ public class CaseRecordDAOImpl implements ICaseRecordDAO {
     @Override
     public CaseRecord getCaseRecordById(int id) throws SQLException {
         CaseRecord caseRecord = null;
-//        PatientDAOImpl patientDAO = new PatientDAOImpl();
         PreparedStatement preparedStatement = connection.prepareStatement(GET_CaseRecord_BY_ID);
         preparedStatement.setInt(1, id);
         ResultSet resultSet = preparedStatement.executeQuery();
@@ -45,7 +44,6 @@ public class CaseRecordDAOImpl implements ICaseRecordDAO {
             String start = resultSet.getString("start");
             String end = resultSet.getString("end");
             String reason = resultSet.getString("reason");
-//            Patient patient = patientDAO.getPatientById(id);
             caseRecord = new CaseRecord(id, id_patient, start, end, reason);
         }
         return caseRecord;
@@ -78,7 +76,7 @@ public class CaseRecordDAOImpl implements ICaseRecordDAO {
     public boolean updateCaseRecord(CaseRecord caseRecord) throws SQLException {
         PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_CaseRecord);
         preparedStatement.setInt(1, caseRecord.getIdPatient());
-        preparedStatement.setString(2, caseRecord.getStart()); 
+        preparedStatement.setString(2, caseRecord.getStart());
         preparedStatement.setString(3, caseRecord.getEnd());
         preparedStatement.setString(4, caseRecord.getReason());
         preparedStatement.setInt(5, caseRecord.getId());

@@ -18,4 +18,5 @@ public interface IPatientService {
 
     boolean updatePatient(int id, Patient patient) throws SQLException;
 
+
 }

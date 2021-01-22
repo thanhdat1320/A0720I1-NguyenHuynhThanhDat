@@ -1,6 +1,7 @@
 package service;
 
 import model.CaseRecord;
+import model.HospitalDTO;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -19,4 +20,6 @@ public interface ICaseRecordService {
     boolean updateCaseRecord(int id, CaseRecord caseRecord, String name) throws SQLException;
 
     int findMaxId() throws SQLException;
+
+    List<HospitalDTO> getListHospital()  throws SQLException;
 }

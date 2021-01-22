@@ -25,22 +25,21 @@
                 <th>Delete</th>
             </tr>
             <c:forEach items="${caseRecordList}" var="cases">
-                <tr>
-                    <td><a href="hospital?action=view&id=${cases.id}">${cases.id}</a></td>
-                    <td>
                         <c:forEach items="${patientList}" var="patient">
                             <c:if test="${patient.id == cases.idPatient}">
                                 <c:if test="${name == patient.name}">
-                                     <a href="hospital?action=viewPatient&id=${patient.id}">${patient.name}</a>
+                                    <tr>
+                                        <td><a href="hospital?action=view&id=${cases.id}">${cases.id}</a></td>
+                                        <td><a href="hospital?action=viewPatient&id=${patient.id}">${patient.name}</a></td>
+                                        <td>${cases.start}</td>
+                                        <td>${cases.end}</td>
+                                        <td>${cases.reason}</td>
+                                        <td><a href="hospital?action=edit&id=${cases.id}">Edit</a></td>
+                                        <td><a href="hospital?action=delete&id=${cases.id}">Delete</a></td>
+                                    </tr>
                                 </c:if>
                             </c:if>
                         </c:forEach>
-                    <td>${cases.start}</td>
-                    <td>${cases.end}</td>
-                    <td>${cases.reason}</td>
-                    <td><a href="hospital?action=edit&id=${cases.id}">Edit</a></td>
-                    <td><a href="hospital?action=delete&id=${cases.id}">Delete</a></td>
-                </tr>
             </c:forEach>
         </table>
 

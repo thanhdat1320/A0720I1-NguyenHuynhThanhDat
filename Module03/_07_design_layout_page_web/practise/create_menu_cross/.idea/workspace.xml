@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="71ddbbef-4895-4205-8382-1e44c488ac73" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/web/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/web/.idea/artifacts/web_war_exploded.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/web/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/web/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/web/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/web/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/web/src/controller/HomeServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/web/src/dao/ICustomerDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/web/src/dao/ITypeCustomerDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/web/src/dao/impl/CustomerDAOImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/web/src/dao/impl/TypeCustomerDAOImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/web/src/model/CS_Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/web/src/model/CS_TypeCustomer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/web/src/model/CT_Contract.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/web/src/model/CT_ContractDetail.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/web/src/model/CT_ServiceInclude.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/web/src/model/EP_DepartmentEmployee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/web/src/model/EP_Employee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/web/src/model/EP_LevelEmployee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/web/src/model/EP_PositionEmployee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/web/src/model/SV_Service.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/web/src/model/SV_TypeRent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/web/src/utils/DBConnection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/web/web.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/web/web/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/web/web/assert/Jquery/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/web/web/assert/css/bootstrap/css/bootstrap-grid.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/web/web/assert/css/bootstrap/css/bootstrap-grid.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/web/web/assert/css/bootstrap/css/bootstrap-grid.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/web/web/assert/css/bootstrap/css/bootstrap-grid.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/web/web/assert/css/bootstrap/css/bootstrap-grid.rtl.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/web/web/assert/css/bootstrap/css/bootstrap-grid.rtl.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/web/web/assert/css/bootstrap/css/bootstrap-grid.rtl.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/web/web/assert/css/bootstrap/css/bootstrap-grid.rtl.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/web/web/assert/css/bootstrap/css/bootstrap-reboot.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/web/web/assert/css/bootstrap/css/bootstrap-reboot.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/web/web/assert/css/bootstrap/css/bootstrap-reboot.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/web/web/assert/css/bootstrap/css/bootstrap-reboot.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/web/web/assert/css/bootstrap/css/bootstrap-reboot.rtl.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/web/web/assert/css/bootstrap/css/bootstrap-reboot.rtl.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/web/web/assert/css/bootstrap/css/bootstrap-reboot.rtl.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/web/web/assert/css/bootstrap/css/bootstrap-reboot.rtl.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/web/web/assert/css/bootstrap/css/bootstrap-utilities.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/web/web/assert/css/bootstrap/css/bootstrap-utilities.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/web/web/assert/css/bootstrap/css/bootstrap-utilities.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/web/web/assert/css/bootstrap/css/bootstrap-utilities.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/web/web/assert/css/bootstrap/css/bootstrap-utilities.rtl.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/web/web/assert/css/bootstrap/css/bootstrap-utilities.rtl.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/web/web/assert/css/bootstrap/css/bootstrap-utilities.rtl.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/web/web/assert/css/bootstrap/css/bootstrap-utilities.rtl.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/web/web/assert/css/bootstrap/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/web/web/assert/css/bootstrap/css/bootstrap.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/web/web/assert/css/bootstrap/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/web/web/assert/css/bootstrap/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/web/web/assert/css/bootstrap/css/bootstrap.rtl.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/web/web/assert/css/bootstrap/css/bootstrap.rtl.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/web/web/assert/css/bootstrap/css/bootstrap.rtl.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/web/web/assert/css/bootstrap/css/bootstrap.rtl.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/web/web/assert/css/bootstrap/js/bootstrap.bundle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/web/web/assert/css/bootstrap/js/bootstrap.bundle.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/web/web/assert/css/bootstrap/js/bootstrap.bundle.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/web/web/assert/css/bootstrap/js/bootstrap.bundle.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/web/web/assert/css/bootstrap/js/bootstrap.esm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/web/web/assert/css/bootstrap/js/bootstrap.esm.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/web/web/assert/css/bootstrap/js/bootstrap.esm.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/web/web/assert/css/bootstrap/js/bootstrap.esm.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/web/web/assert/css/bootstrap/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/web/web/assert/css/bootstrap/js/bootstrap.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/web/web/assert/css/bootstrap/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/web/web/assert/css/bootstrap/js/bootstrap.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/web/web/assert/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/web/web/assert/js/search.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/web/web/jsp/home.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../_12_JDBC/exercise/hopital/src/model/HospitalDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../_12_JDBC/exercise/hopital/web/jsp/CaseRecord/list_bk.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy/database/test.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../_08_bootstrap/practise/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../_08_bootstrap/practise/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../_12_JDBC/exercise/hopital/src/controller/HospitalServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../_12_JDBC/exercise/hopital/src/controller/HospitalServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../_12_JDBC/exercise/hopital/src/dao/impl/CaseRecordDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../_12_JDBC/exercise/hopital/src/dao/impl/CaseRecordDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../_12_JDBC/exercise/hopital/src/service/ICaseRecordService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../_12_JDBC/exercise/hopital/src/service/ICaseRecordService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../_12_JDBC/exercise/hopital/src/service/IPatientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../_12_JDBC/exercise/hopital/src/service/IPatientService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../_12_JDBC/exercise/hopital/src/service/Impl/CaseRecordServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../_12_JDBC/exercise/hopital/src/service/Impl/CaseRecordServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../_12_JDBC/exercise/hopital/web/jsp/CaseRecord/create.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../_12_JDBC/exercise/hopital/web/jsp/CaseRecord/create.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../_12_JDBC/exercise/hopital/web/jsp/CaseRecord/edit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../_12_JDBC/exercise/hopital/web/jsp/CaseRecord/edit.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../_12_JDBC/exercise/hopital/web/jsp/CaseRecord/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../_12_JDBC/exercise/hopital/web/jsp/CaseRecord/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../_12_JDBC/exercise/hopital/web/jsp/CaseRecord/result.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../_12_JDBC/exercise/hopital/web/jsp/CaseRecord/result.jsp" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="ProjectId" id="1nNdOyY51qa5TU0mksiuVcJUi5u" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../create_layout" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="71ddbbef-4895-4205-8382-1e44c488ac73" name="Default Changelist" comment="" />
+      <created>1611234453880</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1611234453880</updated>
+      <workItem from="1611234455462" duration="22000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="740" y="276" key="FileChooserDialogImpl" timestamp="1611234475566">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="276" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1611234475566" />
+  </component>
+</project>

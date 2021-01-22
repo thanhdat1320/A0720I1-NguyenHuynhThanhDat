@@ -3,6 +3,7 @@ package controller;
 import dao.IPatientDAO;
 import dao.impl.PatientDAOImpl;
 import model.CaseRecord;
+import model.HospitalDTO;
 import model.Patient;
 import service.ICaseRecordService;
 import service.IPatientService;
@@ -25,10 +26,12 @@ public class HospitalServlet extends HttpServlet {
     IPatientService patientService = new PatientServiceImpl();
 
     private void listCase(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
-        List<CaseRecord> cases = recordService.getAllCaseRecord();
-        List<Patient> patientList = patientService.getAllPatient();
-        request.setAttribute("cases", cases);
-        request.setAttribute("patientList", patientList);
+//        List<CaseRecord> cases = recordService.getAllCaseRecord();
+//        List<Patient> patientList = patientService.getAllPatient();
+//        request.setAttribute("cases", cases);
+//        request.setAttribute("patientList", patientList);
+        List<HospitalDTO> hospitalDTOS = recordService.getListHospital();
+        request.setAttribute("hospitalDTOS", hospitalDTOS);
         request.getRequestDispatcher("jsp/CaseRecord/list.jsp").forward(request, response);
     }
 
@@ -49,20 +52,23 @@ public class HospitalServlet extends HttpServlet {
 
         String errorBirthdayS = null;
         String errorBirthdayE = null;
+        boolean flag = true;
         if (!Validate.checkBirthday(start)) {
             errorBirthdayS = "yyyy/MM/dd";
             request.setAttribute("errorBirthdayS", errorBirthdayS);
-        } else if (!Validate.checkBirthday(end)){
+            flag = false;
+        }
+        if (!Validate.checkBirthday(end)) {
             errorBirthdayE = "yyyy/MM/dd";
             request.setAttribute("errorBirthdayE", errorBirthdayE);
-        } else  {
+            flag = false;
+        }
+        if (!flag) {
             CaseRecord caseRecord = new CaseRecord(id, idPatient, start, end, reason);
             recordService.saveCaseRecord(caseRecord);
             listCase(request, response);
         }
-
         viewCreateCase(request, response);
-        request.getRequestDispatcher("jsp/CaseRecord/create.jsp").forward(request, response);
     }
 
     private void viewPatient(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {

@@ -3,13 +3,18 @@ package service.Impl;
 import dao.ICaseRecordDAO;
 import dao.impl.CaseRecordDAOImpl;
 import model.CaseRecord;
+import model.HospitalDTO;
+import model.Patient;
 import service.ICaseRecordService;
+import service.IPatientService;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class CaseRecordServiceImpl implements ICaseRecordService {
-    public static ICaseRecordDAO caseRecordDAO = new CaseRecordDAOImpl();
+    private ICaseRecordDAO caseRecordDAO = new CaseRecordDAOImpl();
+    private IPatientService patientService = new PatientServiceImpl();
 
     @Override
     public void saveCaseRecord(CaseRecord caseRecord) throws SQLException {
@@ -44,5 +49,26 @@ public class CaseRecordServiceImpl implements ICaseRecordService {
     @Override
     public int findMaxId() throws SQLException {
         return caseRecordDAO.findMaxId();
+    }
+
+    @Override
+    public List<HospitalDTO> getListHospital() throws SQLException {
+        List<HospitalDTO> hospitalDTOS = new ArrayList<>();
+        List<CaseRecord> caseRecordList =  caseRecordDAO.getAllCaseRecord();
+
+        for (CaseRecord caseRecord: caseRecordList) {
+            HospitalDTO hospitalDTO = new HospitalDTO();
+            hospitalDTO.setId(caseRecord.getId());
+            hospitalDTO.setEnd(caseRecord.getEnd());
+            hospitalDTO.setReason(caseRecord.getReason());
+            hospitalDTO.setStart(caseRecord.getStart());
+            hospitalDTO.setIdPatient(caseRecord.getIdPatient());
+
+            Patient patient = this.patientService.getPatientById(caseRecord.getIdPatient());
+            hospitalDTO.setName(patient.getName());
+
+            hospitalDTOS.add(hospitalDTO);
+        }
+        return hospitalDTOS;
     }
 }

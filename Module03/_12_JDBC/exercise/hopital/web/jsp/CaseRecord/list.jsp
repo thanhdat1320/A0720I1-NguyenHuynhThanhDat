@@ -41,13 +41,10 @@
             <th>Edit</th>
             <th>Delete</th>
         </tr>
-        <c:forEach items="${cases}" var="cases">
+        <c:forEach items="${hospitalDTOS}" var="cases">
             <tr>
                 <td><a href="hospital?action=view&id=${cases.id}">${cases.id}</a></td>
-                <td>
-                    <c:forEach items="${patientList}" var="patient">
-                        <c:if test="${patient.id == cases.idPatient}"><a href="hospital?action=viewPatient&id=${patient.id}">${patient.name}</a></c:if>
-                    </c:forEach>
+                <td><a href="hospital?action=viewPatient&id=${cases.idPatient}">${cases.name}</a></td>
                 <td>${cases.start}</td>
                 <td>${cases.end}</td>
                 <td>${cases.reason}</td>

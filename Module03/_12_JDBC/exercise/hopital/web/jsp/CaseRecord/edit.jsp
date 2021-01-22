@@ -18,6 +18,7 @@
 <div class="edit">
     <form action="hospital" method="post">
         <div class="container">
+
             <div class="form-group row">
                 <label for="id" class="col-sm-2 col-form-label">ID</label>
                 <div class="col-sm">
@@ -31,7 +32,14 @@
                     <form action="hospital" method="post">
                         <select name="patient">
                             <c:forEach items="${patientList}" var="patient">
-                                <option value="${patient.id}">${patient.name}</option>
+                                <c:choose>
+                                    <c:when test="${patient.id == caseRecord.idPatient}">
+                                        <option value="${patient.id}" selected>${patient.name}</option>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <option value="${patient.id}">${patient.name}</option>
+                                    </c:otherwise>
+                                </c:choose>
                             </c:forEach>
                         </select>
                     </form>
@@ -59,11 +67,11 @@
                     <input type="text" class="form-control" id="reason" name="reason" value="${caseRecord.reason}">
                 </div>
             </div>
+
             <hr>
             <input type="submit" class="btn btn-outline-success" value="Update">
             <a class="btn btn-outline-secondary" href="hospital" role="button">Back to list</a>
         </div>
-        <input type="hidden" name="action" value="edit">
     </form>
 </div>
 
