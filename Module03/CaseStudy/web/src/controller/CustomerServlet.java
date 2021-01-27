@@ -1,5 +1,6 @@
 package controller;
 
+import common.Validate;
 import model.CS_Customer;
 import model.CS_TypeCustomer;
 import model.dto.CustomerDTO;
@@ -58,7 +59,7 @@ public class CustomerServlet extends HttpServlet {
         String address = request.getParameter("address");
 
         this.customerService.updateCustomer(new CS_Customer(id, name, birthday, gender, identity, phoneNumber, email, address, idTypeCustomer), id);
-        viewCustomer(request, response); // hoi tutor sao id lay getParameter duoc
+        viewCustomer(request, response);
     }
 
     private void deleteCustomer(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
@@ -68,9 +69,9 @@ public class CustomerServlet extends HttpServlet {
     }
 
     private void viewCreateCustomer(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
-      List<CS_TypeCustomer> typeCustomerList = this.typeCustomerService.getAllTypeCustomer();
-      request.setAttribute("typeCustomerList", typeCustomerList);
-      request.getRequestDispatcher("jsp/customer/create.jsp").forward(request, response);
+        List<CS_TypeCustomer> typeCustomerList = this.typeCustomerService.getAllTypeCustomer();
+        request.setAttribute("typeCustomerList", typeCustomerList);
+        request.getRequestDispatcher("jsp/customer/create.jsp").forward(request, response);
     }
 
     private void createCustomer(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
@@ -83,8 +84,30 @@ public class CustomerServlet extends HttpServlet {
         String email = request.getParameter("email");
         String address = request.getParameter("address");
         int idTypeCustomer = Integer.parseInt(request.getParameter("typeCustomer"));
-        this.customerService.saveCustomer(new CS_Customer(id, name, birthday, gender, identity, phoneNumber, email, address, idTypeCustomer));
-        listCustomer(request, response);
+        CS_Customer customer = new CS_Customer(id, name, birthday, gender, identity, phoneNumber, email, address, idTypeCustomer);
+
+        String errorPhoneNumber = null;
+        String errorEmail = null;
+        boolean flag = true;
+        if (!Validate.checkPhoneNumber(phoneNumber)) {
+            errorPhoneNumber = "(xxxxxxxxxx)";
+            flag = false;
+        }
+
+        if (!Validate.checkEmail(email)) {
+            errorEmail = "fail email";
+            flag = false;
+        }
+
+        if (!flag) {
+            request.setAttribute("customer", customer);
+            request.setAttribute("errorPhoneNumber", errorPhoneNumber);
+            request.setAttribute("errorEmail", errorEmail);
+        } else {
+            this.customerService.saveCustomer(new CS_Customer(id, name, birthday, gender, identity, phoneNumber, email, address, idTypeCustomer));
+            listCustomer(request, response);
+        }
+        viewCreateCustomer(request, response);
     }
 
     private void searchCustomer(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {

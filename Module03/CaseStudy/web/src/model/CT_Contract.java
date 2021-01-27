@@ -1,21 +1,19 @@
 package model;
 
-import java.util.Date;
-
 public class CT_Contract {
     private int id;
     private int idServices;
     private int idCustomer;
     private int idEmployee;
-    private Date start;
-    private Date end;
+    private String start;
+    private String end;
     private int deposit;
     private int total;
 
     public CT_Contract() {
     }
 
-    public CT_Contract(int id, int idServices, int idCustomer, int idEmployee, Date start, Date end, int deposit, int total) {
+    public CT_Contract(int id, int idServices, int idCustomer, int idEmployee, String start, String end, int deposit, int total) {
         this.id = id;
         this.idServices = idServices;
         this.idCustomer = idCustomer;
@@ -58,19 +56,19 @@ public class CT_Contract {
         this.idEmployee = idEmployee;
     }
 
-    public Date getStart() {
+    public String getStart() {
         return start;
     }
 
-    public void setStart(Date start) {
+    public void setStart(String start) {
         this.start = start;
     }
 
-    public Date getEnd() {
+    public String getEnd() {
         return end;
     }
 
-    public void setEnd(Date end) {
+    public void setEnd(String end) {
         this.end = end;
     }
 

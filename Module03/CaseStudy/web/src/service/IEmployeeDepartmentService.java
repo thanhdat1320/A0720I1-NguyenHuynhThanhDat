@@ -1,12 +1,12 @@
-package dao;
+package service;
 
 import model.EP_DepartmentEmployee;
-import model.EP_Employee;
+import model.EP_PositionEmployee;
 
 import java.sql.SQLException;
 import java.util.List;
 
-public interface IEmployeeDepartment {
+public interface IEmployeeDepartmentService {
     void saveDepartmentEmployee(EP_DepartmentEmployee departmentEmployee) throws SQLException;
 
     EP_DepartmentEmployee getDepartmentEmployeeById(int id) throws SQLException;
@@ -15,5 +15,5 @@ public interface IEmployeeDepartment {
 
     boolean deleteDepartmentEmployee(int id) throws SQLException;
 
-    boolean updateDepartmentEmployee(EP_DepartmentEmployee departmentEmployee) throws SQLException;
+    boolean updateDepartmentEmployee(EP_DepartmentEmployee departmentEmployee, int id) throws SQLException;
 }

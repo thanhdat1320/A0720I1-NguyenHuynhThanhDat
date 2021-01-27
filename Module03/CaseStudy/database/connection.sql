@@ -1,0 +1,3 @@
+
+CREATE USER 'root'@'%' IDENTIFIED BY '123123';
+GRANT ALL PRIVILEGES ON furama.* TO 'root'@'%';

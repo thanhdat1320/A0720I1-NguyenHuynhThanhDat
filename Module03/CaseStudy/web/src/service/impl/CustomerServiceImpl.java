@@ -52,6 +52,7 @@ public class CustomerServiceImpl implements ICustomerService {
             customerDTO.setId(customer.getId());
             customerDTO.setName(customer.getName());
             customerDTO.setIdTypeCustomer(customer.getIdTypeCustomer());
+
             CS_TypeCustomer typeCustomer = this.typeCustomerService.getTypeCustomerById(customer.getIdTypeCustomer());
             customerDTO.setNameTypeCustomer(typeCustomer.getName());
 

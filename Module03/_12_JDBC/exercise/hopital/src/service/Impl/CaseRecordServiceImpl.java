@@ -54,6 +54,7 @@ public class CaseRecordServiceImpl implements ICaseRecordService {
     @Override
     public List<HospitalDTO> getListHospital() throws SQLException {
         List<HospitalDTO> hospitalDTOS = new ArrayList<>();
+
         List<CaseRecord> caseRecordList =  caseRecordDAO.getAllCaseRecord();
 
         for (CaseRecord caseRecord: caseRecordList) {
