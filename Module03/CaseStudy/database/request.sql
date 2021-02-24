@@ -9,7 +9,7 @@ having (name like 'h%' or name like 'k%' or name like 't%') and ep_employee.name
 
 /*3: Hiển thị khách hàng từ 18 đến 50 tuổi
 	địa chỉ “Đà Nẵng” hoặc “Quảng Trị”. */
-select cs_customer.id, cs_customer.name, (year(curdate()) - year(cs_customer.brthday)) as age
+select cs_customer.id, cs_customer.name, (year(curdate()) - year(cs_customer.birthday)) as age
 from cs_customer
 where (cs_customer.address = 'da nang' or cs_customer.address = 'quang tri') 
 having age between 18 and 50;
@@ -169,6 +169,12 @@ having count <= 3 and (st between '2018' and '2019');
 		from ct_contract
         where year(ct_contract.start_date) < 2016);
      
+     select cs_customer.id as idCustomer, cs_customer.name, cs_type_customer.id as idTypeCustomer, cs_type_customer.name as nameTypeCustomer, ct_services_include.name as nameServiceInclude
+     from cs_customer
+     join ct_contract on cs_customer.id = ct_contract.id_customer
+     join ct_contract_detail on ct_contract.id = ct_contract_detail.id_contract
+     join ct_services_include on ct_services_include.id = ct_contract_detail.id_services_include
+	join cs_type_customer on cs_customer.id_type_customer = cs_type_customer.id
      
      
      

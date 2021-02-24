@@ -2,23 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="68de934e-edb3-47c6-9d21-d63641872466" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Module03/_06_css/exercise/create_pages_commic/commic.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Module03/_06_css/exercise/create_pages_commic/commic.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Module03/_06_css/exercise/dip_css_in_html/test.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Module03/_06_css/exercise/dip_css_in_html/test.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Module03/_06_css/exercise/format_text/formatText.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Module03/_06_css/exercise/format_text/formatText.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Module03/_07_design_layout_page_web/practise/create_layout/createLayout.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Module03/_07_design_layout_page_web/practise/create_layout/myCSS.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Module03/_07_design_layout_page_web/practise/use_box_model/myCSS.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Module03/_07_design_layout_page_web/practise/use_box_model/useBoxModel.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Module03/CaseStudy/database/furama.mwb" beforeDir="false" afterPath="$PROJECT_DIR$/../Module03/CaseStudy/database/furama.mwb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Module03/CaseStudy/database/furama.mwb.bak" beforeDir="false" afterPath="$PROJECT_DIR$/../Module03/CaseStudy/database/furama.mwb.bak" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Module03/CaseStudy/database/request.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../Module03/CaseStudy/database/request.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Module03/exercise/manager.mwb" beforeDir="false" afterPath="$PROJECT_DIR$/../Module03/exercise_sql/manager.mwb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Module03/exercise/manager.mwb.bak" beforeDir="false" afterPath="$PROJECT_DIR$/../Module03/exercise_sql/manager.mwb.bak" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Module03/exercise/manager.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../Module03/exercise_sql/manager.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Module03/exercise/request.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../Module03/exercise_sql/request.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module03/CaseStudy/web/src/controller/ContractServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module03/CaseStudy/web/src/dao/impl/ContractIncludeServiceDAOImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module03/CaseStudy/web/src/service/IContractDetailService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module03/CaseStudy/web/src/service/IContractIncludeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module03/CaseStudy/web/src/service/IContractService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module03/CaseStudy/web/src/service/impl/ContractDetailImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module03/CaseStudy/web/src/service/impl/ContractIncludeServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module03/CaseStudy/web/src/service/impl/ContractServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,8 +41,9 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Module03" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -132,6 +124,7 @@
       <workItem from="1607947091423" duration="150000" />
       <workItem from="1608090964311" duration="1466000" />
       <workItem from="1608200463438" duration="616000" />
+      <workItem from="1611762324045" duration="114000" />
     </task>
     <servers />
   </component>
@@ -139,25 +132,17 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="788" y="364" key="#com.intellij.ide.actions.DebugLogConfigureAction" timestamp="1600666727582">
+    <state x="552" y="179" key="#Notifications" timestamp="1611762432334">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="788" y="364" key="#com.intellij.ide.actions.DebugLogConfigureAction/0.0.1920.1040@0.0.1920.1040" timestamp="1600666727582" />
+    <state x="552" y="179" key="#Notifications/0.0.1920.1040@0.0.1920.1040" timestamp="1611762432334" />
     <state x="739" y="263" key="FileChooserDialogImpl" timestamp="1608202299738">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="739" y="263" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1608202299738" />
-    <state x="1070" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1599818844222">
+    <state x="461" y="163" key="SettingsEditor" timestamp="1611762402741">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1070" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1599818844222" />
-    <state x="1099" y="244" key="run.anything.popup" timestamp="1600259682868">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="1099" y="244" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1600259682868" />
-    <state x="962" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1599618498523">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="962" y="257" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1599618498523" />
+    <state x="461" y="163" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1611762402741" />
   </component>
 </project>

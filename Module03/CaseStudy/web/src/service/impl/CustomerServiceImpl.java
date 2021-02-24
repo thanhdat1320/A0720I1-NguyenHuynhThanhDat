@@ -3,6 +3,7 @@ package service.impl;
 import dao.ICustomerDAO;
 import dao.impl.CustomerDAOImpl;
 import model.CS_Customer;
+import model.dto.CS_CustomerUseDTO;
 import model.CS_TypeCustomer;
 import model.dto.CustomerDTO;
 import service.ICustomerService;
@@ -63,7 +64,15 @@ public class CustomerServiceImpl implements ICustomerService {
 
     @Override
     public List<CustomerDTO> searchCustomerDTO(String name) throws SQLException {
-        return this.getAllCustomerDTO().stream().filter(customerDTO -> customerDTO.getName().contains(name)).collect(Collectors.toList());
+        return this.getAllCustomerDTO()
+                .stream()
+                .filter(customerDTO -> customerDTO.getName().contains(name))
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public List<CS_CustomerUseDTO> getAllCustomerUseService() throws SQLException {
+        return this.customerDAO.getAllCustomerUseService();
     }
 }
 

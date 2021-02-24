@@ -1,6 +1,7 @@
 package service;
 
 import model.CS_Customer;
+import model.dto.CS_CustomerUseDTO;
 import model.dto.CustomerDTO;
 
 import java.sql.SQLException;
@@ -20,4 +21,6 @@ public interface ICustomerService {
     List<CustomerDTO> getAllCustomerDTO() throws SQLException;
 
     List<CustomerDTO> searchCustomerDTO(String name) throws  SQLException;
+
+    List<CS_CustomerUseDTO> getAllCustomerUseService() throws SQLException;
 }

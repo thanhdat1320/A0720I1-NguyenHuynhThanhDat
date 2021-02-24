@@ -2,6 +2,7 @@ package controller;
 
 import common.Validate;
 import model.CS_Customer;
+import model.dto.CS_CustomerUseDTO;
 import model.CS_TypeCustomer;
 import model.dto.CustomerDTO;
 import service.ICustomerService;
@@ -117,6 +118,11 @@ public class CustomerServlet extends HttpServlet {
         request.getRequestDispatcher("jsp/customer/result.jsp").forward(request, response);
     }
 
+    private void viewCustomerUseService(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
+        List<CS_CustomerUseDTO> customerUseList = this.customerService.getAllCustomerUseService();
+        request.setAttribute("customerUseList", customerUseList);
+        request.getRequestDispatcher("jsp/customer/listCustomerUse.jsp").forward(request, response);
+    }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
@@ -186,6 +192,13 @@ public class CustomerServlet extends HttpServlet {
             case "delete":
                 try {
                     deleteCustomer(request, response);
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+                break;
+            case "viewCustomerUseService" :
+                try {
+                    viewCustomerUseService(request, response);
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }

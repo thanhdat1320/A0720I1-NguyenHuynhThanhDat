@@ -1,7 +1,7 @@
 package dao;
 
 import model.CS_Customer;
-import model.CS_TypeCustomer;
+import model.dto.CS_CustomerUseDTO;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -17,5 +17,7 @@ public interface ICustomerDAO {
     boolean deleteCustomer(int id) throws SQLException;
 
     boolean updateCustomer(CS_Customer customer) throws SQLException;
+
+    List<CS_CustomerUseDTO> getAllCustomerUseService() throws SQLException;
 
 }

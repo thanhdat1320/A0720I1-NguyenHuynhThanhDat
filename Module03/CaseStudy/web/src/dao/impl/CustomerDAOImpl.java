@@ -2,7 +2,7 @@ package dao.impl;
 
 import dao.ICustomerDAO;
 import model.CS_Customer;
-import model.CS_TypeCustomer;
+import model.dto.CS_CustomerUseDTO;
 import utils.DBConnection;
 
 import java.sql.Connection;
@@ -10,7 +10,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class CustomerDAOImpl implements ICustomerDAO {
@@ -20,7 +19,14 @@ public class CustomerDAOImpl implements ICustomerDAO {
     public static final String GET_ALL_CUSTOMER = "select * from cs_customer";
     public static final String DELETE_CUSTOMER = "delete from cs_customer where id = ?";
     public static final String UPDATE_CUSTOMER = "update cs_customer set name = ?, birthday = ?, gender = ?, identity = ?, phone_number = ?, email = ?, address = ?, id_type_customer = ? where id = ?";
-
+    public static final  String GET_CUSTOMER_USE_SERVICE = "     select cs_customer.id as idCustomer, cs_customer.name, cs_type_customer.id as idTypeCustomer, cs_type_customer.name as nameTypeCustomer, ct_services_include.name as nameServiceInclude\n" +
+            "     from cs_customer\n" +
+            "     join ct_contract on cs_customer.id = ct_contract.id_customer\n" +
+            "     join ct_contract_detail on ct_contract.id = ct_contract_detail.id_contract\n" +
+            "     join ct_services_include on ct_services_include.id = ct_contract_detail.id_services_include\n" +
+            "\tjoin cs_type_customer on cs_customer.id_type_customer = cs_type_customer.id\n" +
+            "     \n" +
+            "     ";
 
     @Override
     public void saveCustomer(CS_Customer customer) throws SQLException {
@@ -100,5 +106,22 @@ public class CustomerDAOImpl implements ICustomerDAO {
         return preparedStatement.executeUpdate() > 0;
     }
 
+    @Override
+    public List<CS_CustomerUseDTO> getAllCustomerUseService() throws SQLException {
+        List<CS_CustomerUseDTO> customerList = new ArrayList<>();
+        PreparedStatement preparedStatement = connection.prepareStatement(GET_CUSTOMER_USE_SERVICE);
 
+        ResultSet resultSet = preparedStatement.executeQuery();
+        while (resultSet.next()) {
+            int idCustomer = resultSet.getInt("idCustomer");
+            String name = resultSet.getString("name");
+            int idTypeCustomer = resultSet.getInt("idTypeCustomer");
+            String nameTypeCustomer = resultSet.getString("nameTypeCustomer");
+            String nameServiceInclude = resultSet.getString("nameServiceInclude");
+
+            CS_CustomerUseDTO customerUse = new CS_CustomerUseDTO(idCustomer, name, idTypeCustomer, nameTypeCustomer, nameServiceInclude);
+            customerList.add(customerUse);
+        }
+        return customerList;
+    }
 }

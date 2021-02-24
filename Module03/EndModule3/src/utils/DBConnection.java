@@ -5,9 +5,9 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DBConnection {
-    private static String jdbcURL = "jdbc:mysql://localhost:3306/hoptital?useSSL=false&allowPublicKeyRetrieval=true";
-    private static String jdbcUsername = "dat";
-    private static String jdbcPassword = "123123";
+    private static String jdbcURL = "jdbc:mysql://localhost:3306/module3?useSSL=false&allowPublicKeyRetrieval=true";
+    private static String jdbcUsername = "root";
+    private static String jdbcPassword = "Concho4chan";
 
     public static Connection getConnection() {
         Connection connection = null;

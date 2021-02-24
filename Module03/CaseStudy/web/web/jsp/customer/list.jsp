@@ -15,6 +15,7 @@
     <link rel="stylesheet" type="text/css" href="assert/css/style.css">
 </head>
 <body>
+
 <div class="container viewList">
     <div class="row">
 
@@ -30,8 +31,13 @@
         </div>
 
         <div class="col">
+            <a class="btn btn-outline-secondary" href="customer?action=viewCustomerUseService" role="button">View Customer Use Service</a>
+        </div>
+
+        <div class="col">
             <a class="btn btn-outline-secondary" href="furama" role="button">Back to home</a>
         </div>
+
     </div>
 </div>
 <hr>
@@ -56,7 +62,7 @@
                        href="customer?action=view&id=${customerDTO.id}">Information</a></td>
                 <td><a class="btn btn-outline-warning btn-sm" role="button" aria-pressed="true"
                        href="customer?action=edit&id=${customerDTO.id}">Edit</a></td>
-                <td><a class="btn btn-outline-danger btn-sm" role="button" aria-pressed="true"
+                <td><a class="btn btn-outline-danger btn-sm delete" role="button" aria-pressed="true"
                        href="customer?action=delete&id=${customerDTO.id}">Delete</a></td>
             </tr>
         </c:forEach>

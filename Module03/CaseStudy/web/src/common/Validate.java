@@ -17,5 +17,4 @@ public class Validate {
         regex = "^[a-zA-Z][\\w-]+@([\\w]+\\.[\\w]+|[\\w]+\\.[\\w]{2,}\\.[\\w]{2,})$";
         return str.matches(regex);
     }
-
 }

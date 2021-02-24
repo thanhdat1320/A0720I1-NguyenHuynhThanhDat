@@ -54,7 +54,7 @@
             <div class="form-group row">
                 <label for="birthday" class="col-sm-2 col-form-label">Birthday</label>
                 <div class="col-sm">
-                    <input type="text" class="form-control" id="birthday" name="birthday" value="${customer.birthday}">
+                    <input type="date" class="form-control" id="birthday" name="birthday" value="${customer.birthday}">
                 </div>
             </div>
 
