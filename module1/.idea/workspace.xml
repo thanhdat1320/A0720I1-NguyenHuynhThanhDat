@@ -2,14 +2,46 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="68de934e-edb3-47c6-9d21-d63641872466" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Module03/CaseStudy/web/src/controller/ContractServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Module03/CaseStudy/web/src/dao/impl/ContractIncludeServiceDAOImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Module03/CaseStudy/web/src/service/IContractDetailService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Module03/CaseStudy/web/src/service/IContractIncludeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Module03/CaseStudy/web/src/service/IContractService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Module03/CaseStudy/web/src/service/impl/ContractDetailImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Module03/CaseStudy/web/src/service/impl/ContractIncludeServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Module03/CaseStudy/web/src/service/impl/ContractServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module04/_01_springMVC/exercise/chang_money/chang_money.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module04/_01_springMVC/exercise/dictionary/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module04/_01_springMVC/exercise/dictionary/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module04/_01_springMVC/exercise/dictionary/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module04/_01_springMVC/exercise/dictionary/dictionary.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module04/_01_springMVC/practise/greeting/greeting.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module04/_02_spring_controller/practise/check_email/.idea/modules/check_email.main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module04/_02_spring_controller/practise/check_email/src/main/java/common/Validation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module04/_02_spring_controller/practise/check_email/src/main/java/controllers/CheckEmailController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module04/_02_spring_controller/practise/check_email/src/main/webapp/WEB-INF/applicationContext.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module04/_02_spring_controller/practise/check_email/src/main/webapp/WEB-INF/dispatcher-servlet.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module04/_02_spring_controller/practise/check_email/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module04/_02_spring_controller/practise/manager-customer/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module04/_02_spring_controller/practise/manager-customer/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module04/_02_spring_controller/practise/manager-customer/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module04/_02_spring_controller/practise/manager-customer/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module04/_02_spring_controller/practise/manager-customer/.idea/modules/manager-customer.main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module04/_02_spring_controller/practise/manager-customer/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module04/_02_spring_controller/practise/manager-customer/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module04/_02_spring_controller/practise/manager-customer/src/main/java/controllers/CustomerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module04/_02_spring_controller/practise/manager-customer/src/main/java/model/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module04/_02_spring_controller/practise/manager-customer/src/main/java/repository/ICustomerRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module04/_02_spring_controller/practise/manager-customer/src/main/java/repository/impl/CustomerRepositoryImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module04/_02_spring_controller/practise/manager-customer/src/main/java/service/ICustomerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module04/_02_spring_controller/practise/manager-customer/src/main/java/service/impl/CustomerServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module04/_02_spring_controller/practise/manager-customer/src/main/webapp/WEB-INF/applicationContext.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module04/_02_spring_controller/practise/manager-customer/src/main/webapp/WEB-INF/dispatcher-servlet.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module04/_02_spring_controller/practise/manager-customer/src/main/webapp/WEB-INF/views/create.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module04/_02_spring_controller/practise/manager-customer/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module04/_02_spring_controller/practise/time-the-world/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module04/_02_spring_controller/practise/time-the-world/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module04/_02_spring_controller/practise/time-the-world/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module04/_02_spring_controller/practise/time-the-world/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module04/_02_spring_controller/practise/time-the-world/.idea/modules/time-the-world.main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module04/_02_spring_controller/practise/time-the-world/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module04/_02_spring_controller/practise/time-the-world/src/main/java/controllers/TimeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module04/_02_spring_controller/practise/time-the-world/src/main/webapp/WEB-INF/applicationContext.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module04/_02_spring_controller/practise/time-the-world/src/main/webapp/WEB-INF/dispatcher-servlet.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module04/_02_spring_controller/practise/time-the-world/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module04/_01_springMVC/exercise/chang_money/src/service/impl/ConvertMoneyServiceIpml.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module04/_01_springMVC/exercise/chang_money/src/service/impl/ConvertMoneyServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -125,6 +157,8 @@
       <workItem from="1608090964311" duration="1466000" />
       <workItem from="1608200463438" duration="616000" />
       <workItem from="1611762324045" duration="114000" />
+      <workItem from="1614394692926" duration="180000" />
+      <workItem from="1614399606154" duration="684000" />
     </task>
     <servers />
   </component>
@@ -136,10 +170,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="179" key="#Notifications/0.0.1920.1040@0.0.1920.1040" timestamp="1611762432334" />
-    <state x="739" y="263" key="FileChooserDialogImpl" timestamp="1608202299738">
+    <state x="739" y="263" key="FileChooserDialogImpl" timestamp="1614399619169">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="739" y="263" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1608202299738" />
+    <state x="739" y="263" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1614399619169" />
     <state x="461" y="163" key="SettingsEditor" timestamp="1611762402741">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
