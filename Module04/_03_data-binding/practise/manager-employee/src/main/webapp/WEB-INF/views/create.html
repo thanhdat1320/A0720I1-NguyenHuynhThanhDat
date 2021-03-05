@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head"></head>
+
+<body>
+<form th:action="@{/create}" th:object="${employee}" method="post">
+    <label>ID</label>
+    <input type="text" th:field="*{id}"><br>
+    <label>Name</label>
+    <input type="text" th:field="*{name}"><br>
+    <label>Number Contract</label>
+    <input type="text" th:field="*{contactNumber}"><br>
+    <input type="submit" value="Create">
+</form>
+
+<hr>
+<a th:href="@{/}">Back to list</a>
+
+<footer th:replace="layout :: footer"></footer>
+</body>
+</html>
