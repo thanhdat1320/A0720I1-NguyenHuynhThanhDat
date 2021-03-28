@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List</title>
+</head>
+<body>
+<a th:href="@{/create}">Create</a>
+<a th:href="@{/managerCard}">Manager Card</a>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Amount</th>
+    </tr>
+    <tr th:each="book : ${listBook}">
+        <td th:text="${book.getName()}"></td>
+        <td th:text="${book.getAmount()}"></td>
+        <td><a th:href="@{/delete/__${book.getId()}__}">Delete</a></td>
+        <td><a th:href="@{/borrow/__${book.getId()}__}">Borrow</a></td>
+    </tr>
+</table>
+</body>
+</html>

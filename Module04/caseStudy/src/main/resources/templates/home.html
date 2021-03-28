@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home</title>
+    <th:block th:insert="~{fragments/layout :: meta}"/>
+    <th:block th:insert="~{fragments/layout :: link}"/>
+</head>
+
+<body>
+<div id="header">
+    <span class="header-logo">
+        <h3>Furama</h3>
+    </span>
+</div>
+
+<nav id="navigation">
+    <div class="navigation-flex">
+        <span class="navigation-home">
+            <ul>
+                <li><a class="btn btn-outline-secondary btn-lg" role="button" aria-pressed="true" th:href="@{/furama}">Home</a></li>
+                <li><a class="btn btn-outline-secondary btn-lg" role="button" aria-pressed="true"
+                       th:href="@{/customer/}">Customer</a></li>
+                <li><a class="btn btn-outline-secondary btn-lg" role="button" aria-pressed="true"
+                       th:href="@{/employee/}">Employee</a></li>
+                <li><a class="btn btn-outline-secondary btn-lg" role="button" aria-pressed="true"
+                       th:href="@{/service/}">Service</a></li>
+                <li><a class="btn btn-outline-secondary btn-lg" role="button" aria-pressed="true"
+                       th:href="@{/contract/}">Contract</a></li>
+            </ul>
+        </span>
+    </div>
+</nav>
+
+<div id="main">
+    <div id="sidebar-left">
+        <div class="sidebar-left-main">
+            <div class="sidebar-intro">introduction</div>
+            <div class="sidebar-nope">nope</div>
+        </div>
+    </div>
+
+    <div id="content">
+        <div class="content content1">
+            <span>hot news</span>
+            <span>photo side</span>
+        </div>
+        <div class="content content2">
+            <span>news </span>
+            <span>news </span>
+            <span>news </span>
+            <span>news </span>
+            <span>news </span>
+            <span>news </span>
+        </div>
+    </div>
+
+    <div id="sidebar_right">
+        <span>abc</span>
+        <span>abc</span>
+        <span>abc</span>
+    </div>
+</div>
+
+<footer id="footer">
+    <span class="footer-year">
+          <p>@2012 - TapChiLapTring</p>
+    </span>
+
+    <span>
+        <ul>
+            <li>home</li>
+            <li>home</li>
+            <li>home</li>
+            <li>home</li>
+            <li>home</li>
+        </ul>
+    </span>
+</footer>
+
+<th:block th:insert="~{fragments/layout :: script}"/>
+</body>
+</html>

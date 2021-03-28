@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List</title>
+</head>
+<body>
+<a th:href="@{/create}">Create</a>
+<table>
+    <tr>
+        <td>Name</td>
+        <td>Age</td>
+    </tr>
+    <tr th:each="user : ${listUser}">
+        <td th:text="${user.getName()}"></td>
+        <td th:text="${user.getAge()}"></td>
+    </tr>
+</table>
+</body>
+</html>

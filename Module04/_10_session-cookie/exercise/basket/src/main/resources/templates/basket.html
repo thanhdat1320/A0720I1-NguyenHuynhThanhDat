@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Basket</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+</head>
+<body>
+<table border="1px solid black">
+    <tr>
+        <th>Number</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    <tr th:each="basket, var: ${basketMap}">
+        <td th:text="${var.count}"></td>
+        <td th:text="${basket.getKey().getName()}"></td>
+        <td th:text="${basket.getKey().getPrice()}"></td>
+        <td th:text="${basket.getValue()}"></td>
+        <td><a th:href="@{/edit/__${basket.getKey().getId()}__/__${basket.getValue()}__}">Edit</a></td>
+        <td><a th:href="@{/delete/__${basket.getKey().getId()}__/__${basket.getValue()}__}">Delete</a></td>
+    </tr>
+</table>
+
+<a th:href="@{/list}">Back to list</a>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</body>
+</html>

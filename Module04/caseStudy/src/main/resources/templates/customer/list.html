@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Customer</title>
+    <th:block th:insert="~{fragments/layout :: meta}"/>
+    <th:block th:insert="~{fragments/layout :: link}"/>
+</head>
+
+<body>
+<form th:action="@{/customer/search}" method="post">
+    <input type="text" name="keyword">
+    <input type="submit" value="search">
+    <input type="reset" value="Reset">
+</form>
+<a class="btn btn-outline-secondary" role="button" th:href="@{/customer/create}">Create New Customer</a><hr>
+
+<div class="container-lg">
+    <table class="table table-dark">
+    <thead>
+    <tr>
+        <th>Stt</th>
+        <th>Name</th>
+        <th>Edit</th>
+        <th>Delete</th>
+        <th>View</th>
+    </tr>
+    <tr th:each="customer, var: ${customerList}">
+        <td th:text="${var.count}"></td>
+        <td th:text="${customer.getName()}"></td>
+        <td><a th:href="@{/customer/edit(id=${customer.getId()})}">Edit</a></td>
+        <td><a th:href="@{/customer/delete(id=${customer.getId()})}">Delete</a></td>
+        <td><a th:href="@{/customer/view(id=${customer.getId()})}">View</a></td>
+    </tr>
+    </thead>
+</table>
+</div>
+<div>
+    <a th:href="@{'/customer/'(page=${customerList.number - 1})}" th:if="${customerList.hasPrevious()}">Previous</a>
+    <span th:text="${customerList.number + 1}"></span>/<span th:text="${customerList.totalPages}"></span>
+    <a th:href="@{'/customer/'(page=${customerList.number + 1})}" th:if="${customerList.hasNext()}">Next</a>
+</div>
+<a th:href="@{/furama}">Back to home</a>
+
+<th:block th:insert="~{fragments/layout :: script}"/>
+</body>
+</html>

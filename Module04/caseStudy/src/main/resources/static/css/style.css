@@ -1,0 +1,96 @@
+body {
+    font-family: 'Indie Flower', cursive;
+    font-size: 20px;
+    background-image: url("templates/images/2.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+#header {
+    width: 100%;
+    justify-content: space-between;
+    height: 100px;
+}
+
+#header h3 {
+    text-align: center;
+    font-size: 80px;
+}
+
+#navigation {
+    margin-top: 5px;
+}
+
+#navigation ul li {
+    display: inline;
+    padding: 10px;
+}
+
+.navigation-home ul {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+}
+
+.navigation-search {
+    padding: 15px;
+}
+
+#main {
+    margin-top: 5px;
+    display: flex;
+    justify-content: left;
+}
+#sidebar-left {
+    width: 15%;
+}
+.sidebar-intro {
+    height: 200px;
+}
+.sidebar-nope {
+    height: 300px;
+}
+
+#content {
+    width: 70%;
+    margin-left: 5px;
+}
+
+#sidebar_right {
+    width: 15%;
+    margin-left: 5px;
+    height: 600px;
+}
+
+#footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+#footer ul li {
+    display: inline-block;
+    padding: 5px;
+}
+.footer-year {
+    padding: 5px;
+}
+
+/*List Customer*/
+.viewList {
+    padding-top: 10px;
+}
+
+/*View Customer*/
+.viewCustomer, .viewEmployee{
+    padding-top: 10px;
+}
+
+.viewCustomer table tr > td, .viewEmployee table tr > td{
+    color: blue;
+}
+
+/*Edit Customer*/
+.viewEditCustomer div > label{ /* hoi tutor ko chinh dc font size*/
+    font-size: 16px;
+}

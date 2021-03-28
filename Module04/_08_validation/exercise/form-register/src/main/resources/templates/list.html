@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List</title>
+</head>
+<body>
+<a th:href="@{/create}">Create</a>
+<table>
+    <tr>
+        <td>Name</td>
+        <td>Age</td>
+    </tr>
+    <tr th:each="register : ${registerList}">
+        <td th:text="${register.getFirstName()}"></td>
+        <td th:text="${register.getLastName()}"></td>
+        <td th:text="${register.getAge()}"></td>
+        <td th:text="${register.getEmail()}"></td>
+    </tr>
+</table>
+</body>
+</html>
