@@ -24,7 +24,7 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
-    @GetMapping("/list")
+    @GetMapping(value = {"", "/list"})
     public ModelAndView getList() {
         return new ModelAndView("list", "listProduct", this.productService.findAll());
     }
@@ -73,9 +73,25 @@ public class ProductController {
 
     @GetMapping("/delete/{id}/{amount}")
     public String delete(@ModelAttribute("product") Product product, @ModelAttribute("basket") Basket basket, @ModelAttribute("basketMap") Map<Product, Integer> basketMap) {
-        System.out.println(product.toString());
-        System.out.println(basket.toString());
-        basketMap.remove(product, basket.getAmount());
+        basketMap.remove(this.productService.findById(product.getId()), basket.getAmount());
         return "redirect:/basket";
+    }
+
+    @GetMapping("/create")
+    public String createForm(Model model) {
+        model.addAttribute("product", new Product());
+        return "create";
+    }
+
+    @PostMapping("/create")
+    public String create(@ModelAttribute("product") Product product) {
+        this.productService.save(product);
+        return "redirect:/list";
+    }
+
+    @GetMapping("/delete/{id}")
+    public String delete(@PathVariable("id") int id) {
+        this.productService.delete(id);
+        return "redirect:/list";
     }
 }

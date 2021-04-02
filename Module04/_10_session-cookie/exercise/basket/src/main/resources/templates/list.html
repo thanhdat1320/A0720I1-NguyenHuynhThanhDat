@@ -7,6 +7,7 @@
 </head>
 <body>
 <a th:href="@{/basket}">Basket</a><br>
+<a th:href="@{/create}">Create</a>
 
 <table border="1px solid black">
     <tr>
@@ -20,9 +21,18 @@
         <td th:text="${product.name}"></td>
         <td th:text="${product.price}"></td>
         <td><a th:href="@{/view/__${product.getId()}__}">View</a></td>
+        <td><a th:href="@{/delete/__${product.getId()}__}">Delete</a></td>
     </tr>
 </table>
 
+<!--<div class="card" style="width: 18rem;">-->
+<!--    <img src="..." class="card-img-top" alt="...">-->
+<!--    <div class="card-body">-->
+<!--        <h5 class="card-title">Card title</h5>-->
+<!--        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+<!--        <a href="#" class="btn btn-primary">Go somewhere</a>-->
+<!--    </div>-->
+<!--</div>  -->
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </body>
