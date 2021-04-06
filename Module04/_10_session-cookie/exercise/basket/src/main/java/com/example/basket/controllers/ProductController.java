@@ -24,7 +24,8 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
-    @GetMapping(value = {"", "/list"})
+    @GetMapping(value = {"", "/list" +
+            ""})
     public ModelAndView getList() {
         return new ModelAndView("list", "listProduct", this.productService.findAll());
     }
