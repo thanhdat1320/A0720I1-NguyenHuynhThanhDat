@@ -1,8 +1,7 @@
-package com.example.basket.controllers;
-
-import com.example.basket.models.Basket;
-import com.example.basket.models.Product;
-import com.example.basket.services.ProductService;
+package com.code.basket.controllers;
+import com.code.basket.models.Basket;
+import com.code.basket.models.Product;
+import com.code.basket.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

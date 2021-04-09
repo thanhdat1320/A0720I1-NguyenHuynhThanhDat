@@ -1,15 +1,11 @@
-package com.example.basket.services.impl;
-
-import com.example.basket.models.Product;
-import com.example.basket.repositories.ProductRepository;
-import com.example.basket.services.ProductService;
+package com.code.basket.services.impl;
+import com.code.basket.models.Product;
+import com.code.basket.repositories.ProductRepository;
+import com.code.basket.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
 @Service

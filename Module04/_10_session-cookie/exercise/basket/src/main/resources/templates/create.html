@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Create</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+
+<div>
+    <form th:object="${product}" th:action="@{/create}" th:method="post">
+        <table>
+            <input type="hidden" th:field="*{id}">
+            <tr>
+                <th>Name</th>
+                <td><input type="text" th:field="*{name}"></td>
+            </tr>
+            <tr>
+                <th>Price</th>
+                <td><input type="text" th:field="*{price}"></td>
+            </tr>
+        </table>
+        <button type="submit" class="btn btn-success" data-bs-toggle="button" autocomplete="off">Create</button>
+    </form>
+</div>
+
+</body>
+</html>

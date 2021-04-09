@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+<body>
+<div>
+    <form th:object="${product}" th:action="@{/edit}" th:method="post">
+        <table>
+            <input type="hidden" th:field="*{id}">
+            <tr>
+                <th>Name</th>
+                <td><input type="text" th:field="*{name}" readonly></td>
+            </tr>
+            <tr>
+                <th>Price</th>
+                <td><input type="text" th:field="*{price}" readonly></td>
+            </tr>
+            <tr>
+                <th>Quantity</th>
+                <td th:object="${basket}"><input type="number" min="1" th:field="*{amount}"></td>
+            </tr>
+        </table>
+        <input type="submit" value="Edit">
+    </form>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</body>
+</html>

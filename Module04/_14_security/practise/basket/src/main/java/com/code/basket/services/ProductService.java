@@ -1,6 +1,7 @@
-package com.example.basket.services;
+package com.code.basket.services;
 
-import com.example.basket.models.Product;
+
+import com.code.basket.models.Product;
 
 import java.util.List;
 
