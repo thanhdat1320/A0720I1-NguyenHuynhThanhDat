@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface ICustomerService {
     Page<CS_Customer> findAll(Pageable pageable);
-    void save(CS_Customer cs_customer);
+    CS_Customer save(CS_Customer cs_customer);
     void delete(int id);
     CS_Customer findById(int id);
 

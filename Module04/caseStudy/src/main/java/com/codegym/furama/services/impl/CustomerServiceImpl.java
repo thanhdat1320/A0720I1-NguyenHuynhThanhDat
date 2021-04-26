@@ -18,15 +18,14 @@ public class CustomerServiceImpl implements ICustomerService {
     @Autowired
     private ICustomerRepositories iCustomerRepositories;
 
-
     @Override
     public Page<CS_Customer> findAll(Pageable pageable) {
         return this.iCustomerRepositories.findAll(pageable);
     }
 
     @Override
-    public void save(CS_Customer cs_customer) {
-        this.iCustomerRepositories.save(cs_customer);
+    public CS_Customer save(CS_Customer cs_customer) {
+        return  this.iCustomerRepositories.save(cs_customer);
     }
 
     @Override
@@ -41,7 +40,6 @@ public class CustomerServiceImpl implements ICustomerService {
 
     @Override
     public Page<CS_Customer> search(String keyword, Pageable pageable) {
-//      List<CS_Customer> customerList = this.findAll(pageable).getContent().stream().filter(cs_customer -> cs_customer.getName().contains(keyword)).collect(Collectors.toList());
         List<CS_Customer> customerList = this.iCustomerRepositories.findAll().stream().filter(cs_customer -> cs_customer.getName().contains(keyword)).collect(Collectors.toList());
         int start = (int) pageable.getOffset();
         int end = (int) (start + pageable.getPageSize()) > customerList.size() ? customerList.size() : (start + pageable.getPageSize());

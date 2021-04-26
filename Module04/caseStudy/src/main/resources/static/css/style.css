@@ -1,10 +1,11 @@
 body {
-    font-family: 'Indie Flower', cursive;
+    /*font-family: 'Indie Flower', cursive;*/
     font-size: 20px;
-    background-image: url("templates/images/2.jpg");
+    background: url("/images/2.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-position: center;
+    background-size: cover;
+    background-position:100% ;
 }
 
 #header {

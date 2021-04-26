@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Edit</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../../static/css/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="../../static/css/style.css">
+    <th:block th:insert="~{fragments/layout :: meta}"/>
+    <th:block th:insert="~{fragments/layout :: link}"/>
 </head>
 <body>
 <form th:action="@{/customer/edit}" th:object="${customer}" method="post">
@@ -46,11 +45,11 @@
             <option th:each="typeCustomer : ${listTypeCustomer}" th:value="${typeCustomer.getId()}" th:text="${typeCustomer.name}" th:selected="${typeCustomer.name}"></option>
         </select>
     </div>
+    <hr>
 
-    <input type="submit" value="Edit">
+    <input type="submit" value="Edit" class="btn btn-success">
 </form>
-
-<script type="text/javascript" src="../../static/jquery/jquery.js"></script>
-<script type="text/javascript" src="../../static/css/bootstrap/js/bootstrap.js"></script>
+<a th:href="@{/customer/}" class="btn btn-outline-dark">Back to list</a>
+<th:block th:insert="~{fragments/layout :: script}"/>
 </body>
 </html>

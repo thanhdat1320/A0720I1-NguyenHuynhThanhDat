@@ -24,7 +24,7 @@ public class Register {
     @NotNull(message = "Last name left blank ")
     private String lastName;
 
-    @Min(value = 18, message = "you are under 18 years of age")
+    @Min(value = 18, message = "You are under 18 years of age")
     private int age;
 
     @Pattern(regexp = "^[a-zA-Z][\\w-]+@([\\w]+\\.[\\w]+|[\\w]+\\.[\\w]{2,}\\.[\\w]{2,})$", message = "fail email")

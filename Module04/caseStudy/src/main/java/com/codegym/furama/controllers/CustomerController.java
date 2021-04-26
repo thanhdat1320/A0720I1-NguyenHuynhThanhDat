@@ -6,11 +6,15 @@ import com.codegym.furama.services.ICustomerTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import javax.validation.Valid;
 import java.util.Arrays;
 import java.util.List;
 
@@ -24,7 +28,7 @@ public class CustomerController {
     @Autowired
     private ICustomerTypeService iCustomerTypeService;
 
-    @GetMapping("/")
+    @GetMapping(value = {"/", "/list"})
     public ModelAndView getList(@PageableDefault(3) Pageable pageable) {
         return new ModelAndView("customer/list", "customerList", this.iCustomerService.findAll(pageable));
     }
@@ -39,12 +43,19 @@ public class CustomerController {
     }
 
     @PostMapping("/create")
-    public ModelAndView create(@ModelAttribute(name = "customer") CS_Customer cs_customer) {
-        this.iCustomerService.save(cs_customer);
-        return new ModelAndView("redirect:/customer/");
+    public ModelAndView create(@Valid @ModelAttribute(name = "customer") CS_Customer cs_customer, BindingResult bindingResult, Model model) {
+        if (bindingResult.hasErrors()) {
+            List<String> listGender = Arrays.asList("male", "female", "other");
+            model.addAttribute("listGender", listGender);
+            model.addAttribute("listTypeCustomer", this.iCustomerTypeService.findAll());
+            return new ModelAndView("customer/create");
+        } else {
+            this.iCustomerService.save(cs_customer);
+            return new ModelAndView("redirect:/customer/");
+        }
     }
 
-    @GetMapping("/delete")
+    @PostMapping("/delete")
     public String delete(@RequestParam(value = "id") int id) {
         this.iCustomerService.delete(id);
         return "redirect:/customer/";
@@ -56,7 +67,7 @@ public class CustomerController {
     }
 
     @GetMapping("/edit")
-    public ModelAndView getFormEdit(@RequestParam(value = "id") int id) {
+    public ModelAndView getFormEdit(@RequestParam(value = "idCustomer") int id) {
         List<String> listGender = Arrays.asList("male", "female", "other");
         ModelAndView modelAndView = new ModelAndView("/customer/edit");
         modelAndView.addObject("listTypeCustomer", this.iCustomerTypeService.findAll());
@@ -72,7 +83,7 @@ public class CustomerController {
     }
 
     @PostMapping("/search")
-    public ModelAndView search(@PageableDefault(3) @RequestParam("keyword") String keyword, Pageable pageable) {
+    public ModelAndView search(@PageableDefault(3) @RequestParam("nameSearch") String keyword, Pageable pageable) {
         return new ModelAndView("customer/list", "customerList", this.iCustomerService.search(keyword, pageable));
     }
 }

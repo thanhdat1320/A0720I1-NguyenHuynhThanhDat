@@ -13,6 +13,7 @@ import java.util.Set;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+
 public class US_Role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

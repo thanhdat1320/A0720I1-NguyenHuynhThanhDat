@@ -8,7 +8,6 @@ import javax.validation.ConstraintValidatorContext;
 public class PhoneNumberValidator implements ConstraintValidator<PhoneNumberValidation, PhoneNumber> {
     @Override
     public void initialize(PhoneNumberValidation constraintAnnotation) {
-
     }
 
     @Override

@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>View</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../../static/css/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="../../static/css/style.css">
+    <th:block th:insert="~{fragments/layout :: meta}"/>
+    <th:block th:insert="~{fragments/layout :: link}"/>
 </head>
 <body>
 <div class="container">
-    <table class="table table-dark" th:object="${customer}">
+    <table class="table" th:object="${customer}">
         <tr>
             <th>Name</th>
             <td th:text="${customer.name}"></td>
@@ -47,7 +46,6 @@
     <a class="btn btn-outline-secondary" th:href="@{/customer/}" role="button">Back</a>
 </div>
 
-<script type="text/javascript" src="../../static/jquery/jquery.js"></script>
-<script type="text/javascript" src="../../static/css/bootstrap/js/bootstrap.js"></script>
+<th:block th:insert="~{fragments/layout :: script}"/>
 </body>
 </html>
