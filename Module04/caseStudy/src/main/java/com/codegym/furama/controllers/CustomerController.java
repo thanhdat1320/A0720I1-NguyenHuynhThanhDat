@@ -45,7 +45,7 @@ public class CustomerController {
     @PostMapping("/create")
     public ModelAndView create(@Valid @ModelAttribute(name = "customer") CS_Customer cs_customer, BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors()) {
-            List<String> listGender = Arrays.asList("male", "female", "other");
+            List<String> listGender = Arrays.asList("Male", "Female", "Other");
             model.addAttribute("listGender", listGender);
             model.addAttribute("listTypeCustomer", this.iCustomerTypeService.findAll());
             return new ModelAndView("customer/create");
