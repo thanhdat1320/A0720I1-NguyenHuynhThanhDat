@@ -12,7 +12,6 @@ public interface ICustomerService {
     CS_Customer save(CS_Customer cs_customer);
     void delete(int id);
     CS_Customer findById(int id);
-
     Page<CS_Customer> search(String keyword, Pageable pageable);
 
 }

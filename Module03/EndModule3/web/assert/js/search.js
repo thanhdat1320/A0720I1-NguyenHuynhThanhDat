@@ -12,6 +12,7 @@ $(document).ready(function () {
             }
         })
     });
+
     $(".delete").click((event) => {
         if (!confirm("Are you sure to delete?")) {
             event.preventDefault();
