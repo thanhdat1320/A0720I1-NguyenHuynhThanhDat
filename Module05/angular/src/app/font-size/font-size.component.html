@@ -1,0 +1,11 @@
+<div>
+  <label>Edit font size:</label>
+  <input type="range" [(ngModel)]="fontSize">
+</div>
+<p [style.font-size.px]="fontSize">
+  Nguyen Huynh Thanh Dat
+</p>
+<button (click)="increase()">in</button>
+<button (click)="decrease()">de</button>
+<!--<p>{{count}}</p>-->
+

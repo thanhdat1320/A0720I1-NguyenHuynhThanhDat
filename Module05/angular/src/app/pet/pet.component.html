@@ -1,0 +1,8 @@
+<label>Pet Name</label>
+<input type="text" (change)="setName($event.target.value)">
+<label>Pet Image</label>
+<input type="text" (change)="setImage($event.target.value)">
+<br>
+<h3>Pet Name: {{petName}}</h3>
+<img [src]="petImage" alt="pet" width="20%">
+

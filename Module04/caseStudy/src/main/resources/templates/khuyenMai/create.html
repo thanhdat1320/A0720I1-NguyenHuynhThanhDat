@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create</title>
+    <th:block th:insert="~{fragments/layout :: meta}"/>
+    <th:block th:insert="~{fragments/layout :: link}"/>
+</head>
+<body>
+
+<form th:action="@{/cinema/create}" method="post" th:object="${khuyenMai}">
+    <input type="hidden" th:field="*{id}">
+    <table>
+        <tr>
+            <td>
+                <label>Tieu De</label>
+            </td>
+            <td>
+                <input type="text" th:field="*{tieuDe}">
+                <p th:if="${#fields.hasAnyErrors()}" th:errors="*{tieuDe}" style="color: red"></p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label>Thoi Gian Bat Dau</label>
+            </td>
+            <td><input type="date" th:field="*{thoiGianBatDau}">
+                <p th:if="${#fields.hasAnyErrors()}" th:errors="*{thoiGianBatDau}" style="color: red"></p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label>Thoi Gian Ket Thuc</label>
+            </td>
+            <td><input type="date" th:field="*{thoiGianKetThuc}">
+                <p th:if="${#fields.hasAnyErrors()}" th:errors="*{thoiGianKetThuc}" style="color: red"></p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label>Muc Giam Gia</label>
+            </td>
+            <td><input type="text" th:field="*{mucGiamGia}">
+                <p th:if="${#fields.hasAnyErrors()}" th:errors="*{mucGiamGia}" style="color: red"></p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label>Chi Tiet</label>
+            </td>
+            <td>
+                <input type="text" th:field="*{chiTiet}">
+                <p th:if="${#fields.hasAnyErrors()}" th:errors="*{chiTiet}" style="color: red"></p>
+            </td>
+        </tr>
+    </table>
+    <hr>
+    <button class="btn btn-success" id="create" type="submit">Create</button>
+    <a class="btn btn-outline-secondary" th:href="@{/cinema/}" role="button">Back</a>
+</form>
+<div id="result"></div>
+<th:block th:insert="~{fragments/layout :: script}"/>
+</body>
+</html>

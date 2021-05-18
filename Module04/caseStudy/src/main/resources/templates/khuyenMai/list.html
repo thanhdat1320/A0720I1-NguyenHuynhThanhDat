@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Cinema</title>
+    <th:block th:insert="~{fragments/layout :: meta}"/>
+    <th:block th:insert="~{fragments/layout :: link}"/>
+</head>
+
+<body>
+<div id="result">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" th:href="@{/cinema/}">Cinema</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            Cinema
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#" id="btnModalCreate">Create</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="nameSearch"
+                       style="width: 30%">
+                <button class="btn btn-outline-success" type="submit" id="search">Search</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Modal -->
+    <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Khuyen Mai</h5>
+                </div>
+                <div class="modal-body">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-sm">
+        <table class="table table-hover">
+            <thead class="thead-dark">
+            <tr>
+                <th>Tieu De</th>
+                <th>Thoi Gian Bat Dau</th>
+                <th>Thoi Gian Ket Thuc</th>
+                <th>Muc Giam Gia</th>
+                <th>Chi Tiet</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            </thead>
+            <tr th:each="khuyenMai, var: ${khuyenMaiList}">
+                <td th:text="${khuyenMai.getTieuDe()}"></td>
+                <td th:text="${khuyenMai.getThoiGianBatDau()}"></td>
+                <td th:text="${khuyenMai.getThoiGianKetThuc()}"></td>
+                <td th:text="${khuyenMai.getMucGiamGia()}"></td>
+                <td th:text="${khuyenMai.getChiTiet()}"></td>
+                <td>
+                    <button class="btn btn-outline-warning"
+                            th:onclick="'javascript:editKhuyenMai(' + ${khuyenMai.id} + ')'">Edit
+                    </button>
+                </td>
+                <td>
+                    <button class="btn btn-outline-danger"
+                            th:onclick="'javascript:deleteKhuyenMai(' + ${khuyenMai.id} + ')'">Delete
+                    </button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<th:block th:insert="~{fragments/layout :: script}"/>
+<script>
+
+    /*Delete*/
+    function deleteKhuyenMai(id) {
+        if (confirm("Are you sure to delete?")) {
+            $.ajax({
+                type: 'POST',
+                url: '/cinema/delete',
+                dataType: "HTML",
+                data: {
+                    id: id,
+                },
+                success: (data) => {
+                    $("#result").html(data)
+                }
+            });
+        }
+    }
+
+    /*Search*/
+    $(document).ready(() => {
+        $("#search").click(() => {
+            $.ajax({
+                type: "POST",
+                url: "/cinema/search",
+                dataType: "HTML",
+                data: {
+                    nameSearch: $("#nameSearch").val()
+                },
+                success: (data) => {
+                    $("#result").html(data)
+                }
+            })
+        })
+    });
+
+    /*Create*/
+    $(document).ready(() => {
+        $("#btnModalCreate").click(() => {
+            $.ajax({
+                type: "GET",
+                dataType: "HTML",
+                url: "/cinema/create",
+                success: (data) => {
+                    $(".modal-body").html(data);
+                    $("#modelId").modal('show');
+                },
+            })
+        })
+    });
+
+    /*Edit*/
+    function editKhuyenMai(id) {
+        $.ajax({
+            type: "GET",
+            url: "/cinema/edit",
+            dataType: "HTML",
+            data: {
+                id: id
+            },
+            success: (data) => {
+                $(".modal-body").html(data);
+                $("#modelId").modal('show');
+            }
+        })
+    }
+
+</script>
+</body>
+</html>

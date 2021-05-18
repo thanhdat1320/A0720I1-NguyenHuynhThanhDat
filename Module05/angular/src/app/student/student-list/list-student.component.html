@@ -1,0 +1,17 @@
+<h3>List student</h3>
+<table class="table table-active">
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Class</th>
+    <th>View</th>
+  </tr>
+  <tr *ngFor="let student of listStudent">
+    <td>{{student.id}}</td>
+    <td>{{student.name}}</td>
+    <td>{{student.class}}</td>
+    <td><button (click)="showInfo(student)">View</button></td>
+  </tr>
+</table>
+<app-student-detail [studentChild]="studentBase" (classChange)="changeClassHandler($event)"></app-student-detail>
+<app-name-card cardName="Professional Dev" email="prodev@abc.xyz" phone="0123456789"></app-name-card>
