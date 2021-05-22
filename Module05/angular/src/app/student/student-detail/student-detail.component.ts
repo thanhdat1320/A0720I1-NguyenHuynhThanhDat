@@ -1,4 +1,6 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {StudentService} from '../student.service';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-student-detail',
@@ -6,20 +8,13 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
   styleUrls: ['./student-detail.component.css']
 })
 export class StudentDetailComponent implements OnInit {
-  @Input()
-  studentChild: IStudent;
+  student: IStudent = null;
 
-  @Output()
-  classChange: EventEmitter<IStudent> = new EventEmitter<IStudent>();
-
-  constructor() {
+  constructor(private studentService: StudentService, private activatedRoute: ActivatedRoute) {
   }
 
-  ngOnInit(): void {
-  }
-
-  setClass(classs: IStudent) {
-    this.studentChild.class = classs.value;
-    this.classChange.emit(this.studentChild);
+  ngOnInit() {
+    let id = this.activatedRoute.snapshot.params['id'];
+    this.student = this.studentService.getStudentById(id);
   }
 }

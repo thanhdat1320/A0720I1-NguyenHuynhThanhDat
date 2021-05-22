@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {listStudent} from '../studentList';
+import {StudentService} from '../student.service';
 
 @Component({
   selector: 'app-list-student',
@@ -7,25 +8,30 @@ import {listStudent} from '../studentList';
   styleUrls: ['./list-student.component.css']
 })
 export class ListStudentComponent implements OnInit {
-  listStudent = listStudent;
-  studentBase: IStudent;
+  listStudent: IStudent[];
+  // studentBase: IStudent;
 
-  constructor() {
+  constructor(private studentService: StudentService) {
+    this.listStudent = this.studentService.getAllStudent();
   }
 
   ngOnInit(): void {
   }
 
-  showInfo(student: IStudent) {
-    this.studentBase = student;
-  }
+  // getInfo(student: IStudent) {
+  //   this.studentBase = student;
+  // }
 
+  // changeClassHandler(student) {
+  //   for (const stu of this.listStudent) {
+  //     if (stu.id === student.id) {
+  //       student = stu;
+  //     }
+  //   }
+  // }
 
-  changeClassHandler(student) {
-    for (const stu of this.listStudent) {
-      if (stu.id === student.id) {
-        student = stu;
-      }
-    }
+  deleteStudent(id: number) {
+    this.studentService.deleteStudent(id);
+    this.listStudent = this.studentService.getAllStudent();
   }
 }

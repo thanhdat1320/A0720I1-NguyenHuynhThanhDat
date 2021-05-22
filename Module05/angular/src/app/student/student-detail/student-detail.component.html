@@ -1,17 +1,14 @@
-<table *ngIf="studentChild" class="table tab-content">
+<table *ngIf="student" class="table tab-content">
   <tr>
     <th>ID</th>
-    <td>{{studentChild.id}}</td>
+    <td>{{student.id}}</td>
   </tr>
   <tr>
     <th>Name</th>
-    <td>{{studentChild.name}}</td>
+    <td>{{student.name}}</td>
   </tr>
   <tr>
     <th>Class</th>
-    <div>
-      <input [value]="studentChild.class" #class>
-      <button (click)="setClass(class)">Set Class</button>
-    </div>
+    <td>{{student.class}}</td>
   </tr>
 </table>

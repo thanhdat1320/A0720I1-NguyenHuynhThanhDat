@@ -19,5 +19,5 @@ export const listStudent: IStudent[] = [
     id: 4,
     name: 'don',
     class: 'A07'
-  },
+  }
 ];

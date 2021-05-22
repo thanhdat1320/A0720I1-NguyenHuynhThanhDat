@@ -5,13 +5,22 @@
     <th>Name</th>
     <th>Class</th>
     <th>View</th>
+    <th>Delete</th>
   </tr>
   <tr *ngFor="let student of listStudent">
     <td>{{student.id}}</td>
     <td>{{student.name}}</td>
     <td>{{student.class}}</td>
-    <td><button (click)="showInfo(student)">View</button></td>
+    <td><a class="btn btn-info" [routerLink]="['/detail', student.id]">View</a></td>
+    <td>
+      <button class="btn btn-danger" (click)="deleteStudent(student.id)">Delete</button>
+    </td>
   </tr>
 </table>
-<app-student-detail [studentChild]="studentBase" (classChange)="changeClassHandler($event)"></app-student-detail>
-<app-name-card cardName="Professional Dev" email="prodev@abc.xyz" phone="0123456789"></app-name-card>
+<!--<app-student-detail [studentChild]="studentBase" (classChange)="changeClassHandler($event)"></app-student-detail>-->
+<!--<hr>-->
+<!--<app-name-card cardName="Professional Dev" email="prodev@abc.xyz" phone="0123456789"></app-name-card>-->
+<!--<hr>-->
+<!--<app-student-form></app-student-form>-->
+<!--<hr>-->
+<!--<app-student-form-reactive></app-student-form-reactive>-->
