@@ -1,0 +1,21 @@
+<h3>List User</h3>
+<table class="table table-active">
+  <tr>
+    <th>ID</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th>Gender</th>
+    <th>Age</th>
+    <th>Country</th>
+    <th>Edit</th>
+  </tr>
+  <tr *ngFor="let user of listUser">
+    <td>{{user.id}}</td>
+    <td>{{user.email}}</td>
+    <td>{{user.phone}}</td>
+    <td>{{user.gender}}</td>
+    <td>{{user.age}}</td>
+    <td>{{user.country}}</td>
+    <td><a [routerLink]="['/editUser', user.id]">Edit</a></td>
+  </tr>
+</table>

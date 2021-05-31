@@ -1,0 +1,93 @@
+<div class="container-sm">
+  <form [formGroup]="formUser" (ngSubmit)="createUser()">
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="text" class="form-control" id="email" aria-describedby="emailHelp" formControlName="email">
+      <ng-container *ngFor="let validation of validate_messages.email">
+        <p class="text-danger"
+           *ngIf="formUser.get('email').hasError(validation.type) && (formUser.get('email').dirty || formUser.get('email').touched)">
+          {{validation.message}}
+        </p>
+      </ng-container>
+    </div>
+
+    <fieldset formGroupName="pwGroup">
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" aria-describedby="emailHelp"
+               formControlName="password">
+        <ng-container *ngFor="let validation of validate_messages.password">
+          <p class="text-danger"
+             *ngIf="(formUser.get('pwGroup').get('password').hasError(validation.type)) &&
+                      (formUser.get('pwGroup').get('password').dirty || formUser.get('pwGroup').get('password').touched)">
+            {{validation.message}}
+          </p>
+        </ng-container>
+      </div>
+
+      <div class="form-group">
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="password" class="form-control" id="confirmPassword" aria-describedby="emailHelp"
+               formControlName="confirmPassword">
+        <ng-container *ngFor="let validation of validate_messages.confirmPassword">
+          <p class="text-danger"
+             *ngIf="formUser.hasError(validation.type, ['pwGroup']) && (formUser.get('pwGroup').touched || formUser.get('pwGroup').dirty)">
+            {{validation.message}}
+          </p>
+        </ng-container>
+      </div>
+    </fieldset>
+
+    <div class="form-group">
+      <label for="country">Country</label>
+      <input type="text" class="form-control" id="country" aria-describedby="emailHelp" formControlName="country">
+      <ng-container *ngFor="let validation of validate_messages.country">
+        <p class="text-danger"
+           *ngIf="formUser.get('country').hasError(validation.type) && (formUser.get('country').dirty || formUser.get('country').touched)">
+          {{validation.message}}
+        </p>
+      </ng-container>
+    </div>
+
+    <div class="form-group">
+      <label for="age">Age</label>
+      <input type="date" class="form-control" id="age" aria-describedby="emailHelp" formControlName="age">
+      <ng-container *ngFor="let validation of validate_messages.age">
+        <p class="text-danger"
+           *ngIf="formUser.get('age').hasError(validation.type) && (formUser.get('age').dirty || formUser.get('age').touched)">
+          {{validation.message}}
+        </p>
+      </ng-container>
+    </div>
+
+    <div class="form-group">
+      <label for="gender">Gender</label>
+      <select class="custom-select" id="gender" formControlName="gender">
+        <option value="Male" [selected]="'Male'">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+      </select>
+      <ng-container *ngFor="let validation of validate_messages.gender">
+        <p class="text-danger"
+           *ngIf="formUser.get('gender').hasError(validation.type) && (formUser.get('gender').dirty || formUser.get('gender').touched) ">
+          {{validation.message}}
+        </p>
+      </ng-container>
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Phone</label>
+      <input type="text" class="form-control" id="phone" aria-describedby="emailHelp" formControlName="phone">
+      <ng-container *ngFor="let validation of validate_messages.phone">
+        <p class="text-danger"
+           *ngIf="formUser.get('phone').hasError(validation.type) && (formUser.get('phone').dirty || formUser.get('phone').touched)">
+          {{validation.message}}
+        </p>
+      </ng-container>
+    </div>
+    <div>
+      <button class="btn btn-outline-success" type="submit" [disabled]="formUser.invalid">Create</button>
+    </div>
+  </form>
+</div>
+
