@@ -7,8 +7,14 @@ import {File404Component} from './file404/file404.component';
 import {CustomerEditComponent} from './customer-edit/customer-edit.component';
 import {CustomerCreateComponent} from './customer-create/customer-create.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
+import {MatDialogModule} from '@angular/material/dialog';
+import {HttpClientModule} from '@angular/common/http';
+import {NgxPaginationModule} from 'ngx-pagination';
+import {Ng2SearchPipeModule} from 'ng2-search-filter';
+import { ConfirmDeleteComponent } from './confirm-delete/confirm-delete.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +22,8 @@ import {MatInputModule} from '@angular/material/input';
     CustomerViewComponent,
     File404Component,
     CustomerEditComponent,
-    CustomerCreateComponent
+    CustomerCreateComponent,
+    ConfirmDeleteComponent,
   ],
   exports: [],
   imports: [
@@ -24,7 +31,13 @@ import {MatInputModule} from '@angular/material/input';
     CustomersRoutingModule,
     MatFormFieldModule,
     ReactiveFormsModule,
-    MatInputModule
+    MatInputModule,
+    MatButtonModule,
+    MatDialogModule,
+    HttpClientModule,
+    NgxPaginationModule,
+    FormsModule,
+    Ng2SearchPipeModule
   ]
 })
 export class CustomersModule {

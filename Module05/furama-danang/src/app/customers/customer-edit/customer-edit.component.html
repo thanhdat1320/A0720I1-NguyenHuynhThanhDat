@@ -1,1 +1,64 @@
-<p>customer-edit works!</p>
+
+<div class="container-sm">
+  <form [formGroup]="formCustomer" (ngSubmit)="editCustomer()">
+
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter name"
+             formControlName="name">
+      <ng-container *ngFor="let validation of validationMessages.name">
+        <p class="text-danger"
+           *ngIf="formCustomer.get('name').hasError(validation.type) && (formCustomer.get('name').dirty || formCustomer.get('name').touched)">
+          {{validation.message}}
+        </p>
+      </ng-container>
+    </div>
+
+    <div class="form-group">
+      <label for="birthday">Birthday</label>
+      <input type="date" class="form-control" id="birthday" placeholder="Birthday" formControlName="birthday">
+      <ng-container *ngFor="let validation of validationMessages.birthday">
+        <p class="text-danger"
+           *ngIf="formCustomer.get('birthday').hasError(validation.type) && (formCustomer.get('birthday').dirty || formCustomer.get('birthday').touched)">
+          {{validation.message}}
+        </p>
+      </ng-container>
+    </div>
+
+    <div class="form-group">
+      <label for="gender">Gender</label>
+      <input type="text" class="form-control" id="gender" placeholder="Gender" formControlName="gender">
+    </div>
+
+    <div class="form-group">
+      <label for="identify">Identify</label>
+      <input type="text" class="form-control" id="identify" placeholder="Identify" formControlName="identify">
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Phone</label>
+      <input type="text" class="form-control" id="phone" placeholder="Phone" formControlName="phone">
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="text" class="form-control" id="email" placeholder="Email" formControlName="email">
+    </div>
+
+    <div class="form-group">
+      <label for="address">Address</label>
+      <input type="text" class="form-control" id="address" placeholder="Address" formControlName="address">
+    </div>
+
+    <div class="form-group">
+      <label for="typeCustomer">Type Customer</label>
+      <input type="text" class="form-control" id="typeCustomer" placeholder="Type Customer"
+             formControlName="typeCustomer">
+    </div>
+
+    <div>
+      <button type="submit" class="btn btn-outline-success">Edit1w</button>
+    </div>
+  </form>
+</div>
+
