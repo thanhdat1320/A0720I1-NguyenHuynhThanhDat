@@ -1,0 +1,94 @@
+<div class="container-sm">
+  <form [formGroup]="formStudent" (ngSubmit)="editStudent()">
+
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter name"
+             formControlName="name">
+      <ng-container *ngFor="let validation of validationMessages.name">
+        <p class="text-danger"
+           *ngIf="formStudent.get('name').hasError(validation.type) && (formStudent.get('name').dirty || formStudent.get('name').touched)">
+          {{validation.message}}
+        </p>
+      </ng-container>
+    </div>
+
+    <div class="form-group">
+      <label for="group">Batch</label>
+      <select class="custom-select" id="group" formControlName="group">
+        <option [selected]="formStudent.get('batch')" value="Group1">Group1</option>
+        <option value="Group2">Group2</option>
+        <option value="Group3">Group3</option>
+        <option value="Group4">Group4</option>
+        <option value="Group5">Group5</option>
+        <option value="Group6">Group6</option>
+        <option value="Group7">Group7</option>
+        <option value="Group8">Group8</option>
+      </select>
+      <ng-container *ngFor="let validation of validationMessages.batch">
+        <p class="text-danger"
+           *ngIf="formStudent.get('batch').hasError(validation.type) && (formStudent.get('batch').dirty || formStudent.get('batch').touched)">
+          {{validation.message}}
+        </p>
+      </ng-container>
+    </div>
+
+    <div class="form-group">
+      <label for="subject">Subject</label>
+      <input type="text" class="form-control" id="subject" placeholder="Subject" formControlName="subject">
+      <ng-container *ngFor="let validation of validationMessages.subject">
+        <p class="text-danger"
+           *ngIf="formStudent.get('subject').hasError(validation.type) && (formStudent.get('subject').dirty || formStudent.get('subject').touched)">
+          {{validation.message}}
+        </p>
+      </ng-container>
+    </div>
+
+    <div class="form-group">
+      <label for="teacher">Teacher</label>
+      <select class="custom-select" id="teacher" formControlName="teacher">
+        <option [selected]="formStudent.get('teacher')" value="Hai">Hai</option>
+        <option value="Linh">Linh</option>
+        <option value="Trung Doan">Trung Doan</option>
+        <option value="Trung Dang">Trung Dang</option>
+      </select>
+      <ng-container *ngFor="let validation of validationMessages.teacher">
+              <p class="text-danger"
+                 *ngIf="formStudent.get('teacher').hasError(validation.type) && (formStudent.get('teacher').dirty || formStudent.get('teacher').touched)">
+                {{validation.message}}
+              </p>
+            </ng-container>
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Phone</label>
+      <input type="text" class="form-control" id="phone" placeholder="Phone" formControlName="phone">
+      <ng-container *ngFor="let validation of validationMessages.phone">
+        <p class="text-danger"
+           *ngIf="formStudent.get('phone').hasError(validation.type) && (formStudent.get('phone').dirty || formStudent.get('phone').touched)">
+          {{validation.message}}
+        </p>
+      </ng-container>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="text" class="form-control" id="email" placeholder="Email" formControlName="email">
+      <ng-container *ngFor="let validation of validationMessages.email">
+        <p class="text-danger"
+           *ngIf="formStudent.get('email').hasError(validation.type) && (formStudent.get('email').dirty || formStudent.get('email').touched)">
+          {{validation.message}}
+        </p>
+      </ng-container>
+    </div>
+
+    <span>
+      <button type="submit" class="btn btn-outline-success" [disabled]="formStudent.invalid">Edit</button>
+    </span>
+    <span>
+      <button type="submit" class="btn btn-outline-light" routerLink="/students">Back</button>
+    </span>
+  </form>
+</div>
+
+

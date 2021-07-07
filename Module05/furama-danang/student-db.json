@@ -1,0 +1,58 @@
+{
+  "students": [
+    {
+      "name": "ling",
+      "group": "Group3",
+      "subject": "asd",
+      "teacher": "Trung Dang",
+      "phone": "0919698287",
+      "email": "sdas@gmali.cc",
+      "id": 1
+    },
+    {
+      "name": "ling",
+      "group": "Group2",
+      "subject": "asd",
+      "teacher": "linh",
+      "phone": "0919698287",
+      "email": "sdas@gmali.cc",
+      "id": 2
+    },
+    {
+      "name": "ling",
+      "group": "Group2",
+      "subject": "asd",
+      "teacher": "linh",
+      "phone": "0919698287",
+      "email": "sdas@gmali.cc",
+      "id": 3
+    },
+    {
+      "name": "ling",
+      "group": "Group2",
+      "subject": "asd",
+      "teacher": "linh",
+      "phone": "0919698287",
+      "email": "sdas@gmali.cc",
+      "id": 4
+    },
+    {
+      "name": "ling",
+      "group": "Group2",
+      "subject": "asd",
+      "teacher": "linh",
+      "phone": "0919698287",
+      "email": "sdas@gmali.cc",
+      "id": 5
+    },
+    {
+      "name": "ling",
+      "group": "Group2",
+      "subject": "asd",
+      "teacher": "linh",
+      "phone": "0919698287",
+      "email": "asd@gmial.com",
+      "id": 6
+    }
+  ]
+}

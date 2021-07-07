@@ -1,0 +1,92 @@
+{
+  "customers": [
+    {
+      "name": "ling",
+      "birthday": "1888-06-05",
+      "gender": "ssadf",
+      "identify": "sadfsadf",
+      "phone": "5651651",
+      "email": "sdas@gmali.cc",
+      "address": "ádas",
+      "typeCustomer": "ádasd",
+      "id": 5
+    },
+    {
+      "name": "tai",
+      "birthday": "1888-06-05",
+      "gender": "ssadf",
+      "identify": "sadfsadf",
+      "phone": "5651651",
+      "email": "sdas@gmali.cc",
+      "address": "ádas",
+      "typeCustomer": "ádasd",
+      "id": 7
+    },
+    {
+      "name": "ti",
+      "birthday": "1888-06-05",
+      "gender": "ssadf",
+      "identify": "sadfsadf",
+      "phone": "5651651",
+      "email": "sdas@gmali.cc",
+      "address": "ádas",
+      "typeCustomer": "ádasd",
+      "id": 8
+    },
+    {
+      "name": "trang",
+      "birthday": "1888-06-05",
+      "gender": "ssadf",
+      "identify": "sadfsadf",
+      "phone": "5651651",
+      "email": "sdas@gmali.cc",
+      "address": "ádas",
+      "typeCustomer": "ádasd",
+      "id": 9
+    },
+    {
+      "name": "muọi",
+      "birthday": "1888-06-05",
+      "gender": "ssadf",
+      "identify": "sadfsadf",
+      "phone": "5651651",
+      "email": "sdas@gmali.cc",
+      "address": "ádas",
+      "typeCustomer": "ádasd",
+      "id": 10
+    },
+    {
+      "name": "cuong",
+      "birthday": "1888-06-05",
+      "gender": "ssadf",
+      "identify": "sadfsadf",
+      "phone": "5651651",
+      "email": "sdas@gmali.cc",
+      "address": "ádas",
+      "typeCustomer": "ádasd",
+      "id": 11
+    },
+    {
+      "name": "long",
+      "birthday": "1888-06-05",
+      "gender": "ssadf",
+      "identify": "sadfsadf",
+      "phone": "5651651",
+      "email": "sdas@gmali.cc",
+      "address": "ádas",
+      "typeCustomer": "ádasd",
+      "id": 12
+    },
+    {
+      "name": "dasdasd",
+      "birthday": "1999-06-30",
+      "gender": "male",
+      "identify": "515132",
+      "phone": "1321321321",
+      "email": "dat@gmail.com",
+      "address": "asdasd",
+      "typeCustomer": "asd",
+      "id": 13
+    }
+  ]
+}

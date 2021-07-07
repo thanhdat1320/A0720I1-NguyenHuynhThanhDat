@@ -6,7 +6,8 @@ import {CustomersModule} from './customers/customers.module';
 import {AppComponent} from './app.component';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {EmployeesModule} from './employees/employees.module';
-import { HomePageComponent } from './home-page/home-page.component';
+import {HomePageComponent} from './home-page/home-page.component';
+import {StudentModule} from './student/student.module';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { HomePageComponent } from './home-page/home-page.component';
     BrowserAnimationsModule,
     MatProgressBarModule,
     CustomersModule,
-    EmployeesModule
+    EmployeesModule,
+    StudentModule
   ],
   providers: [],
   bootstrap: [AppComponent]

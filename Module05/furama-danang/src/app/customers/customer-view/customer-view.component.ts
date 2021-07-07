@@ -1,6 +1,4 @@
 import {Component, Inject, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
-import {CustomerService} from '../services/customer.service';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 
 class DialogData {
@@ -12,7 +10,6 @@ class DialogData {
   styleUrls: ['./customer-view.component.scss']
 })
 export class CustomerViewComponent implements OnInit {
-  idCustomer: number;
   // @ts-ignore
   customer: ICustomer;
 
@@ -24,8 +21,6 @@ export class CustomerViewComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // this.idCustomer = this.activatedRoute.snapshot.params['id'];
-    this.customer = this.data.customer;
   }
 
   onNoClick() {

@@ -6,7 +6,8 @@ import {HomePageComponent} from './home-page/home-page.component';
 const routes: Routes = [
   {path: '', component: HomePageComponent},
   {path: 'customers', loadChildren: () => import('./customers/customers.module').then(m => m.CustomersModule)},
-  {path: 'employees', loadChildren: () => import('./employees/employees.module').then(m => m.EmployeesModule)}
+  {path: 'employees', loadChildren: () => import('./employees/employees.module').then(m => m.EmployeesModule)},
+  {path: 'students', loadChildren: () => import('./student/student.module').then(m => m.StudentModule)}
 
 ];
 

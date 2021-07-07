@@ -5,6 +5,7 @@ import {CustomerViewComponent} from './customer-view/customer-view.component';
 import {CustomerEditComponent} from './customer-edit/customer-edit.component';
 import {CustomerCreateComponent} from './customer-create/customer-create.component';
 import {File404Component} from './file404/file404.component';
+import {StudentCreateComponent} from '../student/student-create/student-create.component';
 
 
 const routes: Routes = [

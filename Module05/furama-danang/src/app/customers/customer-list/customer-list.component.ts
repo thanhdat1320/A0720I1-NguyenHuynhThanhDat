@@ -35,16 +35,6 @@ export class CustomerListComponent implements OnInit {
     });
   }
 
-  modalView(id: number) {
-    // @ts-ignore
-    this.customerJsonService.getCustomerById(id).subscribe((data: ICustomer) => {
-      this.customer = data;
-      this.dialog.open(CustomerViewComponent, {
-        width: '700px',
-        data: {customer: this.customer}
-      });
-    });
-  }
 
   searchCustomer() {
     this.customerJsonService.searchFullCustomer(this.word).subscribe(data => {
@@ -55,13 +45,23 @@ export class CustomerListComponent implements OnInit {
       }
     });
   }
+    /*Confirm delete*/
+  // deleteCustomer(id: number) {
+  //   if (confirm('Are you sure to delete?')) {
+  //     this.customerJsonService.deleteCustomer(id).subscribe(data => {
+  //       this.innitListCustomer();
+  //     });
+  //   }
+  // }
 
-  deleteCustomer(id: number) {
-    if (confirm('Are you sure to delete?')) {
-      this.customerJsonService.deleteCustomer(id).subscribe(data => {
-        this.innitListCustomer();
+  modalView(id: number) {
+    this.customerJsonService.getCustomerById(id).subscribe((data) => {
+      this.customer = data;
+      this.dialog.open(CustomerViewComponent, {
+        width: '700px',
+        data: {customer: this.customer}
       });
-    }
+    });
   }
 
   modalDelete(id: number) {

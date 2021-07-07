@@ -1,0 +1,45 @@
+
+<table class="table table-hover table-dark">
+  <thead>
+  <tr>
+    <th scope="col" style="border-right: 1px solid white">STT</th>
+    <th scope="col">ID</th>
+    <th scope="col">Name</th>
+    <th scope="col">Batch</th>
+    <th scope="col">Subject</th>
+    <th scope="col">Teacher</th>
+    <th scope="col">Phone</th>
+    <th scope="col">Email</th>
+    <th scope="col">View</th>
+    <th scope="col">Edit</th>
+    <th scope="col">Delete</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let student of listStudent; let count = index" [attr.data-index]="count">
+    <th scope="row" style="border-right: 1px solid white">{{count + 1}}</th>
+    <th>{{student.id}}</th>
+    <td>{{student.name}}</td>
+    <td>{{student.batch}}</td>
+    <td>{{student.subject}}</td>
+    <td>{{student.teacher}}</td>
+    <td>{{student.phone}}</td>
+    <td>{{student.email}}</td>
+    <td>
+      <button class="btn btn-outline-info" (click)="viewStudent(student.id)">View</button>
+    </td>
+    <td>
+      <a type="button" class="btn btn-outline-warning" [routerLink]="['edit', student.id]">Edit</a>
+    </td>
+    <td>
+      <button class="btn btn-outline-danger" (click)="deleteStudent(student.id)">Delete</button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+<a type="button" class="btn btn-outline-success" routerLink="/createStudent">Create</a>
+
+
+
+
+
